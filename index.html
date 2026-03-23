@@ -674,7 +674,7 @@
       </div>
       <div class="weather-search">
         <input class="weather-search-input" type="text" id="cityInput" placeholder="Search any city&hellip; (default: Modi&rsquo;in)" maxlength="80" onkeydown="if(event.key==='Enter')searchCity()"/>
-        <button class="btn-weather-search" id="citySearchBtn" onclick="searchCity()">&#128269; Search</button>
+        <button class="btn-weather-search" id="citySearchBtn" onclick="searchCity()">🔍 Search</button>
       </div>
       <div class="weather-body" id="weatherBody"><span class="weather-loading">&#8987; Loading weather&hellip;</span></div>
       <div class="weather-footer">Data: <a href="https://open-meteo.com/" target="_blank" rel="noopener" style="color:var(--accent2);text-decoration:none">Open-Meteo</a> &middot; Geocoding: <a href="https://open-meteo.com/en/docs/geocoding-api" target="_blank" rel="noopener" style="color:var(--accent2);text-decoration:none">Open-Meteo Geocoding</a> &middot; <a href="https://ims.gov.il/en/radar" target="_blank" rel="noopener" style="color:var(--accent2);text-decoration:none">IMS Radar &#8594;</a></div>
@@ -1126,7 +1126,7 @@ document.getElementById('fbsubmit').addEventListener('click',async function(){
       var gd=await gr.json();
       if(!gd.results||!gd.results.length){
         document.getElementById('weatherBody').innerHTML='<span class="weather-loading">&#10060; City not found. Try a different spelling.</span>';
-        btn.disabled=false;btn.textContent='&#128269; Search';return;
+        btn.disabled=false;btn.textContent='🔍 Search';return;
       }
       var loc=gd.results[0];
       var label=loc.name+(loc.country?', '+loc.country:'');
@@ -1134,7 +1134,7 @@ document.getElementById('fbsubmit').addEventListener('click',async function(){
     }catch(e){
       document.getElementById('weatherBody').innerHTML='<span class="weather-loading">&#10060; Geocoding failed. Please try again.</span>';
     }
-    btn.disabled=false;btn.textContent='&#128269; Search';
+    btn.disabled=false;btn.textContent='🔍 Search';
   }
 
   // Load default (Modi'in) on start

@@ -155,7 +155,7 @@ const WAVES = [
 
 // ═══════════════════════════════════════════════
 //  GAME STATE
-// ═══════════════════════════════════════════════
+// ═══════════════════════════════════════════���═══
 let state = 'menu'; // menu | playing | waveclear | gameover
 let player = null, enemies = [], blasts = [], particles = [], powerups = [], dragonBalls = [];
 let score, kills, waveNum, dbCollected;
@@ -255,48 +255,192 @@ function drawBackground(dt) {
 function drawGoten(x, y, ssj) {
   ctx.save();
   ctx.translate(x, y);
-  // Aura
+
+  const skin    = '#fde68a';
+  const hairCol = ssj ? '#fde047' : '#111827';
+  const hairShd = ssj ? '#f59e0b' : '#000000';
+  const giCol   = ssj ? '#1d4ed8' : '#2563eb';
+  const irisCol = ssj ? '#38bdf8' : '#1e3a8a';
+
+  // ── SSJ AURA ──
   if(ssj) {
-    const auraGrad = ctx.createRadialGradient(0,0,8,0,0,32);
-    auraGrad.addColorStop(0,'rgba(253,230,138,0.5)');
-    auraGrad.addColorStop(0.6,'rgba(245,158,11,0.25)');
-    auraGrad.addColorStop(1,'rgba(245,158,11,0)');
-    ctx.fillStyle=auraGrad;
-    ctx.beginPath();ctx.arc(0,0,32,0,Math.PI*2);ctx.fill();
+    const ag = ctx.createRadialGradient(0,-12,5,0,-12,42);
+    ag.addColorStop(0,'rgba(253,224,71,0.45)');
+    ag.addColorStop(0.5,'rgba(245,158,11,0.2)');
+    ag.addColorStop(1,'rgba(245,158,11,0)');
+    ctx.fillStyle=ag;
+    ctx.beginPath();ctx.ellipse(0,-12,38,46,0,0,Math.PI*2);ctx.fill();
+    // inner ring
+    const ag2=ctx.createRadialGradient(0,-12,10,0,-12,20);
+    ag2.addColorStop(0,'rgba(253,224,71,0)');
+    ag2.addColorStop(1,'rgba(253,224,71,0.2)');
+    ctx.fillStyle=ag2;
+    ctx.beginPath();ctx.ellipse(0,-12,20,24,0,0,Math.PI*2);ctx.fill();
   }
-  // Body (blue gi)
-  ctx.fillStyle = ssj ? '#1d4ed8' : '#2563eb';
-  ctx.fillRect(-8,-8,16,18);
-  // Belt
-  ctx.fillStyle='#1e3a8a';ctx.fillRect(-8,4,16,3);
-  // Arms
-  ctx.fillStyle = ssj ? '#1d4ed8' : '#2563eb';
-  ctx.fillRect(-14,-8,6,12); ctx.fillRect(8,-8,6,12);
-  // Hands (skin)
-  ctx.fillStyle='#fde68a'; ctx.fillRect(-14,4,6,6); ctx.fillRect(8,4,6,6);
-  // Legs
-  ctx.fillStyle='#1e3a8a'; ctx.fillRect(-8,10,6,10); ctx.fillRect(2,10,6,10);
-  // Boots
-  ctx.fillStyle='#1e3a8a'; ctx.fillRect(-9,18,8,5); ctx.fillRect(1,18,8,5);
-  // Head
-  ctx.fillStyle='#fde68a'; ctx.beginPath(); ctx.arc(0,-12,10,0,Math.PI*2); ctx.fill();
-  // Eyes
-  ctx.fillStyle='#000'; ctx.fillRect(-5,-14,3,3); ctx.fillRect(2,-14,3,3);
-  // Smile
-  ctx.strokeStyle='#000'; ctx.lineWidth=1.5; ctx.beginPath(); ctx.arc(0,-11,4,0.2,Math.PI-0.2); ctx.stroke();
-  // Hair
-  if(ssj) {
-    ctx.fillStyle='#fde68a';
-    // Tall spiky SSJ hair
-    [[-6,-22],[-2,-26],[4,-24],[0,-28],[6,-20]].forEach(([hx,hy])=>{
-      ctx.beginPath();ctx.moveTo(hx-4,-14);ctx.lineTo(hx,hy);ctx.lineTo(hx+4,-14);ctx.fill();
-    });
+
+  // ── BACK SIDE HAIR SPIKES (behind head) ──
+  ctx.fillStyle=hairCol;
+  if(ssj){
+    ctx.beginPath();ctx.moveTo(-10,-21);ctx.lineTo(-22,-38);ctx.lineTo(-4,-26);ctx.fill();
+    ctx.beginPath();ctx.moveTo(10,-21);ctx.lineTo(22,-38);ctx.lineTo(4,-26);ctx.fill();
   } else {
-    ctx.fillStyle='#111';
-    [[-5,-21],[-1,-24],[4,-22],[0,-25],[5,-19]].forEach(([hx,hy])=>{
-      ctx.beginPath();ctx.moveTo(hx-4,-14);ctx.lineTo(hx,hy);ctx.lineTo(hx+4,-14);ctx.fill();
-    });
+    ctx.beginPath();ctx.moveTo(-8,-23);ctx.lineTo(-17,-31);ctx.lineTo(-5,-26);ctx.fill();
+    ctx.beginPath();ctx.moveTo(8,-23);ctx.lineTo(17,-31);ctx.lineTo(5,-26);ctx.fill();
   }
+
+  // ── BOOTS ──
+  ctx.fillStyle='#1e3a8a';
+  ctx.fillRect(-9,16,8,8); ctx.fillRect(1,16,8,8);
+  ctx.fillStyle='#2563eb'; // toe highlight
+  ctx.fillRect(-9,16,8,2); ctx.fillRect(1,16,8,2);
+
+  // ── LEGS ──
+  ctx.fillStyle='#1e3a8a';
+  ctx.fillRect(-8,9,6,8); ctx.fillRect(2,9,6,8);
+
+  // ── GI BODY ──
+  ctx.fillStyle=giCol;
+  ctx.fillRect(-9,-8,18,18);
+  // White undershirt V-collar
+  ctx.fillStyle='#f0f9ff';
+  ctx.beginPath();ctx.moveTo(-3,-8);ctx.lineTo(0,-3);ctx.lineTo(3,-8);ctx.fill();
+  // Subtle gi fold lines
+  ctx.strokeStyle='rgba(0,0,0,0.12)';ctx.lineWidth=1;
+  ctx.beginPath();ctx.moveTo(-4,-8);ctx.lineTo(-6,10);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(4,-8);ctx.lineTo(6,10);ctx.stroke();
+  // Belt
+  ctx.fillStyle='#1e3a8a';ctx.fillRect(-9,4,18,4);
+  // Belt knot
+  ctx.fillStyle='#e2e8f0';ctx.fillRect(-3,4,6,4);
+  ctx.fillStyle='#1e3a8a';ctx.fillRect(-2,5,4,2);
+
+  // ── ARMS ──
+  ctx.fillStyle=giCol;
+  ctx.fillRect(-15,-8,6,13);ctx.fillRect(9,-8,6,13);
+  ctx.fillStyle='rgba(0,0,0,0.1)';
+  ctx.fillRect(-15,-8,2,13);ctx.fillRect(13,-8,2,13);
+  // Orange wristbands
+  ctx.fillStyle='#ea580c';
+  ctx.fillRect(-15,2,6,3);ctx.fillRect(9,2,6,3);
+  // Hands
+  ctx.fillStyle=skin;
+  ctx.beginPath();ctx.ellipse(-12,7,3,4,0.1,0,Math.PI*2);ctx.fill();
+  ctx.beginPath();ctx.ellipse(12,7,3,4,-0.1,0,Math.PI*2);ctx.fill();
+  // Knuckle lines
+  ctx.strokeStyle='rgba(180,130,50,0.35)';ctx.lineWidth=0.8;
+  ctx.beginPath();ctx.moveTo(-14,6);ctx.lineTo(-10,6);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(-14,8);ctx.lineTo(-10,8);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(10,6);ctx.lineTo(14,6);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(10,8);ctx.lineTo(14,8);ctx.stroke();
+
+  // ── NECK ──
+  ctx.fillStyle=skin;ctx.fillRect(-3,-10,6,4);
+
+  // ── HEAD ──
+  ctx.fillStyle=skin;
+  ctx.beginPath();ctx.ellipse(0,-18,10,11,0,0,Math.PI*2);ctx.fill();
+  // Subtle cheek blush
+  ctx.fillStyle='rgba(220,100,80,0.12)';
+  ctx.beginPath();ctx.ellipse(-7,-15,3,2,0,0,Math.PI*2);ctx.fill();
+  ctx.beginPath();ctx.ellipse(7,-15,3,2,0,0,Math.PI*2);ctx.fill();
+  // Ears
+  ctx.fillStyle=skin;
+  ctx.beginPath();ctx.ellipse(-10,-17,2,2.5,0.2,0,Math.PI*2);ctx.fill();
+  ctx.beginPath();ctx.ellipse(10,-17,2,2.5,-0.2,0,Math.PI*2);ctx.fill();
+
+  // ── FRONT HAIR ──
+  ctx.fillStyle=hairCol;
+  if(ssj){
+    // Hair base
+    ctx.beginPath();ctx.ellipse(0,-25,11,7,0,0,Math.PI*2);ctx.fill();
+    // Tall center spike
+    ctx.beginPath();ctx.moveTo(-6,-28);ctx.lineTo(0,-52);ctx.lineTo(6,-28);ctx.fill();
+    // Left main spike
+    ctx.beginPath();ctx.moveTo(-9,-26);ctx.lineTo(-16,-47);ctx.lineTo(-2,-29);ctx.fill();
+    // Right main spike
+    ctx.beginPath();ctx.moveTo(9,-26);ctx.lineTo(16,-47);ctx.lineTo(2,-29);ctx.fill();
+    // Left filler spike
+    ctx.beginPath();ctx.moveTo(-5,-29);ctx.lineTo(-8,-43);ctx.lineTo(0,-29);ctx.fill();
+    // Right filler spike
+    ctx.beginPath();ctx.moveTo(5,-29);ctx.lineTo(8,-43);ctx.lineTo(2,-30);ctx.fill();
+    // Depth shadow
+    ctx.fillStyle=hairShd;ctx.globalAlpha=0.22;
+    ctx.beginPath();ctx.moveTo(-5,-28);ctx.lineTo(-1,-50);ctx.lineTo(1,-28);ctx.fill();
+    ctx.beginPath();ctx.moveTo(-8,-26);ctx.lineTo(-14,-45);ctx.lineTo(-4,-28);ctx.fill();
+    ctx.globalAlpha=1;
+    // Gold highlight streak
+    ctx.fillStyle='#fef9c3';ctx.globalAlpha=0.65;
+    ctx.beginPath();ctx.moveTo(-1.5,-29);ctx.lineTo(0,-50);ctx.lineTo(1.5,-29);ctx.fill();
+    ctx.globalAlpha=1;
+  } else {
+    // Normal Goten wild black spiky hair
+    ctx.beginPath();ctx.ellipse(0,-25,10,7,0,0,Math.PI*2);ctx.fill();
+    // Front center spike (Goten's iconic forward-angled spike)
+    ctx.beginPath();ctx.moveTo(-6,-28);ctx.lineTo(-3,-39);ctx.lineTo(4,-28);ctx.fill();
+    // Main top spike (slightly right of center)
+    ctx.beginPath();ctx.moveTo(-2,-30);ctx.lineTo(2,-40);ctx.lineTo(7,-27);ctx.fill();
+    // Right spike
+    ctx.beginPath();ctx.moveTo(6,-26);ctx.lineTo(12,-36);ctx.lineTo(10,-23);ctx.fill();
+    // Far right spike (outward)
+    ctx.beginPath();ctx.moveTo(9,-22);ctx.lineTo(14,-28);ctx.lineTo(12,-20);ctx.fill();
+    // Left spike
+    ctx.beginPath();ctx.moveTo(-6,-27);ctx.lineTo(-12,-35);ctx.lineTo(-8,-24);ctx.fill();
+    // Front bang wisps over forehead
+    ctx.beginPath();ctx.moveTo(-4,-24);ctx.lineTo(-6,-20);ctx.lineTo(-1,-22);ctx.fill();
+    ctx.beginPath();ctx.moveTo(3,-24);ctx.lineTo(5,-20);ctx.lineTo(8,-22);ctx.fill();
+    // Depth shadow
+    ctx.fillStyle=hairShd;ctx.globalAlpha=0.35;
+    ctx.beginPath();ctx.moveTo(-5,-28);ctx.lineTo(-3,-37);ctx.lineTo(1,-28);ctx.fill();
+    ctx.globalAlpha=1;
+    // Hair sheen
+    ctx.fillStyle='#374151';ctx.globalAlpha=0.45;
+    ctx.beginPath();ctx.moveTo(-2,-29);ctx.lineTo(-1,-37);ctx.lineTo(1,-29);ctx.fill();
+    ctx.globalAlpha=1;
+  }
+
+  // ── EYEBROWS ──
+  ctx.strokeStyle=ssj?'#92400e':'#111827';
+  ctx.lineWidth=2;ctx.lineCap='round';
+  ctx.beginPath();ctx.moveTo(-7,-22);ctx.lineTo(-3,-21);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(7,-22);ctx.lineTo(3,-21);ctx.stroke();
+
+  // ── EYES ──
+  // Whites
+  ctx.fillStyle='#ffffff';
+  ctx.beginPath();ctx.ellipse(-4,-18,3.2,2.5,0,0,Math.PI*2);ctx.fill();
+  ctx.beginPath();ctx.ellipse(4,-18,3.2,2.5,0,0,Math.PI*2);ctx.fill();
+  // Upper lid shadow
+  ctx.fillStyle='rgba(0,0,0,0.1)';
+  ctx.beginPath();ctx.ellipse(-4,-19.5,3.2,1.1,0,0,Math.PI*2);ctx.fill();
+  ctx.beginPath();ctx.ellipse(4,-19.5,3.2,1.1,0,0,Math.PI*2);ctx.fill();
+  // Iris
+  ctx.fillStyle=irisCol;
+  ctx.beginPath();ctx.arc(-4,-18,2.0,0,Math.PI*2);ctx.fill();
+  ctx.beginPath();ctx.arc(4,-18,2.0,0,Math.PI*2);ctx.fill();
+  // Pupil
+  ctx.fillStyle='#000';
+  ctx.beginPath();ctx.arc(-4,-18,1.1,0,Math.PI*2);ctx.fill();
+  ctx.beginPath();ctx.arc(4,-18,1.1,0,Math.PI*2);ctx.fill();
+  // Eye shine
+  ctx.fillStyle='rgba(255,255,255,0.9)';
+  ctx.beginPath();ctx.arc(-3.3,-18.7,0.6,0,Math.PI*2);ctx.fill();
+  ctx.beginPath();ctx.arc(4.7,-18.7,0.6,0,Math.PI*2);ctx.fill();
+
+  // ── NOSE ──
+  ctx.strokeStyle='rgba(160,100,50,0.45)';ctx.lineWidth=0.9;ctx.lineCap='round';
+  ctx.beginPath();ctx.moveTo(-1.5,-14);ctx.quadraticCurveTo(-2.5,-13,-2,-12);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(1.5,-14);ctx.quadraticCurveTo(2.5,-13,2,-12);ctx.stroke();
+
+  // ── MOUTH ──
+  ctx.strokeStyle='rgba(130,70,30,0.7)';ctx.lineWidth=1.2;ctx.lineCap='round';
+  if(ssj){
+    ctx.beginPath();ctx.moveTo(-3,-10);ctx.lineTo(3,-10);ctx.stroke();
+    ctx.strokeStyle='rgba(130,70,30,0.3)';
+    ctx.beginPath();ctx.moveTo(-2,-10);ctx.lineTo(2,-9.5);ctx.stroke();
+  } else {
+    ctx.beginPath();ctx.arc(0,-11.5,2.5,0.15,Math.PI-0.15);ctx.stroke();
+  }
+
   ctx.restore();
 }
 

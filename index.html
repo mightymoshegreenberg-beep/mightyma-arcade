@@ -250,6 +250,17 @@
     .btn-weather-search{background:var(--accent2);color:#000;border:none;border-radius:8px;font-size:.85rem;font-weight:800;padding:.5rem 1rem;cursor:pointer;font-family:inherit;transition:all .2s;white-space:nowrap;flex-shrink:0}
     .btn-weather-search:hover{background:#22d3ee;box-shadow:0 0 12px rgba(6,182,212,.4)}
     .btn-weather-search:disabled{opacity:.5;cursor:not-allowed}
+
+    /* ── PASSWORD / AUTH ── */
+    .auth-error{font-size:.78rem;color:#f87171;background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.25);border-radius:6px;padding:.45rem .75rem;display:none}
+    .auth-success{font-size:.78rem;color:#34d399;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);border-radius:6px;padding:.45rem .75rem;display:none}
+    .pw-strength{height:3px;border-radius:2px;margin-top:.3rem;transition:all .3s;background:rgba(255,255,255,.08)}
+    .pw-strength.weak{background:#f87171;width:33%}
+    .pw-strength.ok{background:var(--accent3);width:66%}
+    .pw-strength.strong{background:var(--accent4);width:100%}
+    .signin-mode-label{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent2);margin-bottom:.25rem}
+    .btn-forgot{background:none;border:none;color:var(--muted);font-size:.75rem;cursor:pointer;font-family:inherit;text-decoration:underline;padding:0;margin-top:-.3rem;align-self:flex-start}
+    .btn-forgot:hover{color:var(--accent2)}
     .hp-field{position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none}
 
     /* ══ SETTINGS MODAL ══ */
@@ -340,27 +351,40 @@
 
         <!-- Sign-in / edit form -->
         <div class="signin-form" id="signinForm">
-          <div style="font-size:.82rem;color:var(--muted);line-height:1.5">
-            Set a username and optional profile picture. Saved to your browser — auto-fills score submissions.
+          <div class="signin-mode-label" id="signinModeLabel">Create Account</div>
+          <div style="font-size:.82rem;color:var(--muted);line-height:1.5" id="signinModeDesc">
+            Set a username and password. Saved to your browser — auto-fills score submissions.
           </div>
           <div class="form-group">
             <label class="form-label" for="settingsUsername" style="font-size:.72rem">Username</label>
             <input class="settings-input" type="text" id="settingsUsername" placeholder="e.g. xXProGamerXx, Z-Fighter, Player1…" maxlength="30" autocomplete="off"/>
           </div>
           <div class="form-group">
+            <label class="form-label" for="settingsPw" style="font-size:.72rem">Password</label>
+            <input class="settings-input" type="password" id="settingsPw" placeholder="Choose a password…" maxlength="64" autocomplete="new-password" oninput="updatePwStrength()"/>
+            <div class="pw-strength" id="pwStrength"></div>
+          </div>
+          <div class="form-group" id="confirmPwGroup">
+            <label class="form-label" for="settingsPwConfirm" style="font-size:.72rem">Confirm Password</label>
+            <input class="settings-input" type="password" id="settingsPwConfirm" placeholder="Repeat password…" maxlength="64" autocomplete="new-password"/>
+          </div>
+          <div class="auth-error" id="authError"></div>
+          <div class="auth-success" id="authSuccess"></div>
+          <div class="form-group" id="avatarGroup">
             <label class="form-label" style="font-size:.72rem">Profile Picture <span style="font-weight:400;text-transform:none;font-size:.7rem;color:var(--muted)">(optional)</span></label>
             <div class="avatar-preview-row">
               <div class="avatar-preview-img" id="settingsAvatarPreview">?</div>
               <div style="flex:1;display:flex;flex-direction:column;gap:.4rem">
-                <label class="choose-photo-btn" for="settingsAvatarFile">📷 Choose Photo</label>
+                <label class="choose-photo-btn" for="settingsAvatarFile">&#128247; Choose Photo</label>
                 <input type="file" id="settingsAvatarFile" accept="image/*" style="display:none" onchange="handleSettingsPhoto(this)"/>
                 <span class="screenshot-hint" id="settingsAvatarHint">No photo selected</span>
               </div>
             </div>
           </div>
           <button class="btn-signin" onclick="saveAccount()">
-            <span id="signinBtnText">🎮 Sign In</span>
+            <span id="signinBtnText">&#127918; Create Account</span>
           </button>
+          <button class="btn-forgot" id="resetBtn" style="display:none" onclick="resetAccount()">Forgot password? Reset account</button>
         </div>
       </div>
 
@@ -447,7 +471,7 @@
       <button class="btn-lucky" onclick="feelingLucky()">&#127922; Feeling Lucky</button>
     </div>
     <div class="unblocked-grid">
-      <a class="ub-card" href="https://www.crazygames.com/game/1v1-lol" target="_blank"><div class="ub-icon">🏗️</div><div class="ub-title">1v1.lol</div><div class="ub-tags"><span class="ub-tag">Building</span><span class="ub-tag">Shooter</span></div><p class="ub-desc">Build-and-shoot battles. Practice Fortnite mechanics for free.</p><span class="ub-link">→ crazygames.com</span></a>
+      <a class="ub-card" href="https://www.crazygames.com/game/1v1-lol" target="_blank"><div class="ub-icon">🏗️</div><div class="ub-title">1v1.lol</div><div class="ub-tags"><span class="ub-tag">Building</span><span class="ub-tag">Shooter</span></div><p class="ub-desc">Build-and-shoot battles. Practice Fortnite mechanics for free.</p><span class="ub-link">��� crazygames.com</span></a>
       <a class="ub-card" href="https://www.crazygames.com/game/slope" target="_blank"><div class="ub-icon">🔮</div><div class="ub-title">Slope</div><div class="ub-tags"><span class="ub-tag">Runner</span><span class="ub-tag">Reflex</span></div><p class="ub-desc">Endless neon slope at breakneck speed. Pure reflex.</p><span class="ub-link">→ crazygames.com</span></a>
       <a class="ub-card" href="https://retrobowl.me" target="_blank"><div class="ub-icon">🏈</div><div class="ub-title">Retro Bowl</div><div class="ub-tags"><span class="ub-tag">Sports</span><span class="ub-tag">Strategy</span></div><p class="ub-desc">Pixel-art football sim. Coach your team to glory.</p><span class="ub-link">→ retrobowl.me</span></a>
       <a class="ub-card" href="https://www.crazygames.com/game/run-3" target="_blank"><div class="ub-icon">👾</div><div class="ub-title">Run 3</div><div class="ub-tags"><span class="ub-tag">Runner</span><span class="ub-tag">Sci-Fi</span></div><p class="ub-desc">Endless runner through a crumbling space tunnel.</p><span class="ub-link">→ crazygames.com</span></a>
@@ -700,63 +724,34 @@
 
 <script>
 // ── localStorage keys ──
-var LS_ACCOUNT = 'mma_account';
-var LS_SETTINGS = 'mma_settings';
-// base64 for current session (not yet saved)
-var _settingsAvatarB64 = null;
-var _scoreAvatarB64 = null;
+var LS_ACCOUNT='mma_account';
+var LS_SETTINGS='mma_settings';
+var LS_SESSION='mma_session';
+var _settingsAvatarB64=null;
 
-// ── Image compression via canvas ──
-function compressImage(file, callback) {
-  var reader = new FileReader();
-  reader.onload = function(e) {
-    var img = new Image();
-    img.onload = function() {
-      var MAX = 128;
-      var w = img.width, h = img.height;
-      if (w > h) { if (w > MAX) { h = Math.round(h*(MAX/w)); w = MAX; } }
-      else { if (h > MAX) { w = Math.round(w*(MAX/h)); h = MAX; } }
-      var canvas = document.createElement('canvas');
-      canvas.width = w; canvas.height = h;
-      canvas.getContext('2d').drawImage(img, 0, 0, w, h);
-      callback(canvas.toDataURL('image/jpeg', 0.72));
-    };
-    img.src = e.target.result;
-  };
-  reader.readAsDataURL(file);
-}
-
-// ── Settings photo handler ──
-function handleSettingsPhoto(input) {
-  var file = input.files[0];
-  if (!file) return;
-  compressImage(file, function(b64) {
-    _settingsAvatarB64 = b64;
-    var el = document.getElementById('settingsAvatarPreview');
-    el.innerHTML = '<img src="'+b64+'" style="width:100%;height:100%;object-fit:cover;border-radius:50%"/>';
-    var hint = document.getElementById('settingsAvatarHint');
-    if (hint) hint.textContent = file.name + ' (ready to save)';
-  });
-}
-
-// ── Score form photo handler ──
-function handleScorePhoto(input) {
-  var file = input.files[0];
-  if (!file) return;
-  compressImage(file, function(b64) {
-    _scoreAvatarB64 = b64;
-    document.getElementById('fbavatar').value = b64;
-    var prev = document.getElementById('fbAvatarPreview');
-    if (prev) prev.innerHTML = '<img src="'+b64+'" style="width:100%;height:100%;object-fit:cover;border-radius:50%"/>';
-    var hint = document.getElementById('fbAvatarHint');
-    if (hint) hint.textContent = file.name + ' selected';
-  });
+// ── SHA-256 via Web Crypto (async) ──
+async function sha256(str){
+  var buf=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(str));
+  return Array.from(new Uint8Array(buf)).map(function(b){return b.toString(16).padStart(2,'0')}).join('');
 }
 
 // ── Helpers ──
-function getAccount(){ try{return JSON.parse(localStorage.getItem(LS_ACCOUNT))||null}catch(e){return null} }
-function getSettings(){ try{return Object.assign({retroMode:false,compactMode:false},JSON.parse(localStorage.getItem(LS_SETTINGS))||{})}catch(e){return{retroMode:false,compactMode:false}} }
-function saveSettings(s){ localStorage.setItem(LS_SETTINGS,JSON.stringify(s)) }
+function getAccount(){try{return JSON.parse(localStorage.getItem(LS_ACCOUNT))||null}catch(e){return null}}
+function getSettings(){try{return Object.assign({retroMode:false,compactMode:false},JSON.parse(localStorage.getItem(LS_SETTINGS))||{})}catch(e){return{retroMode:false,compactMode:false}}}
+function saveSettings(s){localStorage.setItem(LS_SETTINGS,JSON.stringify(s))}
+function isSessionActive(){try{return JSON.parse(sessionStorage.getItem(LS_SESSION))===true}catch(e){return false}}
+function setSession(v){if(v)sessionStorage.setItem(LS_SESSION,'true');else sessionStorage.removeItem(LS_SESSION)}
+
+// ── Password strength indicator ──
+function updatePwStrength(){
+  var pw=document.getElementById('settingsPw').value;
+  var el=document.getElementById('pwStrength');
+  if(!el)return;
+  if(!pw){el.className='pw-strength';return;}
+  var strong=pw.length>=10&&/[A-Z]/.test(pw)&&/[0-9]/.test(pw);
+  var ok=pw.length>=6;
+  el.className='pw-strength '+(strong?'strong':ok?'ok':'weak');
+}
 
 // ── Init on load ──
 (function init(){
@@ -769,6 +764,7 @@ function saveSettings(s){ localStorage.setItem(LS_SETTINGS,JSON.stringify(s)) }
 // ── Account UI ──
 function updateAccountUI(){
   var acc=getAccount();
+  var sessionOk=isSessionActive();
   var pill=document.getElementById('accountPill');
   var pillName=document.getElementById('pillName');
   var pillAvatar=document.getElementById('pillAvatar');
@@ -776,101 +772,204 @@ function updateAccountUI(){
   var signinForm=document.getElementById('signinForm');
   var cardName=document.getElementById('profileCardName');
   var cardAvatar=document.getElementById('profileCardAvatar');
-  var signinBtn=document.getElementById('signinBtnText');
-  if(acc && acc.username){
-    // header pill
+  if(acc&&sessionOk){
+    // Signed in
     pill.classList.add('visible');
     pillName.textContent=acc.username;
     if(acc.avatar){pillAvatar.src=acc.avatar;pillAvatar.style.display=''}
     else{pillAvatar.style.display='none'}
-    // settings panel
     profileCard.classList.add('visible');
     signinForm.classList.add('hidden');
     cardName.textContent=acc.username;
     if(acc.avatar){cardAvatar.src=acc.avatar;cardAvatar.style.display=''}
     else{cardAvatar.style.display='none'}
-    signinBtn.textContent='🎮 Sign In';
-  } else {
+  }else{
+    // Signed out
     pill.classList.remove('visible');
     profileCard.classList.remove('visible');
     signinForm.classList.remove('hidden');
+    // Decide mode: returning user (sign in) vs new user (create)
+    var modeLabel=document.getElementById('signinModeLabel');
+    var modeDesc=document.getElementById('signinModeDesc');
+    var confirmGrp=document.getElementById('confirmPwGroup');
+    var avatarGrp=document.getElementById('avatarGroup');
+    var btnText=document.getElementById('signinBtnText');
+    var resetBtn=document.getElementById('resetBtn');
+    if(acc){
+      // Account exists but no active session = returning user needs to sign in
+      if(modeLabel)modeLabel.textContent='Welcome back, '+acc.username+'!';
+      if(modeDesc)modeDesc.textContent='Enter your password to access your account.';
+      if(confirmGrp)confirmGrp.style.display='none';
+      if(avatarGrp)avatarGrp.style.display='none';
+      if(btnText)btnText.textContent='\uD83C\uDFAE Sign In';
+      if(resetBtn)resetBtn.style.display='block';
+      document.getElementById('settingsUsername').value=acc.username;
+      document.getElementById('settingsUsername').readOnly=true;
+      document.getElementById('settingsUsername').style.opacity='.6';
+    }else{
+      // No account yet = create flow
+      if(modeLabel)modeLabel.textContent='Create Account';
+      if(modeDesc)modeDesc.textContent='Set a username and password. Saved to your browser \u2014 auto-fills score submissions.';
+      if(confirmGrp)confirmGrp.style.display='';
+      if(avatarGrp)avatarGrp.style.display='';
+      if(btnText)btnText.textContent='\uD83C\uDFAE Create Account';
+      if(resetBtn)resetBtn.style.display='none';
+      document.getElementById('settingsUsername').readOnly=false;
+      document.getElementById('settingsUsername').style.opacity='';
+    }
   }
 }
 
-// ── Settings modal ──
+// ── Open settings ──
 function openSettings(){
   var acc=getAccount();
-  // pre-fill sign-in form with existing values
-  if(acc){
-    document.getElementById('settingsUsername').value=acc.username||'';
-    _settingsAvatarB64 = null;
-    var prevEl = document.getElementById('settingsAvatarPreview');
-    if (acc && acc.avatar) {
-      prevEl.innerHTML = '<img src="'+acc.avatar+'" style="width:100%;height:100%;object-fit:cover;border-radius:50%"/>';
-      var hint = document.getElementById('settingsAvatarHint');
-      if (hint) hint.textContent = 'Current photo loaded';
-    } else { prevEl.innerHTML = '?'; }
+  var sessionOk=isSessionActive();
+  _settingsAvatarB64=null;
+  hideAuthMsg();
+  // Reset pw field
+  var pwEl=document.getElementById('settingsPw');
+  if(pwEl)pwEl.value='';
+  var pwcEl=document.getElementById('settingsPwConfirm');
+  if(pwcEl)pwcEl.value='';
+  document.getElementById('pwStrength').className='pw-strength';
+  if(acc&&sessionOk){
+    // Show avatar preview
+    var prevEl=document.getElementById('settingsAvatarPreview');
+    if(acc.avatar)prevEl.innerHTML='<img src="'+acc.avatar+'" style="width:100%;height:100%;object-fit:cover;border-radius:50%"/>';
+    else prevEl.innerHTML='?';
   }
   document.getElementById('settingsOverlay').classList.add('open');
   document.body.style.overflow='hidden';
 }
-function closeSettings(){ document.getElementById('settingsOverlay').classList.remove('open'); document.body.style.overflow=''; }
-function overlayClick(e){ if(e.target===document.getElementById('settingsOverlay'))closeSettings(); }
+function closeSettings(){document.getElementById('settingsOverlay').classList.remove('open');document.body.style.overflow='';}
+function overlayClick(e){if(e.target===document.getElementById('settingsOverlay'))closeSettings();}
 
-// ── Edit profile ──
+// ── Auth messages ──
+function showAuthError(msg){var e=document.getElementById('authError');e.textContent=msg;e.style.display='block';document.getElementById('authSuccess').style.display='none';}
+function showAuthSuccess(msg){var e=document.getElementById('authSuccess');e.textContent=msg;e.style.display='block';document.getElementById('authError').style.display='none';}
+function hideAuthMsg(){var e=document.getElementById('authError');var s=document.getElementById('authSuccess');if(e)e.style.display='none';if(s)s.style.display='none';}
+
+// ── Save / Sign in ──
+async function saveAccount(){
+  hideAuthMsg();
+  var acc=getAccount();
+  var u=document.getElementById('settingsUsername').value.trim();
+  var pw=document.getElementById('settingsPw').value;
+  var btn=document.getElementById('signinBtnText');
+
+  if(!pw){showAuthError('Password is required.');document.getElementById('settingsPw').focus();return;}
+
+  if(!acc){
+    // CREATE ACCOUNT
+    if(!u){showAuthError('Username is required.');document.getElementById('settingsUsername').focus();return;}
+    var pwc=document.getElementById('settingsPwConfirm').value;
+    if(pw!==pwc){showAuthError('Passwords do\u2019t match.');return;}
+    if(pw.length<4){showAuthError('Password must be at least 4 characters.');return;}
+    btn.textContent='\u23f3 Creating\u2026';
+    var hash=await sha256(pw);
+    var finalAvatar=_settingsAvatarB64||null;
+    var newAcc={username:u,avatar:finalAvatar,passwordHash:hash};
+    localStorage.setItem(LS_ACCOUNT,JSON.stringify(newAcc));
+    setSession(true);
+    showAuthSuccess('\u2705 Account created!');
+    setTimeout(function(){closeSettings();updateAccountUI();},700);
+  }else{
+    // SIGN IN — verify password
+    btn.textContent='\u23f3 Checking\u2026';
+    var hash=await sha256(pw);
+    if(hash!==acc.passwordHash){
+      btn.textContent='\uD83C\uDFAE Sign In';
+      showAuthError('\u274C Wrong password. Try again.');
+      document.getElementById('settingsPw').value='';
+      document.getElementById('settingsPw').focus();
+      return;
+    }
+    setSession(true);
+    showAuthSuccess('\u2705 Signed in!');
+    setTimeout(function(){closeSettings();updateAccountUI();},600);
+  }
+  btn.textContent='\uD83C\uDFAE Sign In';
+}
+
+// ── Edit profile (requires active session) ──
 function showEditForm(){
+  if(!isSessionActive()){updateAccountUI();return;}
   var acc=getAccount()||{};
+  _settingsAvatarB64=null;
+  hideAuthMsg();
   document.getElementById('settingsUsername').value=acc.username||'';
-  _settingsAvatarB64 = null;
-  var prevEl = document.getElementById('settingsAvatarPreview');
-  if (acc && acc.avatar) {
-    prevEl.innerHTML = '<img src="'+acc.avatar+'" style="width:100%;height:100%;object-fit:cover;border-radius:50%"/>';
-  } else { prevEl.innerHTML = '?'; }
-  document.getElementById('signinBtnText').textContent='💾 Save Changes';
+  document.getElementById('settingsUsername').readOnly=false;
+  document.getElementById('settingsUsername').style.opacity='';
+  document.getElementById('settingsPw').value='';
+  document.getElementById('settingsPwConfirm').value='';
+  document.getElementById('pwStrength').className='pw-strength';
+  var prevEl=document.getElementById('settingsAvatarPreview');
+  if(acc.avatar)prevEl.innerHTML='<img src="'+acc.avatar+'" style="width:100%;height:100%;object-fit:cover;border-radius:50%"/>';
+  else prevEl.innerHTML='?';
+  var modeLabel=document.getElementById('signinModeLabel');
+  var modeDesc=document.getElementById('signinModeDesc');
+  var confirmGrp=document.getElementById('confirmPwGroup');
+  var avatarGrp=document.getElementById('avatarGroup');
+  var btnText=document.getElementById('signinBtnText');
+  var resetBtn=document.getElementById('resetBtn');
+  if(modeLabel)modeLabel.textContent='Edit Profile';
+  if(modeDesc)modeDesc.textContent='Leave password blank to keep existing. Enter new password to change it.';
+  if(confirmGrp)confirmGrp.style.display='';
+  if(avatarGrp)avatarGrp.style.display='';
+  if(btnText)btnText.textContent='\uD83D\uDCBE Save Changes';
+  if(resetBtn)resetBtn.style.display='none';
   document.getElementById('profileCard').classList.remove('visible');
   document.getElementById('signinForm').classList.remove('hidden');
+  // Override saveAccount for edit mode
+  document.getElementById('signinBtnText').parentElement.onclick=async function(){
+    hideAuthMsg();
+    var acc2=getAccount();
+    var newU=document.getElementById('settingsUsername').value.trim()||acc2.username;
+    var newPw=document.getElementById('settingsPw').value;
+    var newPwc=document.getElementById('settingsPwConfirm').value;
+    var finalAvatar=_settingsAvatarB64||(acc2?acc2.avatar:null);
+    var newHash=acc2.passwordHash;
+    if(newPw){
+      if(newPw!==newPwc){showAuthError('Passwords don\u2019t match.');return;}
+      if(newPw.length<4){showAuthError('Password must be at least 4 characters.');return;}
+      newHash=await sha256(newPw);
+    }
+    var updated={username:newU,avatar:finalAvatar||null,passwordHash:newHash};
+    localStorage.setItem(LS_ACCOUNT,JSON.stringify(updated));
+    showAuthSuccess('\u2705 Profile updated!');
+    setTimeout(function(){closeSettings();updateAccountUI();},600);
+    document.getElementById('signinBtnText').parentElement.onclick=saveAccount;
+  };
 }
 
 // ── Sign out ──
 function signOut(){
-  localStorage.removeItem(LS_ACCOUNT);
-  document.getElementById('settingsUsername').value='';
-  _settingsAvatarB64 = null;
+  setSession(false);
+  _settingsAvatarB64=null;
+  document.getElementById('settingsPw').value='';
+  var pwcEl=document.getElementById('settingsPwConfirm');if(pwcEl)pwcEl.value='';
+  document.getElementById('pwStrength').className='pw-strength';
   document.getElementById('settingsAvatarPreview').innerHTML='?';
-  var hint=document.getElementById('settingsAvatarHint'); if(hint)hint.textContent='No photo selected';
-  document.getElementById('signinBtnText').textContent='🎮 Sign In';
+  var hint=document.getElementById('settingsAvatarHint');if(hint)hint.textContent='No photo selected';
+  hideAuthMsg();
   updateAccountUI();
 }
 
-// ── Save account ──
-function saveAccount(){
-  var u=document.getElementById('settingsUsername').value.trim();
-  if(!u){document.getElementById('settingsUsername').focus();return;}
-  var existingAcc=getAccount();
-  var finalAvatar = _settingsAvatarB64 || (existingAcc ? existingAcc.avatar : null);
-  var acc={username:u,avatar:finalAvatar||null};
-  localStorage.setItem(LS_ACCOUNT,JSON.stringify(acc));
+// ── Reset account (wipe everything) ──
+function resetAccount(){
+  if(!confirm('This will permanently delete your account and all local data. Are you sure?'))return;
+  localStorage.removeItem(LS_ACCOUNT);
+  setSession(false);
+  _settingsAvatarB64=null;
+  document.getElementById('settingsPw').value='';
+  var pwcEl=document.getElementById('settingsPwConfirm');if(pwcEl)pwcEl.value='';
+  document.getElementById('settingsAvatarPreview').innerHTML='?';
+  var hint=document.getElementById('settingsAvatarHint');if(hint)hint.textContent='No photo selected';
+  hideAuthMsg();
   updateAccountUI();
-  // flash success on button
-  var btn=document.getElementById('signinBtnText');
-  btn.textContent='✔ Saved!';
-  setTimeout(function(){btn.textContent='🎮 Sign In';closeSettings();},900);
 }
 
-// ── Avatar preview in settings ──
-// previewAvatar replaced by handleSettingsPhoto
-
-// ── Theme toggles ──
-function applyRetro(on){
-  document.body.classList.toggle('retro-mode',on);
-  var s=getSettings();s.retroMode=on;saveSettings(s);
-}
-function applyCompact(on){
-  document.body.classList.toggle('compact-mode',on);
-  var s=getSettings();s.compactMode=on;saveSettings(s);
-}
-
-// ── Support form ──
+  // ── Support form ──
 function showScoreFields(){
   document.getElementById('scoreFields').style.cssText='display:flex;flex-direction:column;gap:.85rem';
   document.getElementById('messageLabel').textContent='Anything else? (optional)';

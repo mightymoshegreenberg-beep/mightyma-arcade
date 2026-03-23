@@ -1,0 +1,50 @@
+{
+  "lastUpdated": "Mar 23, 2026",
+  "scores": [
+    {
+      "rank": 1,
+      "player": "xXProGamerXx",
+      "avatar": null,
+      "game": "Slope",
+      "score": "8,204m",
+      "verified": true,
+      "date": "Mar 23, 2026"
+    },
+    {
+      "rank": 2,
+      "player": "ArcadeKing",
+      "avatar": null,
+      "game": "Agar.io",
+      "score": "142,800 mass",
+      "verified": true,
+      "date": "Mar 23, 2026"
+    },
+    {
+      "rank": 3,
+      "player": "Z-Fighter",
+      "avatar": null,
+      "game": "Goten's Last Stand",
+      "score": "24,500 pts",
+      "verified": true,
+      "date": "Mar 23, 2026"
+    },
+    {
+      "rank": 4,
+      "player": "Player1",
+      "avatar": null,
+      "game": "Retro Bowl",
+      "score": "18-0 Season",
+      "verified": false,
+      "date": "Mar 23, 2026"
+    },
+    {
+      "rank": 5,
+      "player": "GotenFan",
+      "avatar": null,
+      "game": "Goten's Last Stand",
+      "score": "19,200 pts",
+      "verified": true,
+      "date": "Mar 23, 2026"
+    }
+  ]
+}

@@ -203,6 +203,45 @@
       box-shadow:0 4px 18px rgba(124,58,237,.4);
     }
     .boba-btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(124,58,237,.55)}
+
+    /* ── FEELING LUCKY ── */
+    .lucky-bar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem;margin-bottom:1.1rem}
+    .lucky-bar .section-title{margin-bottom:0}
+    .btn-lucky{display:inline-flex;align-items:center;gap:.45rem;background:transparent;border:2px solid var(--accent2);color:var(--accent2);font-weight:800;font-size:.88rem;padding:.45rem 1.1rem;border-radius:999px;cursor:pointer;transition:all .2s;font-family:inherit;white-space:nowrap}
+    .btn-lucky:hover{background:var(--accent2);color:#000;box-shadow:0 0 18px rgba(6,182,212,.5)}
+    /* ── PATCH NOTES ── */
+    .patch-wrapper{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);overflow:hidden;margin-bottom:2rem}
+    .patch-header{display:flex;align-items:center;justify-content:space-between;gap:.6rem;padding:1rem 1.3rem;border-bottom:1px solid rgba(255,255,255,.07);background:linear-gradient(135deg,rgba(124,58,237,.12),rgba(6,182,212,.06))}
+    .patch-header-title{font-weight:800;font-size:.97rem}
+    .patch-scroll{max-height:220px;overflow-y:auto;padding:.5rem 0}
+    .patch-scroll::-webkit-scrollbar{width:4px}
+    .patch-scroll::-webkit-scrollbar-track{background:transparent}
+    .patch-scroll::-webkit-scrollbar-thumb{background:rgba(124,58,237,.4);border-radius:2px}
+    .patch-item{display:flex;align-items:flex-start;gap:.75rem;padding:.65rem 1.3rem;border-bottom:1px solid rgba(255,255,255,.04);transition:background .15s}
+    .patch-item:last-child{border-bottom:none}
+    .patch-item:hover{background:rgba(255,255,255,.03)}
+    .patch-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:.35rem}
+    .pd-green{background:var(--accent4)}.pd-cyan{background:var(--accent2)}.pd-purple{background:var(--accent1)}.pd-amber{background:var(--accent3)}
+    .patch-text{display:flex;flex-direction:column;gap:.15rem}
+    .patch-title{font-size:.85rem;font-weight:700}
+    .patch-date{font-size:.72rem;color:var(--muted)}
+    /* ── WEATHER ── */
+    .weather-wrapper{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);overflow:hidden;margin-bottom:3rem}
+    .weather-header{padding:1rem 1.3rem .8rem;background:linear-gradient(135deg,rgba(6,182,212,.12),rgba(124,58,237,.06));border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:space-between;gap:.75rem;flex-wrap:wrap}
+    .weather-header-title{font-weight:800;font-size:.97rem;display:flex;align-items:center;gap:.45rem}
+    .weather-body{padding:1.2rem 1.3rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;min-height:90px}
+    .weather-icon{font-size:3rem;line-height:1;flex-shrink:0}
+    .weather-main{display:flex;flex-direction:column;gap:.25rem;flex:1;min-width:150px}
+    .weather-temp{font-size:2.2rem;font-weight:900;line-height:1}
+    .weather-desc{font-size:.9rem;color:var(--muted);font-weight:600}
+    .weather-meta{display:flex;flex-wrap:wrap;gap:.5rem .9rem;margin-top:.4rem}
+    .weather-pill{font-size:.75rem;font-weight:700;color:var(--muted);display:flex;align-items:center;gap:.3rem}
+    .weather-links{display:flex;gap:.6rem;flex-wrap:wrap}
+    .btn-radar{display:inline-flex;align-items:center;gap:.35rem;background:rgba(6,182,212,.12);border:1px solid rgba(6,182,212,.3);border-radius:8px;color:var(--accent2);font-size:.8rem;font-weight:700;padding:.4rem .9rem;text-decoration:none;transition:all .2s}
+    .btn-radar:hover{background:rgba(6,182,212,.22);box-shadow:0 0 12px rgba(6,182,212,.3)}
+    .weather-footer{padding:.65rem 1.3rem;border-top:1px solid rgba(255,255,255,.05);font-size:.72rem;color:var(--muted);background:rgba(0,0,0,.1)}
+    .weather-loading{color:var(--muted);font-size:.88rem}
+    @media(max-width:480px){.weather-temp{font-size:1.8rem}}
     .hp-field{position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none}
 
     /* ══ SETTINGS MODAL ══ */
@@ -366,6 +405,8 @@
   <a href="#leaderboard">🏆 Leaderboard</a>
   <a href="#poll">🗳️ Vote</a>
   <a href="#support">💬 Support</a>
+  <a href="#radar">🌦️ Radar</a>
+  <a href="#patchnotes">📝 Updates</a>
   <a href="https://shellshock.io" target="_blank">Shell Shockers</a>
   <a href="https://deadshot.io" target="_blank">Deadshot.io</a>
   <a href="https://www.gamepix.com/play/among-us" target="_blank">Among Us</a>
@@ -393,7 +434,10 @@
   </section>
   <hr class="section-divider"/>
   <section id="unblocked">
-    <h2 class="section-title">Unblocked Games <span class="badge badge-unblocked">🔓 Works Everywhere</span></h2>
+    <div class="lucky-bar">
+      <h2 class="section-title">Unblocked Games <span class="badge badge-unblocked">🔓 Works Everywhere</span></h2>
+      <button class="btn-lucky" onclick="feelingLucky()">&#127922; Feeling Lucky</button>
+    </div>
     <div class="unblocked-grid">
       <a class="ub-card" href="https://www.crazygames.com/game/1v1-lol" target="_blank"><div class="ub-icon">🏗️</div><div class="ub-title">1v1.lol</div><div class="ub-tags"><span class="ub-tag">Building</span><span class="ub-tag">Shooter</span></div><p class="ub-desc">Build-and-shoot battles. Practice Fortnite mechanics for free.</p><span class="ub-link">→ crazygames.com</span></a>
       <a class="ub-card" href="https://www.crazygames.com/game/slope" target="_blank"><div class="ub-icon">🔮</div><div class="ub-title">Slope</div><div class="ub-tags"><span class="ub-tag">Runner</span><span class="ub-tag">Reflex</span></div><p class="ub-desc">Endless neon slope at breakneck speed. Pure reflex.</p><span class="ub-link">→ crazygames.com</span></a>
@@ -585,6 +629,49 @@
 </section>
 <!-- YT_SECTION_END -->
 
+  <hr class="section-divider"/>
+  <section id="radar">
+    <h2 class="section-title">Local Radar <span class="badge" style="background:linear-gradient(90deg,#0ea5e9,#06b6d4);color:#fff">&#127749; Modi&rsquo;in Live</span></h2>
+    <div class="weather-wrapper">
+      <div class="weather-header">
+        <div class="weather-header-title">&#127749; Modi&rsquo;in, Israel &mdash; Current Conditions</div>
+        <div class="weather-links">
+          <a class="btn-radar" href="https://ims.gov.il/en/radar" target="_blank" rel="noopener">&#128225; IMS Radar</a>
+          <a class="btn-radar" href="https://www.windy.com/?31.896,35.011,9" target="_blank" rel="noopener">&#127754; Windy Map</a>
+        </div>
+      </div>
+      <div class="weather-body" id="weatherBody"><span class="weather-loading">&#8987; Loading weather&hellip;</span></div>
+      <div class="weather-footer">Data: <a href="https://open-meteo.com/" target="_blank" rel="noopener" style="color:var(--accent2);text-decoration:none">Open-Meteo</a> &middot; Modi&rsquo;in 31.896&deg;N, 35.011&deg;E &middot; <a href="https://ims.gov.il/en/radar" target="_blank" rel="noopener" style="color:var(--accent2);text-decoration:none">IMS Radar &#8594;</a></div>
+    </div>
+  </section>
+  <hr class="section-divider"/>
+  <section id="patchnotes">
+    <h2 class="section-title">Latest Updates <span class="badge" style="background:linear-gradient(90deg,var(--accent1),var(--accent4));color:#fff">&#128221; Patch Notes</span></h2>
+    <div class="patch-wrapper">
+      <div class="patch-header">
+        <div class="patch-header-title">&#127381; MightyMA Arcade Changelog</div>
+        <span style="font-size:.72rem;color:var(--muted)">Most recent first</span>
+      </div>
+      <div class="patch-scroll">
+        <div class="patch-item">
+          <div class="patch-dot pd-amber"></div>
+          <div class="patch-text"><span class="patch-title">&#128279; Fixed 1v1.lol link</span><span class="patch-date">Mar 23, 2026 &middot; Bug Fix</span></div>
+        </div>
+        <div class="patch-item">
+          <div class="patch-dot pd-purple"></div>
+          <div class="patch-text"><span class="patch-title">&#128196; Migrated to GitHub Pages</span><span class="patch-date">Mar 22, 2026 &middot; Infrastructure</span></div>
+        </div>
+        <div class="patch-item">
+          <div class="patch-dot pd-cyan"></div>
+          <div class="patch-text"><span class="patch-title">&#127867; Added Buy me a Boba support section</span><span class="patch-date">Mar 23, 2026 &middot; Feature</span></div>
+        </div>
+        <div class="patch-item">
+          <div class="patch-dot pd-green"></div>
+          <div class="patch-text"><span class="patch-title">&#129438; Added Agar.io &mdash; Week 1 Poll Winner!</span><span class="patch-date">Mar 23, 2026 &middot; New Game</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
 <div class="boba-section">
   <p>MightyMA Arcade is 100% free.<br>If you love it, a boba keeps the arcade running. &#x1F64F;</p>
   <a class="boba-btn" href="#">&#127867; Buy me a Boba</a>
@@ -864,6 +951,51 @@ document.getElementById('fbsubmit').addEventListener('click',async function(){
     body:JSON.stringify({ts:Date.now(),ref:ref})
   });
 }catch(e){}}());
+
+  // ── Feeling Lucky ──
+  var LUCKY_URLS=[
+    'https://www.crazygames.com/game/1v1-lol',
+    'https://www.crazygames.com/game/slope',
+    'https://retrobowl.me',
+    'https://www.crazygames.com/game/run-3',
+    'https://www.crazygames.com/game/moto-x3m',
+    'https://www.crazygames.com/game/smash-karts',
+    'https://poki.com/en/g/stickman-hook',
+    'https://www.crazygames.com/game/time-shooter-3-swat',
+    'https://www.crazygames.com/game/getaway-shootout',
+    'https://orteil.dashnet.org/cookieclicker/',
+    'https://www.crazygames.com/game/basketball-legends',
+    'https://www.crazygames.com/game/worlds-hardest-game',
+    'https://www.crazygames.com/game/subway-surfers',
+    'https://poki.com/en/g/monkey-mart',
+    'https://agar.io/'
+  ];
+  function feelingLucky(){window.open(LUCKY_URLS[Math.floor(Math.random()*LUCKY_URLS.length)],'_blank','noopener');}
+  // ── Weather (Open-Meteo, no API key, no rate limit) ──
+  (async function loadWeather(){
+    var WMO={0:'Clear sky',1:'Mainly clear',2:'Partly cloudy',3:'Overcast',45:'Foggy',48:'Icy fog',51:'Light drizzle',53:'Drizzle',55:'Heavy drizzle',61:'Light rain',63:'Rain',65:'Heavy rain',71:'Light snow',73:'Snow',75:'Heavy snow',80:'Rain showers',81:'Showers',82:'Heavy showers',95:'Thunderstorm',99:'Hail storm'};
+    var ICON={0:'\u2600\ufe0f',1:'\u1f324\ufe0f',2:'\u26c5',3:'\u2601\ufe0f',45:'\u1f32b\ufe0f',48:'\u1f32b\ufe0f',51:'\u1f326\ufe0f',53:'\u1f326\ufe0f',55:'\u1f327\ufe0f',61:'\u1f327\ufe0f',63:'\u1f327\ufe0f',65:'\u1f327\ufe0f',71:'\u1f328\ufe0f',73:'\u2744\ufe0f',75:'\u2744\ufe0f',80:'\u1f326\ufe0f',81:'\u1f327\ufe0f',82:'\u26c8\ufe0f',95:'\u26c8\ufe0f',99:'\u1f329\ufe0f'};
+    try{
+      var res=await fetch('https://api.open-meteo.com/v1/forecast?latitude=31.896&longitude=35.011&current=temperature_2m,apparent_temperature,weather_code,wind_speed_10m,relative_humidity_2m&wind_speed_unit=kmh&timezone=Asia%2FJerusalem');
+      var d=await res.json();var c=d.current;
+      var code=c.weather_code;
+      var icon=ICON[code]||'\u1f321\ufe0f';
+      var desc=WMO[code]||'Unknown';
+      document.getElementById('weatherBody').innerHTML=
+        '<div class="weather-icon">'+icon+'</div>'+
+        '<div class="weather-main">'+
+          '<div class="weather-temp">'+Math.round(c.temperature_2m)+'&deg;C</div>'+
+          '<div class="weather-desc">'+desc+'</div>'+
+          '<div class="weather-meta">'+
+            '<span class="weather-pill">&#127777; Feels like '+Math.round(c.apparent_temperature)+'&deg;C</span>'+
+            '<span class="weather-pill">&#128168; Wind '+Math.round(c.wind_speed_10m)+' km/h</span>'+
+            '<span class="weather-pill">&#128167; Humidity '+c.relative_humidity_2m+'%</span>'+
+          '</div>'+
+        '</div>';
+    }catch(e){
+      document.getElementById('weatherBody').innerHTML='<span class="weather-loading">Could not load weather &mdash; <a href="https://ims.gov.il/en/weather-forecast/Modi_in" target="_blank" style="color:var(--accent2)">check IMS &#8594;</a></span>';
+    }
+  })();
 </script>
 </body>
 </html>

@@ -1196,7 +1196,7 @@ document.getElementById('fbsubmit').addEventListener('click',async function(){
   function feelingLucky(){window.open(LUCKY_URLS[Math.floor(Math.random()*LUCKY_URLS.length)],'_blank','noopener');}
   // ── Weather (Open-Meteo geocoding + forecast, no API key) ──
   var WX_WMO={0:'Clear sky',1:'Mainly clear',2:'Partly cloudy',3:'Overcast',45:'Foggy',48:'Icy fog',51:'Light drizzle',53:'Drizzle',55:'Heavy drizzle',61:'Light rain',63:'Rain',65:'Heavy rain',71:'Light snow',73:'Snow',75:'Heavy snow',80:'Rain showers',81:'Showers',82:'Heavy showers',95:'Thunderstorm',99:'Hail storm'};
-  var WX_ICON={0:'\u2600\ufe0f',1:'\U0001f324\ufe0f',2:'\u26c5',3:'\u2601\ufe0f',45:'\U0001f32b\ufe0f',48:'\U0001f32b\ufe0f',51:'\U0001f326\ufe0f',53:'\U0001f326\ufe0f',55:'\U0001f327\ufe0f',61:'\U0001f327\ufe0f',63:'\U0001f327\ufe0f',65:'\U0001f327\ufe0f',71:'\U0001f328\ufe0f',73:'\u2744\ufe0f',75:'\u2744\ufe0f',80:'\U0001f326\ufe0f',81:'\U0001f327\ufe0f',82:'\u26c8\ufe0f',95:'\u26c8\ufe0f',99:'\U0001f329\ufe0f'};
+  var WX_ICON={0:'\u2600\ufe0f',1:'🌤\ufe0f',2:'\u26c5',3:'\u2601\ufe0f',45:'🌫\ufe0f',48:'🌫\ufe0f',51:'🌦\ufe0f',53:'🌦\ufe0f',55:'🌧\ufe0f',61:'🌧\ufe0f',63:'🌧\ufe0f',65:'🌧\ufe0f',71:'🌨\ufe0f',73:'\u2744\ufe0f',75:'\u2744\ufe0f',80:'🌦\ufe0f',81:'🌧\ufe0f',82:'\u26c8\ufe0f',95:'\u26c8\ufe0f',99:'🌩\ufe0f'};
 
   async function fetchWeather(lat,lon,cityLabel){
     var body=document.getElementById('weatherBody');
@@ -1205,7 +1205,7 @@ document.getElementById('fbsubmit').addEventListener('click',async function(){
       var res=await fetch('https://api.open-meteo.com/v1/forecast?latitude='+lat+'&longitude='+lon+'&current=temperature_2m,apparent_temperature,weather_code,wind_speed_10m,relative_humidity_2m&wind_speed_unit=kmh&timezone=auto');
       var d=await res.json();var c=d.current;
       var code=c.weather_code;
-      var icon=WX_ICON[code]||'\U0001f321\ufe0f';
+      var icon=WX_ICON[code]||'🌡\ufe0f';
       var desc=WX_WMO[code]||'Unknown';
       document.getElementById('weatherCityName').textContent=cityLabel;
       document.getElementById('radarBadge').innerHTML='&#127749; '+cityLabel.split(',')[0];

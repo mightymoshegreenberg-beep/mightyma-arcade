@@ -656,9 +656,11 @@
               <input class="form-input" type="text" id="fbscore" placeholder="e.g. 4,200 pts · 800m · 12-0 season"/>
             </div>
             <div class="form-group" id="screenshotGroup">
-              <label class="form-label" for="fbscreenshot">Screenshot Link <span style="font-weight:400;text-transform:none;font-size:.75rem;color:var(--accent4)">(gets ✔ Verified badge)</span></label>
-              <input class="form-input" type="url" id="fbscreenshot" placeholder="imgur.com/… · drive.google.com/… · any public link"/>
-              <span class="screenshot-hint">Any public image link — Imgur, Google Drive, etc.</span>
+              <label class="form-label">Screenshot <span style="font-weight:400;text-transform:none;font-size:.75rem;color:var(--accent4)">(gets ✔ Verified badge)</span></label>
+              <label class="choose-photo-btn" for="fbscreenshotFile" style="font-size:.85rem;padding:.45rem 1rem;cursor:pointer">📸 Choose Screenshot</label>
+              <input type="file" id="fbscreenshotFile" accept="image/*" style="display:none" onchange="handleScreenshotFile(this)"/>
+              <span class="screenshot-hint" id="fbscreenshotHint">No screenshot selected</span>
+              <img id="fbscreenshotPreview" src="" alt="" style="display:none;max-width:180px;max-height:120px;border-radius:8px;margin-top:.5rem;border:1px solid rgba(255,255,255,.1)"/>
             </div>
             <div class="form-group">
               <label class="form-label">Profile Picture <span style="font-weight:400;text-transform:none;font-size:.75rem;color:var(--muted)">(optional — auto-filled if signed in)</span></label>
@@ -1078,12 +1080,42 @@ function hideScoreFields(){
 function handleTypeChange(){ document.getElementById('fbtype').value==='High Score'?showScoreFields():hideScoreFields(); }
 
 var ssHidden=false;
+function handleScreenshotFile(input){
+  var file=input.files[0];
+  var hint=document.getElementById('fbscreenshotHint');
+  var preview=document.getElementById('fbscreenshotPreview');
+  if(!file){hint.textContent='No screenshot selected';preview.style.display='none';preview.src='';return;}
+  hint.textContent=file.name+' ('+Math.round(file.size/1024)+'KB)';
+  var reader=new FileReader();
+  reader.onload=function(e){preview.src=e.target.result;preview.style.display='block';};
+  reader.readAsDataURL(file);
+}
+function getScreenshotThumbnail(){
+  return new Promise(function(resolve){
+    var input=document.getElementById('fbscreenshotFile');
+    var file=input&&input.files&&input.files[0];
+    if(!file){resolve(null);return;}
+    var reader=new FileReader();
+    reader.onload=function(e){
+      var img=new Image();
+      img.onload=function(){
+        var c=document.createElement('canvas');
+        var maxW=160,maxH=110,ratio=Math.min(maxW/img.width,maxH/img.height,1);
+        c.width=Math.round(img.width*ratio);c.height=Math.round(img.height*ratio);
+        c.getContext('2d').drawImage(img,0,0,c.width,c.height);
+        resolve(c.toDataURL('image/jpeg',0.55));
+      };
+      img.src=e.target.result;
+    };
+    reader.readAsDataURL(file);
+  });
+}
 function toggleScreenshot(){
   var btn=document.getElementById('noScreenshotBtn');
   var grp=document.getElementById('screenshotGroup');
   var note=document.getElementById('unverifiedNote');
   ssHidden=!ssHidden;
-  if(ssHidden){grp.style.display='none';note.style.display='block';btn.classList.add('active');btn.textContent="📸 Actually, I'll add a screenshot link";}
+  if(ssHidden){grp.style.display='none';note.style.display='block';btn.classList.add('active');btn.textContent="📸 Actually, I'll add a screenshot";}
   else{grp.style.display='';note.style.display='none';btn.classList.remove('active');btn.textContent="📵 I'd rather not upload a screenshot";}
 }
 
@@ -1098,11 +1130,12 @@ document.getElementById('fbsubmit').addEventListener('click',async function(){
   if(type==='High Score'){
     var game=document.getElementById('fbgame').value.trim();
     var score=document.getElementById('fbscore').value.trim();
-    var ss=ssHidden?'':document.getElementById('fbscreenshot').value.trim();
+    var ssThumb=ssHidden?null:(await getScreenshotThumbnail());
     var avatar=document.getElementById('fbavatar').value.trim();
     var handle=document.getElementById('fbhandle').value.trim();
     if(!game||!score){document.getElementById('fbgame').focus();return;}
-    payload.game=game;payload.score=score;payload.screenshot=ss||null;payload.verified=!!ss;
+    payload.game=game;payload.score=score;payload.screenshot=ssThumb?'[screenshot attached]':null;payload.verified=!!ssThumb;
+    if(ssThumb)payload.screenshotThumb=ssThumb;
     payload.avatar=avatar||null;payload.handle=handle||'Anonymous';
     if(!msg)payload.message='(no extra notes)';
   } else {
@@ -1125,7 +1158,7 @@ document.getElementById('fbsubmit').addEventListener('click',async function(){
         _scoreAvatarB64=null;
         var prev=document.getElementById('fbAvatarPreview'); if(prev)prev.innerHTML='?';
         var hint=document.getElementById('fbAvatarHint'); if(hint)hint.textContent='No photo · will use account photo if signed in';
-        if(!ssHidden)document.getElementById('fbscreenshot').value='';
+        if(!ssHidden){var fi=document.getElementById('fbscreenshotFile');if(fi)fi.value='';var sh=document.getElementById('fbscreenshotHint');if(sh)sh.textContent='No screenshot selected';var sp=document.getElementById('fbscreenshotPreview');if(sp){sp.style.display='none';sp.src='';}}
         ok.textContent=payload.verified?'✅ Score submitted with screenshot — will be reviewed for a ✔ Verified badge!':'✅ Score submitted! Will be reviewed and posted as Unverified.';
       } else{ok.textContent='✅ Got it! The arcade team will see this shortly.';}
     } else{err.style.display='block';}

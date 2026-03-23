@@ -261,6 +261,33 @@
     .signin-mode-label{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent2);margin-bottom:.25rem}
     .btn-forgot{background:none;border:none;color:var(--muted);font-size:.75rem;cursor:pointer;font-family:inherit;text-decoration:underline;padding:0;margin-top:-.3rem;align-self:flex-start}
     .btn-forgot:hover{color:var(--accent2)}
+
+    /* ── GLOBAL LEADERBOARD ── */
+    .global-lb-wrapper{background:var(--card);border:1px solid rgba(255,255,255,.09);border-radius:var(--radius);overflow:hidden;margin-bottom:3rem}
+    .global-lb-header{padding:1.1rem 1.4rem .9rem;background:linear-gradient(135deg,rgba(245,158,11,.12),rgba(239,68,68,.07));border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:space-between;gap:.75rem;flex-wrap:wrap}
+    .global-lb-title{font-weight:800;font-size:.97rem;display:flex;align-items:center;gap:.4rem}
+    .global-lb-sub{font-size:.75rem;color:var(--muted)}
+    .global-lb-scroll{overflow-x:auto}
+    .global-lb-table{width:100%;border-collapse:collapse;min-width:480px}
+    .global-lb-table th{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:.65rem 1rem;text-align:left;border-bottom:1px solid rgba(255,255,255,.07);background:rgba(0,0,0,.2);white-space:nowrap}
+    .global-lb-table tbody tr{border-bottom:1px solid rgba(255,255,255,.05);transition:background .15s}
+    .global-lb-table tbody tr:last-child{border-bottom:none}
+    .global-lb-table tbody tr:hover{background:rgba(255,255,255,.03)}
+    .global-lb-table td{padding:.8rem 1rem;font-size:.86rem;vertical-align:middle}
+    .lb-loading{padding:2.5rem 1.5rem;text-align:center;color:var(--muted);font-size:.88rem}
+    .lb-rank-num{font-weight:900;font-size:1.1rem}
+    .lb-rank-1{color:var(--gold)} .lb-rank-2{color:var(--silver)} .lb-rank-3{color:var(--bronze)}
+    .lb-rank-other{color:var(--muted);font-size:.85rem}
+    .lb-player{display:flex;align-items:center;gap:.55rem}
+    .lb-avatar{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,var(--accent1),var(--accent2));border:1px solid rgba(255,255,255,.15);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:700;color:#fff;overflow:hidden}
+    .lb-avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+    .lb-name{font-weight:700}
+    .lb-game-pill{font-size:.7rem;font-weight:700;padding:.18rem .55rem;border-radius:999px;background:rgba(124,58,237,.18);color:var(--accent2);border:1px solid rgba(124,58,237,.22);white-space:nowrap}
+    .lb-score-val{font-weight:800;font-variant-numeric:tabular-nums}
+    .lb-verified{font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:999px}
+    .lb-v-yes{background:rgba(16,185,129,.12);color:#34d399;border:1px solid rgba(16,185,129,.28)}
+    .lb-v-no{background:rgba(148,163,184,.07);color:var(--muted);border:1px solid rgba(148,163,184,.15)}
+    .global-lb-note{padding:.65rem 1.4rem;font-size:.72rem;color:var(--muted);border-top:1px solid rgba(255,255,255,.05);background:rgba(0,0,0,.12);line-height:1.7}
     .hp-field{position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none}
 
     /* ══ SETTINGS MODAL ══ */
@@ -462,6 +489,8 @@
       <div class="game-card"><div class="card-banner b-fps2">🎯</div><div class="card-body"><div class="card-tag ct-fps2">FPS · Tactical · Team-Based</div><div class="card-title">Deadshot.io</div><p class="card-desc">Tactical multiplayer FPS — SMGs, ARs, Snipers, Shotguns. Modes: FFA, TDM, Hardpoint, Domination, Kill Confirmed.</p><div class="proxy-list">Also on: <a href="https://www.crazygames.com/game/deadshot-io" target="_blank">CrazyGames</a><a href="https://deadshotio.net" target="_blank">deadshotio.net</a><a href="https://webgamer.io/en/g/deadshot-io" target="_blank">WebGamer</a></div><div class="card-footer"><a class="btn btn-p" href="https://deadshot.io" target="_blank">▶ Play Now</a><a class="btn btn-s" href="https://www.crazygames.com/game/deadshot-io" target="_blank">CrazyGames</a></div></div></div>
       <div class="game-card"><div class="card-banner b-neal">⚗️</div><div class="card-body"><div class="card-tag ct-neal">Neal.fun · Crafting · Infinite</div><div class="card-title">Infinite Craft</div><p class="card-desc">Start with Fire, Water, Wind, and Earth — combine elements to discover thousands of things. No install, no account.</p><div class="proxy-list">Direct: <a href="https://neal.fun/infinite-craft/" target="_blank">neal.fun/infinite-craft</a></div><div class="card-footer"><a class="btn btn-neal" href="https://neal.fun/infinite-craft/" target="_blank">▶ Play Now</a><a class="btn btn-s" href="https://neal.fun" target="_blank">More Neal.fun →</a></div></div></div>
       <div class="game-card"><div class="card-banner b-pwd">🔐</div><div class="card-body"><div class="card-tag ct-pwd">Neal.fun · Puzzle · Viral</div><div class="card-title">The Password Game</div><p class="card-desc">Create a password satisfying an ever-growing list of absurd rules. One of the most viral browser games of the decade.</p><div class="proxy-list">Direct: <a href="https://neal.fun/password-game/" target="_blank">neal.fun/password-game</a></div><div class="card-footer"><a class="btn btn-neal" href="https://neal.fun/password-game/" target="_blank">▶ Play Now</a><a class="btn btn-s" href="https://neal.fun" target="_blank">More Neal.fun →</a></div></div></div>
+
+      <div class="game-card"><div class="card-banner b-among" style="background:linear-gradient(135deg,#1a0a08,#3d1a00)">&#9889;</div><div class="card-body"><div class="card-tag" style="color:#f59e0b">Dragon Ball &middot; Action &middot; Survival</div><div class="card-title">Goten's Last Stand &#127474;&#127462;</div><p class="card-desc">Survive endless waves of enemies as Goten! Collect all 7 Dragon Balls to unleash Super Saiyan mode. Fight Saibamen, Frieza Soldiers, Cell Jrs, and epic bosses.</p><div class="proxy-list" style="color:var(--accent4);font-size:.75rem;font-weight:700">&#9889; MightyMA Original &middot; Built from scratch</div><div class="card-footer"><a class="btn btn-p" style="background:linear-gradient(135deg,#f59e0b,#ef4444)" href="mystery.html">&#9654; Play Now</a><a class="btn btn-s" href="mystery.html">&#129354; Go SSJ &rarr;</a></div></div></div>
     </div>
   </section>
   <hr class="section-divider"/>
@@ -505,23 +534,23 @@
   </section>
   <hr class="section-divider"/>
   <section id="leaderboard">
-    <h2 class="section-title">Hall of Fame <span class="badge badge-hof">🏆 Top Scores</span></h2>
-    <div class="hof-wrapper">
-      <div class="hof-header">
-        <div class="hof-title-wrap">
-          <span style="font-weight:700;font-size:1rem">MightyMA Arcade — All-Time High Scores</span>
-          <span class="hof-subtitle">Community-submitted · Verified scores include screenshot proof · Custom avatars supported</span>
+    <h2 class="section-title">Global Leaderboard <span class="badge badge-hof">&#127942; All-Time</span></h2>
+    <div class="global-lb-wrapper">
+      <div class="global-lb-header">
+        <div>
+          <div class="global-lb-title">&#127942; MightyMA Arcade &mdash; Global High Scores</div>
+          <div class="global-lb-sub">Community-submitted &middot; Verified by the Arcade Team &middot; Updated live from GitHub</div>
         </div>
-        <a class="hof-submit-btn" href="#support" onclick="document.getElementById('fbtype').value='High Score';showScoreFields()">🎯 Submit Your Score</a>
+        <a class="hof-submit-btn" href="#support" onclick="document.getElementById('fbtype').value='High Score';showScoreFields()">&#127919; Submit Score</a>
       </div>
-      <div class="hof-empty">
-        <div class="hof-empty-icon">🏆</div>
-        <div class="hof-empty-title">No scores yet — be the first!</div>
-        <div class="hof-empty-sub">Submit your high score below. Include a screenshot link for a ✔ Verified badge. Add a profile picture URL for a custom avatar next to your name.</div>
-        <a class="hof-empty-cta" href="#support" onclick="document.getElementById('fbtype').value='High Score';showScoreFields()">🎯 Submit Your Score →</a>
+      <div class="global-lb-scroll">
+        <table class="global-lb-table">
+          <thead><tr><th>#</th><th>Player</th><th>Game</th><th>Score</th><th>Status</th><th>Date</th></tr></thead>
+          <tbody id="globalLbBody"><tr><td colspan="6" class="lb-loading">&#8987; Loading scores&hellip;</td></tr></tbody>
+        </table>
       </div>
-      <div class="hof-note">
-        <span style="color:var(--accent4)">✔ Verified</span> = screenshot reviewed &nbsp;·&nbsp; <span style="color:var(--muted)">○ Unverified</span> = good faith &nbsp;·&nbsp; Manually reviewed before appearing
+      <div class="global-lb-note">
+        &#9989; Verified = screenshot reviewed by Arcade Team &nbsp;&middot;&nbsp; Submit via the Support form below &nbsp;&middot;&nbsp; Scores update when new entries are approved
       </div>
     </div>
   </section>
@@ -689,6 +718,14 @@
         <span style="font-size:.72rem;color:var(--muted)">Most recent first</span>
       </div>
       <div class="patch-scroll">
+        <div class="patch-item">
+          <div class="patch-dot pd-amber" style="background:linear-gradient(135deg,#f59e0b,#ef4444)"></div>
+          <div class="patch-text"><span class="patch-title">&#9889; Added Goten's Last Stand &mdash; MightyMA Original!</span><span class="patch-date">Mar 23, 2026 &middot; New Game</span></div>
+        </div>
+        <div class="patch-item">
+          <div class="patch-dot pd-green"></div>
+          <div class="patch-text"><span class="patch-title">&#127942; Global Leaderboard added</span><span class="patch-date">Mar 23, 2026 &middot; Feature</span></div>
+        </div>
         <div class="patch-item">
           <div class="patch-dot pd-amber"></div>
           <div class="patch-text"><span class="patch-title">&#128279; Fixed 1v1.lol link</span><span class="patch-date">Mar 23, 2026 &middot; Bug Fix</span></div>
@@ -1139,6 +1176,37 @@ document.getElementById('fbsubmit').addEventListener('click',async function(){
 
   // Load default (Modi'in) on start
   fetchWeather(31.896,35.011,'Modi\u2019in, Israel');
+
+  // ── Global Leaderboard fetch ──
+  (async function loadLeaderboard(){
+    var tbody=document.getElementById('globalLbBody');
+    if(!tbody)return;
+    try{
+      var r=await fetch('https://raw.githubusercontent.com/mightymoshegreenberg-beep/mightyma-arcade/main/leaderboard.json?_='+Date.now());
+      var d=await r.json();
+      var RANK_MEDALS=['&#129351;','&#129352;','&#129353;'];
+      var rows='';
+      (d.scores||[]).forEach(function(s,i){
+        var rankClass=i<3?'lb-rank-'+(i+1):'lb-rank-other';
+        var rankText=i<3?RANK_MEDALS[i]:'#'+s.rank;
+        var avatarHtml=s.avatar?'<img src="'+s.avatar+'" alt=""/>':s.player.slice(0,2).toUpperCase();
+        var verBadge=s.verified
+          ?'<span class="lb-verified lb-v-yes">&#10003; Verified</span>'
+          :'<span class="lb-verified lb-v-no">Unverified</span>';
+        rows+='<tr>'+
+          '<td><span class="lb-rank-num '+rankClass+'">'+rankText+'</span></td>'+
+          '<td><div class="lb-player"><div class="lb-avatar">'+avatarHtml+'</div><span class="lb-name">'+s.player+'</span></div></td>'+
+          '<td><span class="lb-game-pill">'+s.game+'</span></td>'+
+          '<td><span class="lb-score-val">'+s.score+'</span></td>'+
+          '<td>'+verBadge+'</td>'+
+          '<td style="color:var(--muted);font-size:.75rem">'+s.date+'</td>'+
+        '</tr>';
+      });
+      tbody.innerHTML=rows||'<tr><td colspan="6" class="lb-loading">No scores yet — be the first!</td></tr>';
+    }catch(e){
+      tbody.innerHTML='<tr><td colspan="6" class="lb-loading">Could not load scores. <a href="#support" style="color:var(--accent2)">Submit yours →</a></td></tr>';
+    }
+  })();
 </script>
 </body>
 </html>

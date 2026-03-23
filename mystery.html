@@ -467,8 +467,23 @@ function collide(a, b) {return dist(a,b)<a.radius+b.radius;}
 function shoot() {
   if(player.ki<KI_BLAST_COST && !ssjActive) return;
   if(blastCooldown>0) return;
-  // Find angle toward mouse
-  const angle=Math.atan2(mouse.y-player.y, mouse.x-player.x);
+  let angle;
+  if(mobileShoot||joystick.active) {
+    // Mobile/touch: auto-aim at nearest enemy
+    if(enemies.length>0) {
+      let nearest=enemies[0], nearestDist=dist(player,enemies[0]);
+      for(let i=1;i<enemies.length;i++){
+        const d=dist(player,enemies[i]);
+        if(d<nearestDist){nearestDist=d;nearest=enemies[i];}
+      }
+      angle=Math.atan2(nearest.y-player.y, nearest.x-player.x);
+    } else {
+      angle=-Math.PI/2; // no enemies — fire straight up
+    }
+  } else {
+    // Desktop: aim toward mouse cursor
+    angle=Math.atan2(mouse.y-player.y, mouse.x-player.x);
+  }
   const dmg=ssjActive?SSJ_BLAST_DMG:BLAST_DMG;
   const radius=ssjActive?14:BLAST_RADIUS;
   blasts.push({x:player.x,y:player.y,

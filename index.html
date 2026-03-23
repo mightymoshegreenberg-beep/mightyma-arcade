@@ -242,6 +242,14 @@
     .weather-footer{padding:.65rem 1.3rem;border-top:1px solid rgba(255,255,255,.05);font-size:.72rem;color:var(--muted);background:rgba(0,0,0,.1)}
     .weather-loading{color:var(--muted);font-size:.88rem}
     @media(max-width:480px){.weather-temp{font-size:1.8rem}}
+
+    .weather-search{display:flex;gap:.5rem;padding:.9rem 1.3rem;border-bottom:1px solid rgba(255,255,255,.07);background:rgba(0,0,0,.12)}
+    .weather-search-input{flex:1;background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.12);border-radius:8px;color:var(--text);font-size:.88rem;padding:.5rem .85rem;font-family:inherit;transition:border-color .2s;min-width:0}
+    .weather-search-input:focus{outline:none;border-color:var(--accent2);box-shadow:0 0 0 3px rgba(6,182,212,.15)}
+    .weather-search-input::placeholder{color:var(--muted)}
+    .btn-weather-search{background:var(--accent2);color:#000;border:none;border-radius:8px;font-size:.85rem;font-weight:800;padding:.5rem 1rem;cursor:pointer;font-family:inherit;transition:all .2s;white-space:nowrap;flex-shrink:0}
+    .btn-weather-search:hover{background:#22d3ee;box-shadow:0 0 12px rgba(6,182,212,.4)}
+    .btn-weather-search:disabled{opacity:.5;cursor:not-allowed}
     .hp-field{position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none}
 
     /* ══ SETTINGS MODAL ══ */
@@ -631,17 +639,21 @@
 
   <hr class="section-divider"/>
   <section id="radar">
-    <h2 class="section-title">Local Radar <span class="badge" style="background:linear-gradient(90deg,#0ea5e9,#06b6d4);color:#fff">&#127749; Modi&rsquo;in Live</span></h2>
+    <h2 class="section-title">Local Radar <span class="badge" style="background:linear-gradient(90deg,#0ea5e9,#06b6d4);color:#fff" id="radarBadge">&#127749; Modi&rsquo;in</span></h2>
     <div class="weather-wrapper">
       <div class="weather-header">
-        <div class="weather-header-title">&#127749; Modi&rsquo;in, Israel &mdash; Current Conditions</div>
+        <div class="weather-header-title" id="weatherTitle">&#127749; <span id="weatherCityName">Modi&rsquo;in, Israel</span> &mdash; Current Conditions</div>
         <div class="weather-links">
-          <a class="btn-radar" href="https://ims.gov.il/en/radar" target="_blank" rel="noopener">&#128225; IMS Radar</a>
-          <a class="btn-radar" href="https://www.windy.com/?31.896,35.011,9" target="_blank" rel="noopener">&#127754; Windy Map</a>
+          <a class="btn-radar" id="imsRadarLink" href="https://ims.gov.il/en/radar" target="_blank" rel="noopener">&#128225; IMS Radar</a>
+          <a class="btn-radar" id="windyLink" href="https://www.windy.com/?31.896,35.011,9" target="_blank" rel="noopener">&#127754; Windy Map</a>
         </div>
       </div>
+      <div class="weather-search">
+        <input class="weather-search-input" type="text" id="cityInput" placeholder="Search any city&hellip; (default: Modi&rsquo;in)" maxlength="80" onkeydown="if(event.key==='Enter')searchCity()"/>
+        <button class="btn-weather-search" id="citySearchBtn" onclick="searchCity()">&#128269; Search</button>
+      </div>
       <div class="weather-body" id="weatherBody"><span class="weather-loading">&#8987; Loading weather&hellip;</span></div>
-      <div class="weather-footer">Data: <a href="https://open-meteo.com/" target="_blank" rel="noopener" style="color:var(--accent2);text-decoration:none">Open-Meteo</a> &middot; Modi&rsquo;in 31.896&deg;N, 35.011&deg;E &middot; <a href="https://ims.gov.il/en/radar" target="_blank" rel="noopener" style="color:var(--accent2);text-decoration:none">IMS Radar &#8594;</a></div>
+      <div class="weather-footer">Data: <a href="https://open-meteo.com/" target="_blank" rel="noopener" style="color:var(--accent2);text-decoration:none">Open-Meteo</a> &middot; Geocoding: <a href="https://open-meteo.com/en/docs/geocoding-api" target="_blank" rel="noopener" style="color:var(--accent2);text-decoration:none">Open-Meteo Geocoding</a> &middot; <a href="https://ims.gov.il/en/radar" target="_blank" rel="noopener" style="color:var(--accent2);text-decoration:none">IMS Radar &#8594;</a></div>
     </div>
   </section>
   <hr class="section-divider"/>
@@ -971,17 +983,23 @@ document.getElementById('fbsubmit').addEventListener('click',async function(){
     'https://agar.io/'
   ];
   function feelingLucky(){window.open(LUCKY_URLS[Math.floor(Math.random()*LUCKY_URLS.length)],'_blank','noopener');}
-  // ── Weather (Open-Meteo, no API key, no rate limit) ──
-  (async function loadWeather(){
-    var WMO={0:'Clear sky',1:'Mainly clear',2:'Partly cloudy',3:'Overcast',45:'Foggy',48:'Icy fog',51:'Light drizzle',53:'Drizzle',55:'Heavy drizzle',61:'Light rain',63:'Rain',65:'Heavy rain',71:'Light snow',73:'Snow',75:'Heavy snow',80:'Rain showers',81:'Showers',82:'Heavy showers',95:'Thunderstorm',99:'Hail storm'};
-    var ICON={0:'\u2600\ufe0f',1:'\u1f324\ufe0f',2:'\u26c5',3:'\u2601\ufe0f',45:'\u1f32b\ufe0f',48:'\u1f32b\ufe0f',51:'\u1f326\ufe0f',53:'\u1f326\ufe0f',55:'\u1f327\ufe0f',61:'\u1f327\ufe0f',63:'\u1f327\ufe0f',65:'\u1f327\ufe0f',71:'\u1f328\ufe0f',73:'\u2744\ufe0f',75:'\u2744\ufe0f',80:'\u1f326\ufe0f',81:'\u1f327\ufe0f',82:'\u26c8\ufe0f',95:'\u26c8\ufe0f',99:'\u1f329\ufe0f'};
+  // ── Weather (Open-Meteo geocoding + forecast, no API key) ──
+  var WX_WMO={0:'Clear sky',1:'Mainly clear',2:'Partly cloudy',3:'Overcast',45:'Foggy',48:'Icy fog',51:'Light drizzle',53:'Drizzle',55:'Heavy drizzle',61:'Light rain',63:'Rain',65:'Heavy rain',71:'Light snow',73:'Snow',75:'Heavy snow',80:'Rain showers',81:'Showers',82:'Heavy showers',95:'Thunderstorm',99:'Hail storm'};
+  var WX_ICON={0:'\u2600\ufe0f',1:'\U0001f324\ufe0f',2:'\u26c5',3:'\u2601\ufe0f',45:'\U0001f32b\ufe0f',48:'\U0001f32b\ufe0f',51:'\U0001f326\ufe0f',53:'\U0001f326\ufe0f',55:'\U0001f327\ufe0f',61:'\U0001f327\ufe0f',63:'\U0001f327\ufe0f',65:'\U0001f327\ufe0f',71:'\U0001f328\ufe0f',73:'\u2744\ufe0f',75:'\u2744\ufe0f',80:'\U0001f326\ufe0f',81:'\U0001f327\ufe0f',82:'\u26c8\ufe0f',95:'\u26c8\ufe0f',99:'\U0001f329\ufe0f'};
+
+  async function fetchWeather(lat,lon,cityLabel){
+    var body=document.getElementById('weatherBody');
+    body.innerHTML='<span class="weather-loading">&#8987; Loading&hellip;</span>';
     try{
-      var res=await fetch('https://api.open-meteo.com/v1/forecast?latitude=31.896&longitude=35.011&current=temperature_2m,apparent_temperature,weather_code,wind_speed_10m,relative_humidity_2m&wind_speed_unit=kmh&timezone=Asia%2FJerusalem');
+      var res=await fetch('https://api.open-meteo.com/v1/forecast?latitude='+lat+'&longitude='+lon+'&current=temperature_2m,apparent_temperature,weather_code,wind_speed_10m,relative_humidity_2m&wind_speed_unit=kmh&timezone=auto');
       var d=await res.json();var c=d.current;
       var code=c.weather_code;
-      var icon=ICON[code]||'\u1f321\ufe0f';
-      var desc=WMO[code]||'Unknown';
-      document.getElementById('weatherBody').innerHTML=
+      var icon=WX_ICON[code]||'\U0001f321\ufe0f';
+      var desc=WX_WMO[code]||'Unknown';
+      document.getElementById('weatherCityName').textContent=cityLabel;
+      document.getElementById('radarBadge').innerHTML='&#127749; '+cityLabel.split(',')[0];
+      document.getElementById('windyLink').href='https://www.windy.com/?'+lat+','+lon+',9';
+      body.innerHTML=
         '<div class="weather-icon">'+icon+'</div>'+
         '<div class="weather-main">'+
           '<div class="weather-temp">'+Math.round(c.temperature_2m)+'&deg;C</div>'+
@@ -990,12 +1008,38 @@ document.getElementById('fbsubmit').addEventListener('click',async function(){
             '<span class="weather-pill">&#127777; Feels like '+Math.round(c.apparent_temperature)+'&deg;C</span>'+
             '<span class="weather-pill">&#128168; Wind '+Math.round(c.wind_speed_10m)+' km/h</span>'+
             '<span class="weather-pill">&#128167; Humidity '+c.relative_humidity_2m+'%</span>'+
+            '<span class="weather-pill" style="font-size:.7rem;color:var(--muted)">'+lat.toFixed(3)+'&deg;N, '+lon.toFixed(3)+'&deg;E</span>'+
           '</div>'+
         '</div>';
     }catch(e){
-      document.getElementById('weatherBody').innerHTML='<span class="weather-loading">Could not load weather &mdash; <a href="https://ims.gov.il/en/weather-forecast/Modi_in" target="_blank" style="color:var(--accent2)">check IMS &#8594;</a></span>';
+      body.innerHTML='<span class="weather-loading">Could not load weather &mdash; <a href="https://ims.gov.il/en/weather-forecast/Modi_in" target="_blank" style="color:var(--accent2)">check IMS &#8594;</a></span>';
     }
-  })();
+  }
+
+  async function searchCity(){
+    var input=document.getElementById('cityInput');
+    var btn=document.getElementById('citySearchBtn');
+    var query=(input.value||'').trim();
+    if(!query){fetchWeather(31.896,35.011,'Modi\u2019in, Israel');return;}
+    btn.disabled=true;btn.textContent='\u23f3 Searching\u2026';
+    try{
+      var gr=await fetch('https://geocoding-api.open-meteo.com/v1/search?name='+encodeURIComponent(query)+'&count=1&language=en&format=json');
+      var gd=await gr.json();
+      if(!gd.results||!gd.results.length){
+        document.getElementById('weatherBody').innerHTML='<span class="weather-loading">&#10060; City not found. Try a different spelling.</span>';
+        btn.disabled=false;btn.textContent='&#128269; Search';return;
+      }
+      var loc=gd.results[0];
+      var label=loc.name+(loc.country?', '+loc.country:'');
+      await fetchWeather(loc.latitude,loc.longitude,label);
+    }catch(e){
+      document.getElementById('weatherBody').innerHTML='<span class="weather-loading">&#10060; Geocoding failed. Please try again.</span>';
+    }
+    btn.disabled=false;btn.textContent='&#128269; Search';
+  }
+
+  // Load default (Modi'in) on start
+  fetchWeather(31.896,35.011,'Modi\u2019in, Israel');
 </script>
 </body>
 </html>

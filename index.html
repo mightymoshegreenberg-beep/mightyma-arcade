@@ -1253,32 +1253,39 @@ document.getElementById('fbsubmit').addEventListener('click',async function(){
   fetchWeather(31.896,35.011,'Modi\u2019in, Israel');
 
   // ── Global Leaderboard fetch ──
-  (async function loadLeaderboard(){
+  (async async function loadLeaderboard(){
     var tbody=document.getElementById('globalLbBody');
     if(!tbody)return;
     try{
-      var r=await fetch('https://raw.githubusercontent.com/mightymoshegreenberg-beep/mightyma-arcade/main/leaderboard.json?_='+Date.now());
-      var d=await r.json();
+      var resp=await fetch('https://raw.githubusercontent.com/mightymoshegreenberg-beep/mightyma-arcade/main/leaderboard.json?_='+Date.now());
+      var d=await resp.json();
       var RANK_MEDALS=['&#129351;','&#129352;','&#129353;'];
       var rows='';
       (d.scores||[]).forEach(function(s,i){
         var rankClass=i<3?'lb-rank-'+(i+1):'lb-rank-other';
-        var rankText=i<3?RANK_MEDALS[i]:'#'+s.rank;
-        var avatarHtml=s.avatar?'<img src="'+s.avatar+'" alt=""/>':s.player.slice(0,2).toUpperCase();
-        var verBadge=s.verified
+        var rankText=i<3?RANK_MEDALS[i]:'#'+(i+1);
+        var name=s.handle||s.player||'Anonymous';
+        var initials=name.slice(0,2).toUpperCase();
+        var thumbSrc=s.screenshotThumb||s.avatar||'';
+        var avatarHtml=thumbSrc
+          ?('<img src="'+thumbSrc+'" alt="" style="width:32px;height:32px;object-fit:cover;border-radius:4px"/>')
+          :initials;
+        var isVerified=!!(s.verified||s.screenshotThumb);
+        var verBadge=isVerified
           ?'<span class="lb-verified lb-v-yes">&#10003; Verified</span>'
           :'<span class="lb-verified lb-v-no">Unverified</span>';
-        rows+='<tr>'+
-          '<td><span class="lb-rank-num '+rankClass+'">'+rankText+'</span></td>'+
-          '<td><div class="lb-player"><div class="lb-avatar">'+avatarHtml+'</div><span class="lb-name">'+s.player+'</span></div></td>'+
-          '<td><span class="lb-game-pill">'+s.game+'</span></td>'+
-          '<td><span class="lb-score-val">'+s.score+'</span></td>'+
-          '<td>'+verBadge+'</td>'+
-          '<td style="color:var(--muted);font-size:.75rem">'+s.date+'</td>'+
-        '</tr>';
+        rows+='<tr>'
+          +'<td><span class="lb-rank-num '+rankClass+'">'+rankText+'</span></td>'
+          +'<td><div class="lb-player"><div class="lb-avatar">'+avatarHtml+'</div><span class="lb-name">'+name+'</span></div></td>'
+          +'<td><span class="lb-game-pill">'+s.game+'</span></td>'
+          +'<td><span class="lb-score-val">'+s.score+'</span></td>'
+          +'<td>'+verBadge+'</td>'
+          +'<td style="color:var(--muted);font-size:.75rem">'+s.date+'</td>'
+          +'</tr>';
       });
       tbody.innerHTML=rows||'<tr><td colspan="6" class="lb-loading">No scores yet — be the first!</td></tr>';
     }catch(e){
+      console.error('Leaderboard load error:',e);
       tbody.innerHTML='<tr><td colspan="6" class="lb-loading">Could not load scores. <a href="#support" style="color:var(--accent2)">Submit yours →</a></td></tr>';
     }
   })();

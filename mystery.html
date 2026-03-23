@@ -171,6 +171,7 @@ let mobileShoot = false;
 let joystick = {active:false, dx:0, dy:0};
 let hiScore = parseInt(localStorage.getItem('mma_goten_hi') || '0');
 let blastCooldown = 0;
+let pendingSpawns = 0;
 let bgStars = [];
 
 // Pre-generate background stars
@@ -183,7 +184,7 @@ function initGame() {
   player = {x:W/2, y:H/2, hp:100, maxHp:100, ki:KI_MAX, radius:PLAYER_RADIUS, invincible:0};
   enemies = []; blasts = []; particles = []; powerups = []; dragonBalls = [];
   score = 0; kills = 0; waveNum = 1; dbCollected = 0;
-  ssjActive = false; ssjTimer2 = 0; kiTimer = 0; dbTimer = 0; blastCooldown = 0;
+  ssjActive = false; ssjTimer2 = 0; kiTimer = 0; dbTimer = 0; blastCooldown = 0; pendingSpawns = 0;
   spawnWave(waveNum);
   updateHUD();
   renderDBIcons();
@@ -199,7 +200,8 @@ function spawnWave(n) {
   wDef.forEach(group => {
     const count = group.count + Math.floor((extraScale-1)*group.count*0.5);
     for(let i=0;i<count;i++) {
-      setTimeout(() => spawnEnemy(group.type), i*220);
+      pendingSpawns++;
+      setTimeout(() => { spawnEnemy(group.type); pendingSpawns--; }, i*220);
     }
   });
   // Spawn a Dragon Ball on odd waves
@@ -582,7 +584,7 @@ function update(dt) {
   particles=particles.filter(p=>p.life>0);
 
   // ── Wave clear ──
-  if(enemies.length===0&&state==='playing'){
+  if(enemies.length===0&&pendingSpawns===0&&state==='playing'){
     state='waveclear';
     const bonus=500*waveNum;score+=bonus;
     document.getElementById('waveClearTitle').textContent=`Wave ${waveNum} Clear!`;
@@ -717,5 +719,9 @@ sBtn.addEventListener('touchstart',e=>{e.preventDefault();mobileShoot=true;},{pa
 // ── Start loop ──
 requestAnimationFrame(ts=>{lastTime=ts;requestAnimationFrame(loop);});
 </script>
+
+<div style="width:100%;max-width:900px;padding:.55rem 1rem;font-size:.68rem;color:#475569;text-align:center;background:rgba(0,0,0,.4);border-top:1px solid rgba(255,255,255,.05);flex-shrink:0;line-height:1.6">
+  MightyMA Arcade is a non-profit fan project. Dragon Ball and all associated characters, names, and imagery are trademarks of Toei Animation and Shueisha. This site is not affiliated with or endorsed by any rights holders. &nbsp;&middot;&nbsp; <a href="index.html" style="color:#64748b;text-decoration:none">MightyMA Arcade</a>
+</div>
 </body>
 </html>

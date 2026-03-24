@@ -1,3 +1,19 @@
+// ── Retro Mode ────────────────────────────────────────────────────
+function applyRetro(on){
+  document.body.classList.toggle('retro-mode',on);
+  var rt=document.getElementById('retroToggle');if(rt)rt.checked=on;
+  var s=getSettings();s.retroMode=on;saveSettings(s);
+}
+function toggleRetro(){applyRetro(!document.body.classList.contains('retro-mode'));}
+
+// ── Compact Mode ──────────────────────────────────────────────────
+function applyCompact(on){
+  document.body.classList.toggle('compact-mode',on);
+  var ct=document.getElementById('compactToggle');if(ct)ct.checked=on;
+  var s=getSettings();s.compactMode=on;saveSettings(s);
+}
+function toggleCompact(){applyCompact(!document.body.classList.contains('compact-mode'));}
+
 
 // ── Among Us Mode ──────────────────────────────────────────────────
 function applyAmongUs(on){

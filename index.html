@@ -1306,7 +1306,8 @@ document.getElementById('fbsubmit').addEventListener('click',async function(){
       (d.scores||[]).forEach(function(s,i){
         var rankClass=i<3?'lb-rank-'+(i+1):'lb-rank-other';
         var rankText=i<3?RANK_MEDALS[i]:'#'+(i+1);
-        var name=s.handle||s.player||'Anonymous';
+        function esc(t){var d=document.createElement('div');d.textContent=t;return d.innerHTML;}
+        var name=esc(s.handle||s.player||'Anonymous');
         var initials=name.slice(0,2).toUpperCase();
         var thumbSrc=s.screenshotThumb||s.avatar||'';
         var avatarHtml=thumbSrc
@@ -1319,10 +1320,10 @@ document.getElementById('fbsubmit').addEventListener('click',async function(){
         rows+='<tr>'
           +'<td><span class="lb-rank-num '+rankClass+'">'+rankText+'</span></td>'
           +'<td><div class="lb-player"><div class="lb-avatar">'+avatarHtml+'</div><span class="lb-name">'+name+'</span></div></td>'
-          +'<td><span class="lb-game-pill">'+s.game+'</span></td>'
-          +'<td><span class="lb-score-val">'+s.score+'</span></td>'
+          +'<td><span class="lb-game-pill">'+esc(s.game||'')+'</span></td>'
+          +'<td><span class="lb-score-val">'+esc(String(s.score||''))+'</span></td>'
           +'<td>'+verBadge+'</td>'
-          +'<td style="color:var(--muted);font-size:.75rem">'+s.date+'</td>'
+          +'<td style="color:var(--muted);font-size:.75rem">'+esc(s.date||'')+'</td>'
           +'</tr>';
       });
       tbody.innerHTML=rows||'<tr><td colspan="6" class="lb-loading">No scores yet — be the first!</td></tr>';

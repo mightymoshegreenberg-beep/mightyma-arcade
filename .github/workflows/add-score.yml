@@ -1,0 +1,90 @@
+name: Add Score to Leaderboard
+
+on:
+  workflow_dispatch:
+    inputs:
+      handle:
+        description: 'Player handle'
+        required: true
+        default: 'MightyMA'
+      game:
+        description: 'Game name'
+        required: true
+        default: "Goten's Last Stand"
+      score:
+        description: 'Score (e.g. 28,850)'
+        required: true
+      wave:
+        description: 'Wave reached (optional)'
+        required: false
+      kills:
+        description: 'Kill count (optional)'
+        required: false
+      verified:
+        description: 'Mark as verified? (true/false)'
+        required: false
+        default: 'true'
+      proof_url:
+        description: 'Screenshot URL or proof note (optional)'
+        required: false
+
+permissions:
+  contents: write
+
+jobs:
+  add-score:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Append score entry
+        run: |
+          python3 - <<'EOF'
+          import json, os, datetime
+
+          with open('leaderboard.json', 'r') as f:
+              data = json.load(f)
+
+          entry = {
+              "handle": os.environ.get('HANDLE', 'Anonymous'),
+              "game":   os.environ.get('GAME', ''),
+              "score":  os.environ.get('SCORE', ''),
+              "verified": os.environ.get('VERIFIED', 'false').lower() == 'true',
+              "date":   datetime.date.today().strftime('%b %-d, %Y'),
+          }
+
+          wave  = os.environ.get('WAVE', '').strip()
+          kills = os.environ.get('KILLS', '').strip()
+          proof = os.environ.get('PROOF_URL', '').strip()
+
+          if wave:  entry['wave']  = int(wave)
+          if kills: entry['kills'] = int(kills)
+          if proof: entry['proofUrl'] = proof
+
+          # Insert at front so highest/newest appears first
+          data['scores'].insert(0, entry)
+          data['lastUpdated'] = datetime.date.today().strftime('%b %-d, %Y')
+
+          with open('leaderboard.json', 'w') as f:
+              json.dump(data, f, indent=2)
+
+          print(f"Added entry: {entry}")
+          EOF
+        env:
+          HANDLE:    ${{ github.event.inputs.handle }}
+          GAME:      ${{ github.event.inputs.game }}
+          SCORE:     ${{ github.event.inputs.score }}
+          WAVE:      ${{ github.event.inputs.wave }}
+          KILLS:     ${{ github.event.inputs.kills }}
+          VERIFIED:  ${{ github.event.inputs.verified }}
+          PROOF_URL: ${{ github.event.inputs.proof_url }}
+
+      - name: Commit updated leaderboard
+        run: |
+          git config user.name  "MightyMA Arcade Bot"
+          git config user.email "arcade-bot@users.noreply.github.com"
+          git add leaderboard.json
+          git commit -m "🏆 Add score: ${{ github.event.inputs.handle }} — ${{ github.event.inputs.score }} on ${{ github.event.inputs.game }}"
+          git push origin main

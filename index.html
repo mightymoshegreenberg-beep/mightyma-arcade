@@ -64,7 +64,7 @@
     .tagline{color:var(--muted);margin-top:.5rem;font-size:1rem;letter-spacing:.05em;position:relative}
 
     /* Settings gear + account pill in header */
-    .header-controls{position:absolute;top:1rem;right:1rem;display:flex;align-items:center;gap:.5rem;z-index:10}
+    .header-controls{position:fixed;bottom:1.5rem;right:1.5rem;display:flex;align-items:center;gap:.5rem;z-index:200}
     .account-pill{display:none;align-items:center;gap:.45rem;background:rgba(124,58,237,.2);border:1px solid rgba(124,58,237,.35);border-radius:999px;padding:.3rem .75rem .3rem .4rem;font-size:.78rem;font-weight:700;color:var(--text);cursor:pointer;transition:all .2s}
     .account-pill:hover{background:rgba(124,58,237,.35);box-shadow:var(--glow)}
     .account-pill.visible{display:flex}
@@ -72,7 +72,7 @@
     .settings-gear{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:50%;width:38px;height:38px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;cursor:pointer;transition:all .2s;color:var(--text);flex-shrink:0}
     .settings-gear:hover{background:rgba(124,58,237,.3);border-color:var(--accent1);transform:rotate(30deg);box-shadow:var(--glow)}
 
-    nav{display:flex;justify-content:center;flex-wrap:wrap;gap:.6rem;padding:1.2rem 1rem;background:var(--surface);border-bottom:1px solid rgba(255,255,255,.06);position:sticky;top:0;z-index:100;backdrop-filter:blur(8px)}
+    nav{display:flex;justify-content:center;flex-wrap:wrap;gap:.6rem;padding:1.2rem 1rem;background:var(--surface);border-bottom:1px solid rgba(255,255,255,.06);backdrop-filter:blur(8px)}
     nav a{text-decoration:none;color:var(--muted);background:var(--card);border:1px solid rgba(255,255,255,.08);padding:.35rem .9rem;border-radius:999px;font-size:.82rem;transition:all .2s}
     nav a:hover{color:#fff;border-color:var(--accent1);box-shadow:var(--glow)}
     main{max-width:1300px;margin:0 auto;padding:2.5rem 1.2rem 4rem}

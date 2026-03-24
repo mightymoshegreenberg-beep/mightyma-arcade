@@ -71,3 +71,69 @@
     .yt-video-title{font-size:.88rem;font-weight:700;line-height:1.38;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
     .yt-video-meta{font-size:.72rem;color:var(--muted);margin-top:auto;padding-top:.3rem}
     @media(max-width:600px){.yt-feed-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* ============================================================
+   SUPER SAIYAN BLUE GOTEN MODE — 2026-03-25 Daily Arcade Drop
+   Cold electric blue palette / SSB ki aura variant
+   ============================================================ */
+body.goten-ssb-mode {
+  --bg:       #000508;
+  --surface:  #00060e;
+  --card:     #000d1a;
+  --accent1:  #3b82f6;
+  --accent2:  #06b6d4;
+  --accent3:  #bfdbfe;
+  --accent4:  #7dd3fc;
+  --text:     #e0f2fe;
+  --muted:    #2563eb;
+  --glow:     0 0 26px rgba(59,130,246,.75);
+}
+
+body.goten-ssb-mode header {
+  background: linear-gradient(135deg, #000508, #001433) !important;
+  border-bottom-color: #3b82f6 !important;
+}
+
+body.goten-ssb-mode header::before {
+  background: radial-gradient(ellipse at 50% 0%, rgba(59,130,246,.35), transparent 70%) !important;
+}
+
+body.goten-ssb-mode .logo {
+  background: linear-gradient(90deg, #3b82f6, #06b6d4, #bfdbfe) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+body.goten-ssb-mode::after {
+  content: '' !important;
+  position: fixed !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  z-index: 9997 !important;
+  background: radial-gradient(ellipse at 50% 110%, rgba(59,130,246,.12), transparent 60%) !important;
+  animation: aura-pulse 2.5s ease-in-out infinite alternate !important;
+}
+
+body.goten-ssb-mode .btn-p,
+body.goten-ssb-mode .hof-submit-btn,
+body.goten-ssb-mode .badge-fire {
+  background: linear-gradient(90deg, #3b82f6, #06b6d4) !important;
+}
+
+body.goten-ssb-mode .form-input:focus,
+body.goten-ssb-mode .form-select:focus,
+body.goten-ssb-mode .form-textarea:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59,130,246,.2);
+}
+
+body.goten-ssb-mode .ach-card.ach-unlocked {
+  border-color: rgba(59,130,246,.5) !important;
+  box-shadow: 0 0 14px rgba(59,130,246,.22);
+}
+
+body.goten-ssb-mode footer,
+body.goten-ssb-mode nav {
+  background: var(--surface);
+}

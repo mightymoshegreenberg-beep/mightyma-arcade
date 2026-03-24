@@ -347,8 +347,10 @@
     @media(max-width:700px){.support-grid{grid-template-columns:1fr}.poll-header{flex-direction:column}.featured-grid{grid-template-columns:1fr}.unblocked-grid{grid-template-columns:repeat(2,1fr)}.achievements-grid{grid-template-columns:repeat(2,1fr)}.settings-overlay{padding:4.5rem .6rem 1rem}.settings-panel{max-width:100%}}
     @media(max-width:420px){.achievements-grid{grid-template-columns:1fr}}
   </style>
+  <link rel="stylesheet" href="arcade-modes.css"/>
 </head>
 <body>
+<div id="spaceBgLayer" class="space-bg-layer"></div>
 
 <!-- ══ SETTINGS MODAL ══ -->
 <div class="settings-overlay" id="settingsOverlay" onclick="overlayClick(event)">
@@ -440,6 +442,26 @@
             <span class="toggle-slider"></span>
           </label>
         </div>
+        <div class="toggle-row">
+          <div class="toggle-info">
+            <div class="toggle-name">🚀 Among Us Mode</div>
+            <div class="toggle-desc">Space background · purple hue · floating crewmates</div>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" id="amongUsToggle" onchange="applyAmongUs(this.checked)"/>
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+        <div class="toggle-row">
+          <div class="toggle-info">
+            <div class="toggle-name">⚡ Goten Mode</div>
+            <div class="toggle-desc">Dragon Ball orange/blue theme · ki aura</div>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" id="gotenToggle" onchange="applyGoten(this.checked)"/>
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
       </div>
 
     </div>
@@ -469,11 +491,18 @@
   <a href="#radar">🌦️ Radar</a>
   <a href="#patchnotes">📝 Updates</a>
   <a href="mystery.html">⚡ Goten's Game</a>
+  <a href="among-us.html">🚀 Among Us</a>
   <a href="https://shellshock.io" target="_blank">Shell Shockers</a>
   <a href="https://deadshot.io" target="_blank">Deadshot.io</a>
   <a href="https://www.gamepix.com/play/among-us" target="_blank">Among Us</a>
   <a href="https://eaglercraft.com/mc/1.8.8" target="_blank">Eaglercraft</a>
 </nav>
+
+<!-- MODE TOGGLE BAR -->
+<div class="mode-toggle-bar">
+  <button id="amongUsModeBtn" class="mode-btn mode-btn-among" onclick="toggleAmongUs()">🚀 Among Us Mode</button>
+  <button id="gotenModeBtn" class="mode-btn mode-btn-goten" onclick="toggleGoten()">⚡ Goten Mode</button>
+</div>
 
 <main>
   <section id="featured">
@@ -523,6 +552,7 @@
   <hr class="section-divider"/>
   <section id="achievements">
     <h2 class="section-title">Achievements <span class="badge badge-ach">🏅 Earn Your Badge</span></h2>
+    <div class="ach-counter" id="achCounter">✨ 0 / 10 Achievements Unlocked</div>
     <div class="achievements-grid">
       <div class="ach-card"><div class="ach-icon">🏆</div><div class="ach-name">Hall of Famer</div><div class="ach-desc">Your score appears on the MightyMA leaderboard for all to see.</div><div class="ach-how">→ Get a score posted on the leaderboard</div></div>
       <div class="ach-card"><div class="ach-icon">📸</div><div class="ach-name">Screenshot or It Didn't Happen</div><div class="ach-desc">Back up your claim with receipts. Submit a verified score with screenshot proof.</div><div class="ach-how">→ Submit a high score with a screenshot link</div></div>
@@ -532,6 +562,9 @@
       <div class="ach-card"><div class="ach-icon">🌙</div><div class="ach-name">Night Owl</div><div class="ach-desc">While others sleep, you grind. Submitted a score between midnight and 3 AM.</div><div class="ach-how">→ Submit a score after midnight</div></div>
       <div class="ach-card"><div class="ach-icon">🐛</div><div class="ach-name">Bug Hunter</div><div class="ach-desc">You kept the arcade clean. Reported a broken link that actually got fixed.</div><div class="ach-how">→ Report a broken link via the support form</div></div>
       <div class="ach-card"><div class="ach-icon">🔓</div><div class="ach-name">Unlocker</div><div class="ach-desc">Explorer. Curiosity-driven. Visited all 15 games in the Unblocked Games section.</div><div class="ach-how">→ Play all 15 unblocked games</div></div>
+
+      <div class="ach-card" id="ach-among-us"><div class="ach-icon">🚀</div><div class="ach-name">Space Cadet</div><div class="ach-desc">Launched the Among Us themed background. The ship is drifting through the void.</div><div class="ach-how">→ Activate Among Us Mode</div></div>
+      <div class="ach-card" id="ach-goten"><div class="ach-icon">⚡</div><div class="ach-name">Super Saiyan Vibes</div><div class="ach-desc">You channeled Goten's power. The orange aura surrounds the arcade.</div><div class="ach-how">→ Activate Goten Mode</div></div>
 <!-- ACHIEVEMENTS_END -->
     </div>
   </section>
@@ -723,6 +756,12 @@
         <a href="https://www.youtube.com/watch?v=8113Ee8A2K4" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.35rem;font-size:.78rem;font-weight:700;color:#ff0000;text-decoration:none">&#9654; Watch on YouTube &#8594;</a>
       </div>
     </div>
+
+    <div style="margin-top:1.5rem">
+      <div style="font-size:1rem;font-weight:800;margin-bottom:.3rem">🎬 Latest Videos</div>
+      <div id="ytFeedStatus" style="font-size:.72rem;color:var(--muted);margin-bottom:.7rem">Loading feed…</div>
+      <div class="yt-feed-grid" id="ytFeedGrid"></div>
+    </div>
     <div style="margin-top:1rem;font-size:.72rem;color:var(--muted)">
       &#128260; Stats updated Mar 22, 2026 &nbsp;&middot;&nbsp;
       <a href="https://www.youtube.com/@FortniteMostAmazing" target="_blank" rel="noopener" style="color:var(--accent2);text-decoration:none">youtube.com/@FortniteMostAmazing</a>
@@ -839,6 +878,9 @@ function updatePwStrength(){
   var s=getSettings();
   if(s.retroMode){document.body.classList.add('retro-mode');document.getElementById('retroToggle').checked=true}
   if(s.compactMode){document.body.classList.add('compact-mode');document.getElementById('compactToggle').checked=true}
+  if(s.amongUsMode){document.body.classList.add('among-us-mode');var at=document.getElementById('amongUsToggle');if(at)at.checked=true;var ab=document.getElementById('amongUsModeBtn');if(ab)ab.classList.add('active');buildSpaceBg(true);}
+  if(s.gotenMode){document.body.classList.add('goten-mode');var gt=document.getElementById('gotenToggle');if(gt)gt.checked=true;var gb=document.getElementById('gotenModeBtn');if(gb)gb.classList.add('active');}
+  initAchievements();
   updateAccountUI();
 })();
 
@@ -1290,5 +1332,7 @@ document.getElementById('fbsubmit').addEventListener('click',async function(){
     }
   })();
 </script>
+<script src="arcade-modes.js"></script>
 </body>
 </html>
+

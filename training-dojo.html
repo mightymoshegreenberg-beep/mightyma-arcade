@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+<title>Training Dojo | MightyMA Arcade</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#050010;color:#fff;font-family:'Segoe UI',system-ui,sans-serif;overflow:hidden;height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;user-select:none}
+#topbar{width:100%;max-width:900px;display:flex;align-items:center;justify-content:space-between;padding:.5rem 1rem;background:rgba(0,0,0,.65);flex-shrink:0;z-index:10;border-bottom:1px solid rgba(124,58,237,.25)}
+.back-link{color:#a78bfa;text-decoration:none;font-weight:700;font-size:.85rem}
+.back-link:hover{color:#c4b5fd}
+#topbar h1{font-size:.95rem;font-weight:900;background:linear-gradient(90deg,#a78bfa,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+#hud{width:100%;max-width:900px;padding:.35rem .8rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;background:rgba(0,0,0,.5);flex-shrink:0;z-index:10;border-bottom:1px solid rgba(255,255,255,.05)}
+.hud-item{display:flex;align-items:center;gap:.4rem;font-size:.78rem;font-weight:700}
+.hud-label{color:#94a3b8}
+#scoreVal{color:#f59e0b;font-size:.95rem;font-weight:900}
+#comboVal{color:#a78bfa;font-size:.85rem;font-weight:800}
+#timerVal{color:#06b6d4;font-size:.9rem;font-weight:800}
+#coinVal{color:#f59e0b;font-size:.9rem;font-weight:800}
+#canvasWrap{position:relative;width:100%;max-width:900px;flex:1;min-height:0;display:flex;align-items:center;justify-content:center}
+canvas{display:block;max-width:100%;max-height:100%;image-rendering:auto}
+.screen{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.2rem;background:rgba(0,0,0,.88);z-index:20;padding:1.5rem;text-align:center}
+.screen.hidden{display:none}
+.screen h2{font-size:clamp(1.3rem,5vw,2.2rem);font-weight:900;background:linear-gradient(90deg,#a78bfa,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.screen p{color:#94a3b8;font-size:.88rem;max-width:380px;line-height:1.6}
+.btn-dojo{background:linear-gradient(135deg,#7c3aed,#06b6d4);color:#fff;border:none;border-radius:10px;font-size:.95rem;font-weight:800;padding:.65rem 1.6rem;cursor:pointer;transition:all .2s}
+.btn-dojo:hover{transform:scale(1.05);box-shadow:0 0 20px rgba(124,58,237,.5)}
+.btn-dojo.secondary{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);font-size:.82rem;padding:.5rem 1.1rem}
+.btn-dojo.secondary:hover{background:rgba(255,255,255,.14)}
+.stat-row{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap}
+.stat-box{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:.65rem 1.1rem;min-width:100px;text-align:center}
+.stat-val{font-size:1.4rem;font-weight:900;color:#a78bfa}
+.stat-lbl{font-size:.7rem;color:#94a3b8;text-transform:uppercase;letter-spacing:.06em;margin-top:.12rem}
+.difficulty-row{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center}
+.diff-btn{padding:.4rem .9rem;border-radius:8px;font-size:.78rem;font-weight:700;cursor:pointer;border:2px solid rgba(255,255,255,.15);background:rgba(255,255,255,.05);color:#94a3b8;font-family:inherit;transition:all .2s}
+.diff-btn:hover{border-color:var(--sel-col,#7c3aed);color:#fff}
+.diff-btn.active{background:var(--sel-col,#7c3aed);border-color:var(--sel-col,#7c3aed);color:#fff}
+#coinNotice{font-size:.82rem;color:#f59e0b;font-weight:700;margin-top:.25rem}
+</style>
+</head>
+<body>
+<div id="topbar">
+  <a class="back-link" href="index.html">← MightyMA Arcade</a>
+  <h1>🥋 Training Dojo</h1>
+  <span style="font-size:.72rem;color:#64748b">Ki Training</span>
+</div>
+<div id="hud">
+  <div class="hud-item"><span class="hud-label">⚡ Ki:</span><span id="scoreVal">0</span></div>
+  <div class="hud-item"><span class="hud-label">🔥 Combo:</span><span id="comboVal">x1</span></div>
+  <div class="hud-item"><span class="hud-label">⏱:</span><span id="timerVal">30</span></div>
+  <div class="hud-item"><span class="hud-label" style="font-size:.65rem">🪙</span><span id="coinVal">0</span><span class="hud-label" style="font-size:.65rem">coins</span></div>
+</div>
+<div id="canvasWrap">
+  <canvas id="dojoCanvas"></canvas>
+  <div class="screen" id="menuScreen">
+    <h2>🥋 Training Dojo</h2>
+    <p>Hit the glowing Ki targets before they vanish. Build combos for bonus points. Earn Ki Coins saved to your arcade wallet!</p>
+    <div class="difficulty-row">
+      <button class="diff-btn active" id="diffEasy" style="--sel-col:#10b981" onclick="setDiff('easy',this)">🟢 Casual</button>
+      <button class="diff-btn" id="diffMed" style="--sel-col:#f59e0b" onclick="setDiff('med',this)">🟡 Fighter</button>
+      <button class="diff-btn" id="diffHard" style="--sel-col:#ef4444" onclick="setDiff('hard',this)">🔴 Master</button>
+    </div>
+    <button class="btn-dojo" id="startBtn">⚡ Begin Training</button>
+    <a href="index.html" class="btn-dojo secondary">← Back to Arcade</a>
+    <div id="coinNotice">🪙 All-time coins: <span id="menuCoins">0</span></div>
+  </div>
+  <div class="screen hidden" id="resultScreen">
+    <h2 id="resultTitle">Training Complete!</h2>
+    <div class="stat-row">
+      <div class="stat-box"><div class="stat-val" id="resScore">0</div><div class="stat-lbl">Ki Earned</div></div>
+      <div class="stat-box"><div class="stat-val" id="resHits">0</div><div class="stat-lbl">Targets Hit</div></div>
+      <div class="stat-box"><div class="stat-val" id="resCombo">x1</div><div class="stat-lbl">Best Combo</div></div>
+      <div class="stat-box"><div class="stat-val" id="resCoins">0</div><div class="stat-lbl">🪙 Coins Won</div></div>
+    </div>
+    <div id="coinNotice2" style="font-size:.82rem;color:#f59e0b;font-weight:700"></div>
+    <button class="btn-dojo" id="retryBtn">🔄 Train Again</button>
+    <a href="mystery.html" class="btn-dojo secondary">⚡ Play Goten's Last Stand</a>
+  </div>
+</div>
+<script>
+const canvas=document.getElementById('dojoCanvas');
+const ctx=canvas.getContext('2d');
+const W=800,H=500;
+canvas.width=W;canvas.height=H;
+const DIFF_SETTINGS={
+  easy:{duration:30,spawnRate:1.2,targetLife:2.2,maxTargets:4,pointsBase:10},
+  med:{duration:30,spawnRate:0.75,targetLife:1.55,maxTargets:6,pointsBase:18},
+  hard:{duration:30,spawnRate:0.5,targetLife:1.0,maxTargets:9,pointsBase:30}
+};
+const COIN_RATE=100;
+const LS_COINS='mma_dojo_coins';
+let diff='easy',state='menu';
+let targets=[],particles=[],floats=[];
+let score=0,hits=0,bestCombo=1,combo=0,comboTimer=0;
+let timeLeft=30,lastTime=0,spawnTimer=0;
+let bgStars=[];
+for(let i=0;i<60;i++)bgStars.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.2+.3,t:Math.random()*Math.PI*2});
+function randRange(a,b){return a+Math.random()*(b-a);}
+function setDiff(d,btn){diff=d;document.querySelectorAll('.diff-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');}
+function getCoinTotal(){return parseInt(localStorage.getItem(LS_COINS)||'0');}
+function addCoins(n){var c=getCoinTotal()+n;localStorage.setItem(LS_COINS,c);return c;}
+const TARGET_TYPES=[
+  {col:'#a78bfa',dark:'#6d28d9',points:1,radius:22},
+  {col:'#f59e0b',dark:'#b45309',points:2,radius:17},
+  {col:'#06b6d4',dark:'#0e7490',points:3,radius:13},
+  {col:'#ef4444',dark:'#991b1b',points:5,radius:10}
+];
+function spawnTarget(){
+  const cfg=DIFF_SETTINGS[diff];
+  if(targets.length>=cfg.maxTargets)return;
+  const t=TARGET_TYPES[Math.floor(Math.random()*TARGET_TYPES.length)];
+  const margin=t.radius+12;
+  targets.push({x:randRange(margin,W-margin),y:randRange(margin,H-margin),radius:t.radius,col:t.col,dark:t.dark,points:t.points,life:cfg.targetLife,maxLife:cfg.targetLife,pulse:Math.random()*Math.PI*2,hit:false,hitAlpha:0,scale:0});
+}
+function spawnParticles(x,y,col,n){
+  for(let i=0;i<n;i++){const a=Math.random()*Math.PI*2,s=1.5+Math.random()*3;particles.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,r:2+Math.random()*3,col,life:0.5+Math.random()*0.4,maxLife:1});}
+}
+function spawnFloat(x,y,text,col){
+  floats.push({x,y,text,col,life:1.0,vy:-1.2});
+}
+function drawBg(dt){
+  ctx.fillStyle='#030008';ctx.fillRect(0,0,W,H);
+  bgStars.forEach(s=>{s.t+=dt*1.2;ctx.fillStyle='rgba(255,255,255,'+(0.2+Math.sin(s.t)*0.2)+')';ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fill();});
+  ctx.strokeStyle='rgba(124,58,237,0.07)';ctx.lineWidth=1;
+  for(let x=0;x<W;x+=55){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke();}
+  for(let y=0;y<H;y+=55){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();}
+  ctx.strokeStyle='rgba(124,58,237,0.12)';ctx.lineWidth=2;
+  ctx.beginPath();ctx.arc(W/2,H/2,180,0,Math.PI*2);ctx.stroke();
+}
+function drawTarget(t,dt){
+  if(t.hit)return;
+  t.pulse+=dt*3;
+  if(t.scale<1)t.scale=Math.min(1,t.scale+dt*6);
+  const pct=t.life/t.maxLife;
+  ctx.save();ctx.translate(t.x,t.y);ctx.scale(t.scale,t.scale);
+  const glow=ctx.createRadialGradient(0,0,t.radius*.3,0,0,t.radius+10+Math.sin(t.pulse)*3);
+  glow.addColorStop(0,t.col+'88');glow.addColorStop(1,'rgba(0,0,0,0)');
+  ctx.fillStyle=glow;ctx.beginPath();ctx.arc(0,0,t.radius+14,0,Math.PI*2);ctx.fill();
+  ctx.globalAlpha=0.4+pct*0.6;ctx.fillStyle=t.col;ctx.beginPath();ctx.arc(0,0,t.radius,0,Math.PI*2);ctx.fill();
+  ctx.fillStyle=t.dark;ctx.beginPath();ctx.arc(0,0,t.radius*0.55,0,Math.PI*2);ctx.fill();
+  ctx.globalAlpha=1;
+  ctx.strokeStyle=t.col;ctx.lineWidth=3;ctx.lineCap='round';
+  ctx.beginPath();ctx.arc(0,0,t.radius+4,-Math.PI/2,-Math.PI/2+pct*Math.PI*2);ctx.stroke();
+  ctx.fillStyle='#fff';ctx.globalAlpha=0.9;
+  ctx.font='bold '+(t.radius*0.7)+'px system-ui,sans-serif';
+  ctx.textAlign='center';ctx.textBaseline='middle';
+  ctx.fillText(t.points>1?'+'+t.points:'+Ki',0,0);
+  ctx.globalAlpha=1;ctx.restore();
+}
+function drawParticle(p){ctx.save();ctx.globalAlpha=p.life/p.maxLife;ctx.fillStyle=p.col;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill();ctx.restore();}
+function drawFloats(){floats.forEach(f=>{ctx.save();ctx.globalAlpha=f.life;ctx.fillStyle=f.col;ctx.font='bold 14px system-ui,sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(f.text,f.x,f.y);ctx.restore();});}
+function drawTimerRing(){
+  const pct=timeLeft/DIFF_SETTINGS[diff].duration;
+  const cx=W-36,cy=36,r=22;
+  ctx.strokeStyle='rgba(255,255,255,.1)';ctx.lineWidth=4;ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);ctx.stroke();
+  ctx.strokeStyle=pct>0.4?'#06b6d4':(pct>0.2?'#f59e0b':'#ef4444');ctx.lineWidth=4;ctx.lineCap='round';
+  ctx.beginPath();ctx.arc(cx,cy,r,-Math.PI/2,-Math.PI/2+pct*Math.PI*2);ctx.stroke();
+}
+function updateHUD(){
+  document.getElementById('scoreVal').textContent=score.toLocaleString();
+  document.getElementById('comboVal').textContent='x'+(combo+1);
+  document.getElementById('timerVal').textContent=Math.ceil(timeLeft);
+  document.getElementById('coinVal').textContent=getCoinTotal();
+}
+function update(dt){
+  if(state!=='playing')return;
+  const cfg=DIFF_SETTINGS[diff];
+  timeLeft=Math.max(0,timeLeft-dt);
+  if(timeLeft<=0){endGame();return;}
+  spawnTimer+=dt;
+  if(spawnTimer>=cfg.spawnRate){spawnTimer=0;spawnTarget();}
+  if(combo>0){comboTimer+=dt;if(comboTimer>1.8){combo=0;comboTimer=0;updateHUD();}}
+  targets.forEach(t=>{if(!t.hit){t.life-=dt;if(t.life<=0){t.hit=true;combo=0;comboTimer=0;updateHUD();}}else{if(t.hitAlpha>0)t.hitAlpha-=dt*4;}});
+  targets=targets.filter(t=>!t.hit||t.hitAlpha>0);
+  particles.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.life-=dt;p.vx*=0.9;p.vy*=0.9;});particles=particles.filter(p=>p.life>0);
+  floats.forEach(f=>{f.y+=f.vy;f.life-=dt*1.1;});floats=floats.filter(f=>f.life>0);
+  updateHUD();
+}
+function render(dt){
+  drawBg(dt);
+  targets.filter(t=>!t.hit).forEach(t=>drawTarget(t,dt));
+  particles.forEach(drawParticle);
+  drawFloats();
+  drawTimerRing();
+}
+function hitAt(cx,cy){
+  for(let i=targets.length-1;i>=0;i--){
+    const t=targets[i];
+    if(t.hit)continue;
+    if(Math.sqrt((cx-t.x)**2+(cy-t.y)**2)<=t.radius+8){
+      t.hit=true;t.hitAlpha=1.0;
+      combo++;comboTimer=0;
+      if(combo>bestCombo)bestCombo=combo;
+      const pts=t.points*DIFF_SETTINGS[diff].pointsBase*(1+combo*0.15);
+      score+=Math.round(pts);hits++;
+      spawnParticles(t.x,t.y,t.col,8);
+      spawnFloat(t.x,t.y-t.radius,combo>2?'COMBO x'+combo+' +'+Math.round(pts):'+'+Math.round(pts),combo>2?'#f59e0b':t.col);
+      updateHUD();return true;
+    }
+  }
+  return false;
+}
+function initGame(){
+  targets=[];particles=[];floats=[];
+  score=0;hits=0;bestCombo=1;combo=0;comboTimer=0;spawnTimer=0;
+  timeLeft=DIFF_SETTINGS[diff].duration;
+}
+function endGame(){
+  state='gameover';
+  const coinsEarned=Math.floor(score/COIN_RATE);
+  const newTotal=addCoins(coinsEarned);
+  document.getElementById('resScore').textContent=score.toLocaleString();
+  document.getElementById('resHits').textContent=hits;
+  document.getElementById('resCombo').textContent='x'+bestCombo;
+  document.getElementById('resCoins').textContent='+'+coinsEarned;
+  document.getElementById('coinNotice2').textContent='Total Ki Coins: '+newTotal+' 🪙';
+  document.getElementById('resultTitle').textContent=score>=500?'🏆 Excellent Training!':(score>=200?'⚡ Good Session!':'🥋 Keep Grinding!');
+  document.getElementById('resultScreen').classList.remove('hidden');
+}
+function hideAllScreens(){
+  ['menuScreen','resultScreen'].forEach(id=>document.getElementById(id).classList.add('hidden'));
+}
+function loop(ts){
+  const dt=Math.min((ts-lastTime)/1000,0.05);
+  lastTime=ts;update(dt);render(dt);
+  requestAnimationFrame(loop);
+}
+function getCanvasPos(e){
+  const r=canvas.getBoundingClientRect();
+  return{x:(e.clientX-r.left)*W/r.width,y:(e.clientY-r.top)*H/r.height};
+}
+canvas.addEventListener('click',e=>{if(state==='playing'){const p=getCanvasPos(e);hitAt(p.x,p.y);}});
+canvas.addEventListener('touchstart',e=>{
+  e.preventDefault();
+  if(state==='playing'){const t=e.touches[0];hitAt(...Object.values(getCanvasPos(t)));}
+},{passive:false});
+document.getElementById('startBtn').onclick=()=>{hideAllScreens();initGame();state='playing';};
+document.getElementById('retryBtn').onclick=()=>{hideAllScreens();initGame();state='playing';};
+document.getElementById('menuCoins').textContent=getCoinTotal();
+document.getElementById('coinVal').textContent=getCoinTotal();
+requestAnimationFrame(ts=>{lastTime=ts;requestAnimationFrame(loop);});
+</script>
+<div style="width:100%;max-width:900px;padding:.5rem 1rem;font-size:.67rem;color:#475569;text-align:center;background:rgba(0,0,0,.4);border-top:1px solid rgba(255,255,255,.05);flex-shrink:0">
+  MightyMA Arcade &middot; Training Dojo &middot; Ki Coins saved locally in your browser
+</div>
+</body>
+</html>

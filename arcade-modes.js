@@ -36,8 +36,93 @@ function applyGoten(on){
   var s=getSettings();s.gotenMode=on;if(on)s.amongUsMode=false;saveSettings(s);
   if(!on)buildSpaceBg(false);
   if(on)unlockAchievement('ach-goten');
+  var sec=document.getElementById('gotenSkinSection');if(sec)sec.style.display=on?'':(document.body.classList.contains('goten-ssb-mode')?'':' none');
+  initGotenSkin();
 }
 function toggleGoten(){applyGoten(!document.body.classList.contains('goten-mode'));}
+
+// ── SSB Mode (Super Saiyan Blue) ─────────────────────────────────────
+function applySSB(on){
+  if(on){
+    document.body.classList.add('goten-ssb-mode');
+    document.body.classList.remove('goten-mode','among-us-mode');
+    var gt=document.getElementById('gotenToggle');if(gt)gt.checked=false;
+    var at=document.getElementById('amongUsToggle');if(at)at.checked=false;
+    var ab=document.getElementById('amongUsModeBtn');if(ab)ab.classList.remove('active');
+    var gb=document.getElementById('gotenModeBtn');if(gb)gb.classList.remove('active');
+  } else {
+    document.body.classList.remove('goten-ssb-mode');
+  }
+  var s=getSettings();s.ssbMode=on;if(on){s.gotenMode=false;s.amongUsMode=false;}saveSettings(s);
+  if(on)unlockAchievement('ach-goten-ssb');
+}
+
+// ── Goten Skin Selector ──────────────────────────────────────────────
+function applyGotenSkin(skin){
+  var s=getSettings();
+  s.gotenSkin=skin;
+  saveSettings(s);
+  localStorage.setItem('mma_goten_skin',skin);
+  ['base','ssj','ssb'].forEach(function(k){
+    var btn=document.getElementById('skin'+k.charAt(0).toUpperCase()+k.slice(1));
+    if(btn)btn.classList.toggle('active',k===skin);
+  });
+  if(skin==='ssb'){
+    applySSB(true);
+  } else if(skin==='ssj'){
+    applySSB(false);
+    applyGoten(true);
+  } else {
+    applySSB(false);
+  }
+}
+
+function initGotenSkin(){
+  var skin=localStorage.getItem('mma_goten_skin')||'base';
+  var showSection=document.body.classList.contains('goten-mode')||
+    document.body.classList.contains('goten-ssb-mode')||
+    skin!=='base';
+  var sec=document.getElementById('gotenSkinSection');
+  if(sec)sec.style.display=showSection?'':'none';
+  ['base','ssj','ssb'].forEach(function(k){
+    var btn=document.getElementById('skin'+k.charAt(0).toUpperCase()+k.slice(1));
+    if(btn)btn.classList.toggle('active',k===skin);
+  });
+}
+
+// ── Activity Ticker ──────────────────────────────────────────────────
+(async function initTicker(){
+  var track=document.getElementById('tickerTrack');
+  if(!track)return;
+  var scores=[];
+  try{
+    var r=await fetch('https://raw.githubusercontent.com/mightymoshegreenberg-beep/mightyma-arcade/main/leaderboard.json?_='+Date.now(),{signal:AbortSignal.timeout(4000)});
+    var d=await r.json();
+    scores=d.scores||[];
+  }catch(ex){}
+  if(scores.length===0){
+    scores=[
+      {handle:'MightyMA',game:"Goten's Last Stand",score:'28,850',date:'Mar 25, 2026'},
+      {handle:'MightyMA',game:"Goten's Last Stand",score:'17,150',date:'Mar 23, 2026'}
+    ];
+  }
+  function esc(t){var d=document.createElement('div');d.textContent=String(t||'');return d.innerHTML;}
+  function buildItems(arr){
+    return arr.map(function(s){
+      return '<span class="ticker-item">'
+        +'<span>\uD83C\uDFC5</span>'
+        +'<span class="ti-handle">'+esc(s.handle||'Anonymous')+'</span>'
+        +'<span class="ti-score">'+esc(s.score)+'</span>'
+        +'<span class="ti-game">'+esc(s.game)+'</span>'
+        +'<span style="color:var(--muted);font-size:.68rem">'+esc(s.date)+'</span>'
+        +'</span>';
+    }).join('');
+  }
+  var expanded=scores;
+  while(expanded.length<6)expanded=expanded.concat(scores);
+  track.innerHTML=buildItems(expanded)+buildItems(expanded);
+  track.classList.add('running');
+})();
 
 // ── Space Background Builder ─────────────────────────────────────────
 function buildSpaceBg(intense){
@@ -94,6 +179,7 @@ function initAchievements(){
     }
   });
   updateAchCounter();
+  initGotenSkin();
 }
 
 // ── YouTube Video Feed (RSS via CORS proxy, fallback to static) ──
@@ -130,8 +216,7 @@ function initAchievements(){
         if(i>=5)return;
         var idEl=e.querySelector('videoId');var titleEl=e.querySelector('title');var pubEl=e.querySelector('published');
         if(idEl&&titleEl)vids.push({id:idEl.textContent,title:titleEl.textContent,
-          date:pubEl?new Date(pubEl.textContent).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}):''
-        });
+          date:pubEl?new Date(pubEl.textContent).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}):''});
       });
       if(vids.length>0){renderCards(vids);if(status)status.textContent='\u2705 Feed loaded from YouTube RSS';return;}
     }

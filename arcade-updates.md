@@ -11,3 +11,7 @@ programmed.
 ## 2026-03-25 — Daily Arcade Drop
 **Type:** Skins/Graphics
 **Update:** Super Saiyan Blue Goten Skin — A new `goten-ssb-mode` CSS variant for Goten's Last Stand. Replaces the signature amber/orange ki aura with an icy electric blue palette: `--accent1: #3b82f6` (blue), `--accent2: #06b6d4` (cyan), `--accent3: #bfdbfe` (light blue), aura glow shifts to `rgba(59,130,246,.75)`. The ki aura pulse animation changes from warm amber to a cold blue radial gradient rising from the base. Logo gradient updates to blue → cyan → sky blue. Evokes Goten's imagined SSB transformation — calm, icy power radiating from every pixel.
+
+## 2026-03-26 — Daily Arcade Drop
+**Type:** Lore/Story
+**Update:** Nobody remembers when the cabinet called "Goten's Last Stand" first appeared in the arcade. One night it simply wasn't there, and the next morning it was — plugged into a socket no one had used in years. The initials carved deepest into the high-score board read G.T., but the name field always displayed the same three letters: SSJ. Regulars say if you watch the attract screen long enough after midnight, you'll see a golden flicker where there should only be static — like something on the other side is still fighting.

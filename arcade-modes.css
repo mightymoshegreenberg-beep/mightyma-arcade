@@ -137,3 +137,70 @@ body.goten-ssb-mode footer,
 body.goten-ssb-mode nav {
   background: var(--surface);
 }
+
+/* ============================================================
+   ULTRA INSTINCT GOTEN MODE — 2026-03-27 Daily Arcade Drop
+   Silver/white transcendence palette / UI aura variant
+   ============================================================ */
+body.goten-ui-mode {
+  --bg:       #08090c;
+  --surface:  #0d0e12;
+  --card:     #13141a;
+  --accent1:  #e2e8f0;
+  --accent2:  #f8fafc;
+  --accent3:  #94a3b8;
+  --accent4:  #cbd5e1;
+  --text:     #f1f5f9;
+  --muted:    #64748b;
+  --glow:     0 0 26px rgba(226,232,240,.80);
+}
+
+body.goten-ui-mode header {
+  background: linear-gradient(135deg, #08090c, #10121a) !important;
+  border-bottom-color: #e2e8f0 !important;
+}
+
+body.goten-ui-mode header::before {
+  background: radial-gradient(ellipse at 50% 0%, rgba(226,232,240,.25), transparent 70%) !important;
+}
+
+body.goten-ui-mode .logo {
+  background: linear-gradient(90deg, #e2e8f0, #f8fafc, #94a3b8) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+body.goten-ui-mode::after {
+  content: '' !important;
+  position: fixed !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  z-index: 9997 !important;
+  background: radial-gradient(ellipse at 50% 110%, rgba(226,232,240,.10), transparent 65%) !important;
+  animation: aura-pulse 4s ease-in-out infinite alternate !important;
+}
+
+body.goten-ui-mode .btn-p,
+body.goten-ui-mode .hof-submit-btn,
+body.goten-ui-mode .badge-fire {
+  background: linear-gradient(90deg, #e2e8f0, #94a3b8) !important;
+  color: #08090c !important;
+}
+
+body.goten-ui-mode .form-input:focus,
+body.goten-ui-mode .form-select:focus,
+body.goten-ui-mode .form-textarea:focus {
+  border-color: #e2e8f0;
+  box-shadow: 0 0 0 3px rgba(226,232,240,.18);
+}
+
+body.goten-ui-mode .ach-card.ach-unlocked {
+  border-color: rgba(226,232,240,.4) !important;
+  box-shadow: 0 0 14px rgba(226,232,240,.18);
+}
+
+body.goten-ui-mode footer,
+body.goten-ui-mode nav {
+  background: var(--surface);
+}

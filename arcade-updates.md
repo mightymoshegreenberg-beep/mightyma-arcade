@@ -16,3 +16,7 @@ Deep in the neon-lit basement of the MightyMA tower, they say the original arcad
 ## 2026-03-27 — Daily Arcade Drop
 **Type:** Skins/Graphics
 **Update:** Ultra Instinct Goten Skin (`goten-ui-mode`) — A new CSS skin variant for Goten's Last Stand evoking Goten's imagined Ultra Instinct state. The palette abandons all color and goes pure silver and white: `--accent1: #e2e8f0` (silver), `--accent2: #f8fafc` (near-white), `--accent3: #94a3b8` (slate grey), aura glow shifts to `rgba(226,232,240,.80)`. The aura pulse animation is slowed to 4s for a serene, effortless feel — Ultra Instinct doesn't strain, it flows. Logo gradient: silver → white → slate. Header background: deep cool charcoal `#08090c` to `#10121a`. The ki aura rises from below as a soft silver radial cloud, evoking the iconic silver transformation shimmer. When this mode is active, Goten isn't fighting — he's transcending.
+
+## 2026-03-28 — Daily Arcade Drop
+**Type:** Lore/Story
+**Update:** They called her The Watcher — a girl who came in every Friday night, pumped a single token into Goten's Last Stand, and left after exactly one life. No one ever saw her play past the first stage, yet her initials — E.G.T. — sat permanent at the top of the leaderboard. The night the cabinet finally flickered off for maintenance, the initials were gone. The slot where they'd been read simply: STILL HERE.

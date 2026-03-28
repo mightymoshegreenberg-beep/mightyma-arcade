@@ -204,3 +204,61 @@ body.goten-ui-mode footer,
 body.goten-ui-mode nav {
   background: var(--surface);
 }
+
+/* ============================================================
+   BEAST MODE GOTEN — 2026-03-29 Daily Arcade Drop
+   Blood red / bone white feral transformation palette
+   ============================================================ */
+body.goten-beast-mode {
+  --bg:       #040000;
+  --surface:  #0a0000;
+  --card:     #120000;
+  --accent1:  #dc2626;
+  --accent2:  #fafafa;
+  --accent3:  #991b1b;
+  --accent4:  #fca5a5;
+  --text:     #fff1f2;
+  --muted:    #ef4444;
+  --glow:     0 0 28px rgba(220,38,38,.85);
+}
+body.goten-beast-mode header {
+  background: linear-gradient(135deg, #040000, #1a0000) !important;
+  border-bottom-color: #dc2626 !important;
+}
+body.goten-beast-mode header::before {
+  background: radial-gradient(ellipse at 50% 0%, rgba(220,38,38,.40), transparent 70%) !important;
+}
+body.goten-beast-mode .logo {
+  background: linear-gradient(90deg, #dc2626, #fafafa, #991b1b) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+body.goten-beast-mode::after {
+  content: '' !important;
+  position: fixed !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  z-index: 9997 !important;
+  background: radial-gradient(ellipse at 50% 110%, rgba(220,38,38,.18), transparent 55%) !important;
+  animation: aura-pulse 1.8s ease-in-out infinite alternate !important;
+}
+body.goten-beast-mode .btn-p,
+body.goten-beast-mode .hof-submit-btn,
+body.goten-beast-mode .badge-fire {
+  background: linear-gradient(90deg, #dc2626, #991b1b) !important;
+}
+body.goten-beast-mode .form-input:focus,
+body.goten-beast-mode .form-select:focus,
+body.goten-beast-mode .form-textarea:focus {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 3px rgba(220,38,38,.22);
+}
+body.goten-beast-mode .ach-card.ach-unlocked {
+  border-color: rgba(220,38,38,.55) !important;
+  box-shadow: 0 0 16px rgba(220,38,38,.28);
+}
+body.goten-beast-mode footer,
+body.goten-beast-mode nav {
+  background: var(--surface);
+}

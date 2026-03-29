@@ -24,3 +24,7 @@ Deep in the neon-lit basement of the MightyMA tower, they say the original arcad
 ## 2026-03-29 — Daily Arcade Drop
 **Type:** Skins/Graphics
 **Update:** Goten Beast Mode Skin (`goten-beast-mode`) — A new CSS skin variant for Goten's Last Stand inspired by the raw, uncontrolled Beast transformation. The palette goes crimson and bone-white: `--accent1: #dc2626` (blood red), `--accent2: #fafafa` (bone white), `--accent3: #991b1b` (deep crimson), `--accent4: #fca5a5` (pale rose). Background plunges to pure void black `#040000`. The aura pulse animation cranks to 1.8s — frantic, feral, barely contained. Logo gradient: crimson → white → deep red. Header bleed: dark blood-red `#0a0000` to `#1a0000`. The ki aura erupts from below as a violent red-white radial burst, evoking the moment Beast Goten stops holding back. This skin has no calm, no elegance — just raw, overwhelming power.
+
+## 2026-03-30 — Daily Arcade Drop
+**Type:** Lore/Story
+**Update:** There is a game in the back corner of the MightyMA Arcade that nobody agrees on the name of. The marquee above the cabinet is dark — burned out, or maybe never wired in the first place. Players who sit down swear the controls respond before they touch them, as if the machine already knows what move they were about to make. The only thing anyone agrees on: every session ends the same way. Not with a game-over screen. Just a single line of white text on black — *"You were always going to lose. Play again?"*

@@ -262,3 +262,70 @@ body.goten-beast-mode footer,
 body.goten-beast-mode nav {
   background: var(--surface);
 }
+
+/* ============================================================
+   MYSTIC / POTENTIAL UNLEASHED GOTEN MODE — 2026-03-31 Daily Arcade Drop
+   Deep violet & warm gold — hidden potential finally unlocked
+   ============================================================ */
+body.goten-mystic-mode {
+  --bg:       #030008;
+  --surface:  #07000f;
+  --card:     #0e0018;
+  --accent1:  #7c3aed;
+  --accent2:  #fde68a;
+  --accent3:  #4c1d95;
+  --accent4:  #ddd6fe;
+  --text:     #f5f3ff;
+  --muted:    #a78bfa;
+  --glow:     0 0 28px rgba(124,58,237,.80);
+}
+
+body.goten-mystic-mode header {
+  background: linear-gradient(135deg, #030008, #0f0025) !important;
+  border-bottom-color: #7c3aed !important;
+}
+
+body.goten-mystic-mode header::before {
+  background: radial-gradient(ellipse at 50% 0%, rgba(124,58,237,.38), transparent 70%) !important;
+}
+
+body.goten-mystic-mode .logo {
+  background: linear-gradient(90deg, #7c3aed, #fde68a, #ddd6fe) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+body.goten-mystic-mode::after {
+  content: '' !important;
+  position: fixed !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  z-index: 9997 !important;
+  background: radial-gradient(ellipse at 50% 110%, rgba(124,58,237,.15), rgba(253,230,138,.05), transparent 62%) !important;
+  animation: aura-pulse 3.2s ease-in-out infinite alternate !important;
+}
+
+body.goten-mystic-mode .btn-p,
+body.goten-mystic-mode .hof-submit-btn,
+body.goten-mystic-mode .badge-fire {
+  background: linear-gradient(90deg, #7c3aed, #fde68a) !important;
+  color: #030008 !important;
+}
+
+body.goten-mystic-mode .form-input:focus,
+body.goten-mystic-mode .form-select:focus,
+body.goten-mystic-mode .form-textarea:focus {
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 3px rgba(124,58,237,.22);
+}
+
+body.goten-mystic-mode .ach-card.ach-unlocked {
+  border-color: rgba(124,58,237,.55) !important;
+  box-shadow: 0 0 16px rgba(124,58,237,.28);
+}
+
+body.goten-mystic-mode footer,
+body.goten-mystic-mode nav {
+  background: var(--surface);
+}

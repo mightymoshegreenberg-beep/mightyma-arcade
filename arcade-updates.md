@@ -28,3 +28,9 @@ Deep in the neon-lit basement of the MightyMA tower, they say the original arcad
 ## 2026-03-30 — Daily Arcade Drop
 **Type:** Lore/Story
 **Update:** There is a game in the back corner of the MightyMA Arcade that nobody agrees on the name of. The marquee above the cabinet is dark — burned out, or maybe never wired in the first place. Players who sit down swear the controls respond before they touch them, as if the machine already knows what move they were about to make. The only thing anyone agrees on: every session ends the same way. Not with a game-over screen. Just a single line of white text on black — *"You were always going to lose. Play again?"*
+
+---
+
+## 2026-03-31 — Daily Arcade Drop
+**Type:** Skins/Graphics
+**Update:** Goten Mystic / Potential Unleashed Skin (`goten-mystic-mode`) — A new CSS skin variant for Goten's Last Stand evoking a Mystic/Ultimate transformation — the concept of Goten's hidden potential finally drawn out by the Elder Kai. The palette is deep violet and warm gold: `--accent1: #7c3aed` (deep violet), `--accent2: #fde68a` (soft gold), `--accent3: #4c1d95` (dark indigo), `--accent4: #ddd6fe` (lavender mist). Background collapses to near-void purple-black `#030008`. The aura pulse is set to a measured 3.2s — not frantic, not serene, but relentless. This is not a transformation from anger or instinct. It is unlocked potential, calm and absolute. Logo gradient: violet → gold → lavender. The ki aura rises as a violet-gold radial bloom from below, like power that was always there, finally given permission.

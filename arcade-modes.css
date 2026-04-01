@@ -329,3 +329,62 @@ body.goten-mystic-mode footer,
 body.goten-mystic-mode nav {
   background: var(--surface);
 }
+
+/* ============================================================
+   SUPER SAIYAN 3 GOTEN MODE — 2026-04-02 Daily Arcade Drop
+   Blinding pale yellow & electric purple — raw SSJ3 storm
+   ============================================================ */
+body.goten-ssj3-mode {
+  --bg:       #010000;
+  --surface:  #060001;
+  --card:     #0d0003;
+  --accent1:  #fef08a;
+  --accent2:  #a855f7;
+  --accent3:  #fefce8;
+  --accent4:  #e9d5ff;
+  --text:     #fefce8;
+  --muted:    #d8b4fe;
+  --glow:     0 0 30px rgba(254,240,138,.85);
+}
+body.goten-ssj3-mode header {
+  background: linear-gradient(135deg, #010000, #0a0002) !important;
+  border-bottom-color: #fef08a !important;
+}
+body.goten-ssj3-mode header::before {
+  background: radial-gradient(ellipse at 50% 0%, rgba(254,240,138,.35), transparent 70%) !important;
+}
+body.goten-ssj3-mode .logo {
+  background: linear-gradient(90deg, #fef08a, #a855f7, #fefce8) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+body.goten-ssj3-mode::after {
+  content: '' !important;
+  position: fixed !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  z-index: 9997 !important;
+  background: radial-gradient(ellipse at 50% 110%, rgba(254,240,138,.18), rgba(168,85,247,.08), transparent 55%) !important;
+  animation: aura-pulse 1.4s ease-in-out infinite alternate !important;
+}
+body.goten-ssj3-mode .btn-p,
+body.goten-ssj3-mode .hof-submit-btn,
+body.goten-ssj3-mode .badge-fire {
+  background: linear-gradient(90deg, #fef08a, #a855f7) !important;
+  color: #010000 !important;
+}
+body.goten-ssj3-mode .form-input:focus,
+body.goten-ssj3-mode .form-select:focus,
+body.goten-ssj3-mode .form-textarea:focus {
+  border-color: #fef08a;
+  box-shadow: 0 0 0 3px rgba(254,240,138,.22);
+}
+body.goten-ssj3-mode .ach-card.ach-unlocked {
+  border-color: rgba(254,240,138,.55) !important;
+  box-shadow: 0 0 16px rgba(254,240,138,.28);
+}
+body.goten-ssj3-mode footer,
+body.goten-ssj3-mode nav {
+  background: var(--surface);
+}

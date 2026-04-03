@@ -388,3 +388,20 @@ body.goten-ssj3-mode footer,
 body.goten-ssj3-mode nav {
   background: var(--surface);
 }
+
+/* Daily Arcade Drop 2026-04-04: SSJ Blue Goten Skin */
+body.ssj-blue-mode {
+  --bg-color: #000c1d;
+  --accent-color: #00f2ff;
+  --secondary-accent: #0077ff;
+  --text-color: #ffffff;
+  --game-border: 4px solid #00f2ff;
+  --aura-effect: 0 0 25px 12px rgba(0, 191, 255, 0.8);
+  background: radial-gradient(circle, #001a3d 0%, #000c1d 100%);
+  animation: ssb-flicker 2s infinite alternate;
+}
+
+@keyframes ssb-flicker {
+  from { box-shadow: 0 0 20px 5px rgba(0, 242, 255, 0.5); }
+  to { box-shadow: 0 0 40px 15px rgba(0, 242, 255, 0.9); }
+}

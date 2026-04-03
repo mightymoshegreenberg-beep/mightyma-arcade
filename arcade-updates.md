@@ -46,3 +46,7 @@ Deep in the neon-lit basement of the MightyMA tower, they say the original arcad
 ## 2026-04-03 — Daily Arcade Drop
 **Type:** Lore/Story
 **Update:** The Legend of the "Void-Staring" Cabinet. Hidden behind a heavy velvet curtain in the back of the arcade sits a blank, wooden game cabinet that has no coin slot or joystick. Legend says it was the first cabinet Moshe ever found, and if you stare at its blank screen for long enough after midnight, you can see the high scores of games that haven't been invented yet. Some say it pulses with a soft blue light whenever a player reaches a perfect score in 'Goten's Last Stand'.
+
+## 2026-04-04 — Daily Arcade Drop
+**Type:** Skins/Graphics Improvement
+**Update:** 'Super Saiyan Blue' Skin for Goten’s Last Stand. A vibrant sapphire aura now envelops Goten when he reaches max energy. His hair glows with a brilliant cyan sheen, and his energy blasts are laced with crackling electric blue sparks, signaling his mastery of God Ki.

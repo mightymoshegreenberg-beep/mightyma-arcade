@@ -1,4 +1,3 @@
-
     /* === AMONG US BACKGROUND LAYER === */
     @keyframes twinkle{0%,100%{opacity:.25}50%{opacity:.9}}
     @keyframes float-crewmate{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-20px) rotate(6deg)}}
@@ -405,3 +404,6 @@ body.ssj-blue-mode {
   from { box-shadow: 0 0 20px 5px rgba(0, 242, 255, 0.5); }
   to { box-shadow: 0 0 40px 15px rgba(0, 242, 255, 0.9); }
 }
+
+/* Minor hover polish for the mode toggle buttons */
+.mode-btn:hover{transform:translateY(-1px)}

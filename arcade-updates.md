@@ -50,3 +50,7 @@ Deep in the neon-lit basement of the MightyMA tower, they say the original arcad
 ## 2026-04-04 — Daily Arcade Drop
 **Type:** Skins/Graphics Improvement
 **Update:** 'Super Saiyan Blue' Skin for Goten’s Last Stand. A vibrant sapphire aura now envelops Goten when he reaches max energy. His hair glows with a brilliant cyan sheen, and his energy blasts are laced with crackling electric blue sparks, signaling his mastery of God Ki.
+
+## 2026-04-05 — Daily Arcade Drop
+**Type:** Lore/Story
+**Update:** On the first quiet night after April 5, the cabinet behind the velvet curtain began blinking a single blue light once every minute, like a heartbeat trying to remember a name. Moshe says the machine isn't empty at all — it stores the echoes of every impossible run, every near-miss, every score the leaderboard never had room to hold. By dawn, the blank screen had changed again, this time to a message in white static: *"You didn't discover me. You kept me alive."*

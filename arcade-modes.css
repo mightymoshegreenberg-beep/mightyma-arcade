@@ -405,5 +405,90 @@ body.ssj-blue-mode {
   to { box-shadow: 0 0 40px 15px rgba(0, 242, 255, 0.9); }
 }
 
+/* ============================================================
+   SUPER SAIYAN ROSÉ GOTEN MODE — 2026-04-06 Daily Arcade Drop
+   Deep obsidian / hot pink / midnight indigo — divine corruption
+   ============================================================ */
+body.goten-rose-mode {
+  --bg:       #020105;
+  --surface:  #090211;
+  --card:     #12061d;
+  --accent1:  #db2777;
+  --accent2:  #4c1d95;
+  --accent3:  #fbcfe8;
+  --accent4:  #1e1b4b;
+  --text:     #fff1f8;
+  --muted:    #f472b6;
+  --glow:     0 0 30px rgba(219,39,119,.82);
+}
+body.goten-rose-mode header {
+  background: linear-gradient(135deg, #020105, #14061d) !important;
+  border-bottom-color: #db2777 !important;
+}
+body.goten-rose-mode header::before {
+  background: radial-gradient(ellipse at 50% 0%, rgba(219,39,119,.35), transparent 70%) !important;
+}
+body.goten-rose-mode .logo {
+  background: linear-gradient(90deg, #db2777, #4c1d95, #fbcfe8) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+body.goten-rose-mode::after {
+  content: '' !important;
+  position: fixed !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  z-index: 9997 !important;
+  background: radial-gradient(ellipse at 50% 110%, rgba(219,39,119,.16), rgba(76,29,149,.08), transparent 62%) !important;
+  animation: aura-pulse 2.5s ease-in-out infinite alternate !important;
+}
+body.goten-rose-mode .btn-p,
+body.goten-rose-mode .hof-submit-btn,
+body.goten-rose-mode .badge-fire {
+  background: linear-gradient(90deg, #db2777, #4c1d95) !important;
+  color: #fff !important;
+}
+body.goten-rose-mode .form-input:focus,
+body.goten-rose-mode .form-select:focus,
+body.goten-rose-mode .form-textarea:focus {
+  border-color: #db2777;
+  box-shadow: 0 0 0 3px rgba(219,39,119,.22);
+}
+body.goten-rose-mode .ach-card.ach-unlocked {
+  border-color: rgba(219,39,119,.55) !important;
+  box-shadow: 0 0 16px rgba(219,39,119,.28);
+}
+body.goten-rose-mode #roseModeBtn,
+body.goten-rose-mode .mode-btn-rose {
+  background: linear-gradient(90deg, rgba(219,39,119,.15), rgba(76,29,149,.15)) !important;
+  border-color: rgba(219,39,119,.4) !important;
+  color: #f472b6 !important;
+  box-shadow: 0 0 14px rgba(219,39,119,.25);
+}
+body.goten-rose-mode #roseModeBtn.active,
+body.goten-rose-mode #roseModeBtn:hover,
+body.goten-rose-mode .mode-btn-rose.active,
+body.goten-rose-mode .mode-btn-rose:hover {
+  background: linear-gradient(90deg, #db2777, #4c1d95) !important;
+  border-color: #db2777 !important;
+  color: #fff !important;
+  box-shadow: 0 0 14px rgba(219,39,119,.45);
+}
+body.goten-rose-mode #skinRose {
+  border-color: rgba(219,39,119,.35) !important;
+  color: #f472b6 !important;
+}
+body.goten-rose-mode #skinRose.active,
+body.goten-rose-mode #skinRose:hover {
+  background: linear-gradient(90deg, #db2777, #4c1d95) !important;
+  color: #fff !important;
+  border-color: #db2777 !important;
+}
+body.goten-rose-mode footer,
+body.goten-rose-mode nav {
+  background: var(--surface);
+}
+
 /* Minor hover polish for the mode toggle buttons */
 .mode-btn:hover{transform:translateY(-1px)}

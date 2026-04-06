@@ -58,3 +58,7 @@ Deep in the neon-lit basement of the MightyMA tower, they say the original arcad
 ## 2026-04-06 — Daily Arcade Drop
 **Type:** Skins/Graphics
 **Update:** Super Saiyan Rosé Goten Skin (`goten-rose-mode`) — A new CSS skin variant for Goten's Last Stand evoking the elegant but lethal Super Saiyan Rosé transformation. The palette shifts to deep obsidian, hot pink, and midnight indigo: `--accent1: #db2777` (hot pink), `--accent2: #4c1d95` (dark violet), `--accent3: #fbcfe8` (pale pink), `--accent4: #1e1b4b` (midnight indigo). Background: deep obsidian `#020105`. The aura pulse is set to a steady, menacing 2.5s. Logo gradient: hot pink → dark violet → pale pink. The ki aura rises as a deep violet-pink radial bloom, mimicking the divine but corrupted energy of Rosé. When this mode is active, the arcade feels colder, as if the machine itself is judging your worth.
+
+## 2026-04-07 — Daily Arcade Drop
+**Type:** Lore/Story Expansion
+**Update:** The Legend of the Golden Gi — In Silent Valley, Moshe practiced a stillness so deep the pines seemed to hold their breath with him. By sunrise, the old training robe on the stone looked less like cloth and more like a vow: a golden gi said to shine only when its wearer has learned that calm can be its own kind of power.

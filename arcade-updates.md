@@ -62,3 +62,7 @@ Deep in the neon-lit basement of the MightyMA tower, they say the original arcad
 ## 2026-04-07 — Daily Arcade Drop
 **Type:** Lore/Story Expansion
 **Update:** The Legend of the Golden Gi — In Silent Valley, Moshe practiced a stillness so deep the pines seemed to hold their breath with him. By sunrise, the old training robe on the stone looked less like cloth and more like a vow: a golden gi said to shine only when its wearer has learned that calm can be its own kind of power.
+
+## 2026-04-08 — Daily Arcade Drop
+**Type:** Skins/Graphics Improvement
+**Update:** Golden Gi Goten Skin (`goten-gold-mode`) — Inspired by the legend of Moshe's training in Silent Valley, this skin represents the calm power of the Golden Gi. Replaces the standard palette with a radiant amber and cream scheme: `--accent1: #fbbf24` (amber), `--accent2: #fef3c7` (warm cream), `--accent3: #d97706` (burnt orange), `--accent4: #fffbeb` (eggshell). The aura pulse is slowed to a steady 5s "breathing" rhythm. Logo gradient: gold → white → amber. The header glows with a warm, sun-drenched amber light (`rgba(251, 191, 36, 0.6)`). This is the skin of a fighter who has found perfect stillness in the eye of the storm.

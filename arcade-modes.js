@@ -16,11 +16,11 @@ function toggleCompact(){applyCompact(!document.body.classList.contains('compact
 
 // ── Among Us Mode ──────────────────────────────────────────────────
 function applyAmongUs(on){
-  if(on){document.body.classList.add('among-us-mode');document.body.classList.remove('goten-mode','goten-ssb-mode','goten-rose-mode');var gt=document.getElementById('gotenToggle');if(gt)gt.checked=false;var gb=document.getElementById('gotenModeBtn');if(gb)gb.classList.remove('active');var sb=document.getElementById('ssbModeBtn');if(sb)sb.classList.remove('active');var rb=document.getElementById('roseModeBtn');if(rb)rb.classList.remove('active');}
+  if(on){document.body.classList.add('among-us-mode');document.body.classList.remove('goten-mode','goten-ssb-mode','goten-rose-mode','goten-gold-mode');var gt=document.getElementById('gotenToggle');if(gt)gt.checked=false;var gb=document.getElementById('gotenModeBtn');if(gb)gb.classList.remove('active');var sb=document.getElementById('ssbModeBtn');if(sb)sb.classList.remove('active');var rb=document.getElementById('roseModeBtn');if(rb)rb.classList.remove('active');}
   else{document.body.classList.remove('among-us-mode');}
   var at=document.getElementById('amongUsToggle');if(at)at.checked=on;
   var ab=document.getElementById('amongUsModeBtn');if(ab)ab.classList.toggle('active',on);
-  var s=getSettings();s.amongUsMode=on;if(on){s.gotenMode=false;s.ssbMode=false;s.roseMode=false;}saveSettings(s);
+  var s=getSettings();s.amongUsMode=on;if(on){s.gotenMode=false;s.ssbMode=false;s.roseMode=false;s.goldMode=false;}saveSettings(s);
   buildSpaceBg(on);
   if(on)unlockAchievement('ach-among-us');
   initGotenSkin();
@@ -29,11 +29,11 @@ function toggleAmongUs(){applyAmongUs(!document.body.classList.contains('among-u
 
 // ── Goten Mode ──────────────────────────────────────────────────────
 function applyGoten(on){
-  if(on){document.body.classList.add('goten-mode');document.body.classList.remove('among-us-mode','goten-ssb-mode','goten-rose-mode');var at=document.getElementById('amongUsToggle');if(at)at.checked=false;var ab=document.getElementById('amongUsModeBtn');if(ab)ab.classList.remove('active');var sb=document.getElementById('ssbModeBtn');if(sb)sb.classList.remove('active');var rb=document.getElementById('roseModeBtn');if(rb)rb.classList.remove('active');}
+  if(on){document.body.classList.add('goten-mode');document.body.classList.remove('among-us-mode','goten-ssb-mode','goten-rose-mode','goten-gold-mode');var at=document.getElementById('amongUsToggle');if(at)at.checked=false;var ab=document.getElementById('amongUsModeBtn');if(ab)ab.classList.remove('active');var sb=document.getElementById('ssbModeBtn');if(sb)sb.classList.remove('active');var rb=document.getElementById('roseModeBtn');if(rb)rb.classList.remove('active');}
   else{document.body.classList.remove('goten-mode');}
   var gt=document.getElementById('gotenToggle');if(gt)gt.checked=on;
   var gb=document.getElementById('gotenModeBtn');if(gb)gb.classList.toggle('active',on);
-  var s=getSettings();s.gotenMode=on;if(on){s.amongUsMode=false;s.ssbMode=false;s.roseMode=false;}saveSettings(s);
+  var s=getSettings();s.gotenMode=on;if(on){s.amongUsMode=false;s.ssbMode=false;s.roseMode=false;s.goldMode=false;}saveSettings(s);
   if(!on)buildSpaceBg(false);
   if(on)unlockAchievement('ach-goten');
   initGotenSkin();
@@ -44,7 +44,7 @@ function toggleGoten(){applyGoten(!document.body.classList.contains('goten-mode'
 function applySSB(on){
   if(on){
     document.body.classList.add('goten-ssb-mode');
-    document.body.classList.remove('goten-mode','among-us-mode','goten-rose-mode');
+    document.body.classList.remove('goten-mode','among-us-mode','goten-rose-mode','goten-gold-mode');
     var gt=document.getElementById('gotenToggle');if(gt)gt.checked=false;
     var at=document.getElementById('amongUsToggle');if(at)at.checked=false;
     var gb=document.getElementById('gotenModeBtn');if(gb)gb.classList.remove('active');
@@ -53,7 +53,7 @@ function applySSB(on){
   } else {
     document.body.classList.remove('goten-ssb-mode');
   }
-  var s=getSettings();s.ssbMode=on;if(on){s.gotenMode=false;s.amongUsMode=false;s.roseMode=false;s.gotenSkin='ssb';localStorage.setItem('mma_goten_skin','ssb');}saveSettings(s);
+  var s=getSettings();s.ssbMode=on;if(on){s.gotenMode=false;s.amongUsMode=false;s.roseMode=false;s.goldMode=false;s.gotenSkin='ssb';localStorage.setItem('mma_goten_skin','ssb');}saveSettings(s);
   var sb=document.getElementById('ssbModeBtn');if(sb)sb.classList.toggle('active',on);
   if(on)unlockAchievement('ach-goten-ssb');
   initGotenSkin();
@@ -63,7 +63,7 @@ function applySSB(on){
 function applyRose(on){
   if(on){
     document.body.classList.add('goten-rose-mode');
-    document.body.classList.remove('goten-mode','among-us-mode','goten-ssb-mode');
+    document.body.classList.remove('goten-mode','among-us-mode','goten-ssb-mode','goten-gold-mode');
     var gt=document.getElementById('gotenToggle');if(gt)gt.checked=false;
     var at=document.getElementById('amongUsToggle');if(at)at.checked=false;
     var gb=document.getElementById('gotenModeBtn');if(gb)gb.classList.remove('active');
@@ -72,8 +72,27 @@ function applyRose(on){
   } else {
     document.body.classList.remove('goten-rose-mode');
   }
-  var s=getSettings();s.roseMode=on;if(on){s.gotenMode=false;s.amongUsMode=false;s.ssbMode=false;s.gotenSkin='rose';localStorage.setItem('mma_goten_skin','rose');}saveSettings(s);
+  var s=getSettings();s.roseMode=on;if(on){s.gotenMode=false;s.amongUsMode=false;s.ssbMode=false;s.goldMode=false;s.gotenSkin='rose';localStorage.setItem('mma_goten_skin','rose');}saveSettings(s);
   var rb=document.getElementById('roseModeBtn');if(rb)rb.classList.toggle('active',on);
+  initGotenSkin();
+}
+
+// ── Golden Gi Goten Mode ─────────────────────────────────────────────
+function applyGold(on){
+  if(on){
+    document.body.classList.add('goten-gold-mode');
+    document.body.classList.remove('goten-mode','among-us-mode','goten-ssb-mode','goten-rose-mode');
+    var gt=document.getElementById('gotenToggle');if(gt)gt.checked=false;
+    var at=document.getElementById('amongUsToggle');if(at)at.checked=false;
+    var gb=document.getElementById('gotenModeBtn');if(gb)gb.classList.remove('active');
+    var ab=document.getElementById('amongUsModeBtn');if(ab)ab.classList.remove('active');
+    var sb=document.getElementById('ssbModeBtn');if(sb)sb.classList.remove('active');
+    var rb=document.getElementById('roseModeBtn');if(rb)rb.classList.remove('active');
+  } else {
+    document.body.classList.remove('goten-gold-mode');
+  }
+  var s=getSettings();s.goldMode=on;if(on){s.gotenMode=false;s.amongUsMode=false;s.ssbMode=false;s.roseMode=false;s.gotenSkin='gold';localStorage.setItem('mma_goten_skin','gold');}saveSettings(s);
+  var gbn=document.getElementById('skinGold');if(gbn)gbn.classList.toggle('active',on);
   initGotenSkin();
 }
 
@@ -83,23 +102,31 @@ function applyGotenSkin(skin){
   s.gotenSkin=skin;
   saveSettings(s);
   localStorage.setItem('mma_goten_skin',skin);
-  ['base','ssj','ssb','rose'].forEach(function(k){
+  ['base','ssj','ssb','rose','gold'].forEach(function(k){
     var btn=document.getElementById('skin'+k.charAt(0).toUpperCase()+k.slice(1));
     if(btn)btn.classList.toggle('active',k===skin);
   });
   if(skin==='ssb'){
     applyRose(false);
+    applyGold(false);
     applySSB(true);
   } else if(skin==='rose'){
     applySSB(false);
+    applyGold(false);
     applyRose(true);
+  } else if(skin==='gold'){
+    applyRose(false);
+    applySSB(false);
+    applyGold(true);
   } else if(skin==='ssj'){
     applyRose(false);
     applySSB(false);
+    applyGold(false);
     applyGoten(true);
   } else {
     applyRose(false);
     applySSB(false);
+    applyGold(false);
   }
   initGotenSkin();
 }
@@ -107,17 +134,22 @@ function applyGotenSkin(skin){
 function initGotenSkin(){
   var settings=getSettings();
   var skin=localStorage.getItem('mma_goten_skin')||settings.gotenSkin||'base';
-  if((settings.roseMode||skin==='rose')&&!document.body.classList.contains('among-us-mode')&&!document.body.classList.contains('goten-mode')&&!document.body.classList.contains('goten-ssb-mode')){
+  if((settings.goldMode||skin==='gold')&&!document.body.classList.contains('among-us-mode')&&!document.body.classList.contains('goten-mode')&&!document.body.classList.contains('goten-ssb-mode')&&!document.body.classList.contains('goten-rose-mode')){
+    document.body.classList.add('goten-gold-mode');
+  }
+  if((settings.roseMode||skin==='rose')&&!document.body.classList.contains('among-us-mode')&&!document.body.classList.contains('goten-mode')&&!document.body.classList.contains('goten-ssb-mode')&&!document.body.classList.contains('goten-gold-mode')){
     document.body.classList.add('goten-rose-mode');
   }
-  if(settings.roseMode||skin==='rose')skin='rose';
+  if(settings.goldMode||skin==='gold')skin='gold';
+  else if(settings.roseMode||skin==='rose')skin='rose';
   var showSection=document.body.classList.contains('goten-mode')||
     document.body.classList.contains('goten-ssb-mode')||
     document.body.classList.contains('goten-rose-mode')||
+    document.body.classList.contains('goten-gold-mode')||
     skin!=='base';
   var sec=document.getElementById('gotenSkinSection');
   if(sec)sec.style.display=showSection?'':'none';
-  ['base','ssj','ssb','rose'].forEach(function(k){
+  ['base','ssj','ssb','rose','gold'].forEach(function(k){
     var btn=document.getElementById('skin'+k.charAt(0).toUpperCase()+k.slice(1));
     if(btn)btn.classList.toggle('active',k===skin);
   });

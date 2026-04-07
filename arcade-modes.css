@@ -492,3 +492,49 @@ body.goten-rose-mode nav {
 
 /* Minor hover polish for the mode toggle buttons */
 .mode-btn:hover{transform:translateY(-1px)}
+
+/* --- Golden Gi Goten (Lore: Silent Valley) --- */
+body.goten-gold-mode {
+    --bg: #0c0a09;
+    --surface: #1c1917;
+    --card: #292524;
+    --accent1: #fbbf24; /* amber */
+    --accent2: #fef3c7; /* warm cream */
+    --accent3: #d97706; /* burnt orange */
+    --accent4: #fffbeb; /* eggshell */
+    --text: #fafaf9;
+    --muted: #a8a29e;
+    --glow: rgba(251, 191, 36, 0.6);
+}
+
+body.goten-gold-mode header {
+    background: linear-gradient(135deg, #1c1917 0%, #292524 100%);
+    border-bottom: 2px solid var(--accent1);
+}
+
+body.goten-gold-mode header::before {
+    background: radial-gradient(circle at center, rgba(251, 191, 36, 0.15) 0%, transparent 70%);
+}
+
+body.goten-gold-mode .logo {
+    background: linear-gradient(to right, #fbbf24, #fef3c7, #d97706);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.4));
+}
+
+body.goten-gold-mode::after {
+    content: '';
+    position: fixed;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140%;
+    height: 60%;
+    background: radial-gradient(ellipse at bottom, rgba(251, 191, 36, 0.12) 0%, rgba(254, 243, 199, 0.05) 40%, transparent 75%);
+    pointer-events: none;
+    z-index: -1;
+    animation: aura-pulse 5s ease-in-out infinite;
+    filter: blur(40px);
+}

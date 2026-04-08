@@ -66,3 +66,7 @@ Deep in the neon-lit basement of the MightyMA tower, they say the original arcad
 ## 2026-04-08 — Daily Arcade Drop
 **Type:** Skins/Graphics Improvement
 **Update:** Golden Gi Goten Skin (`goten-gold-mode`) — Inspired by the legend of Moshe's training in Silent Valley, this skin represents the calm power of the Golden Gi. Replaces the standard palette with a radiant amber and cream scheme: `--accent1: #fbbf24` (amber), `--accent2: #fef3c7` (warm cream), `--accent3: #d97706` (burnt orange), `--accent4: #fffbeb` (eggshell). The aura pulse is slowed to a steady 5s "breathing" rhythm. Logo gradient: gold → white → amber. The header glows with a warm, sun-drenched amber light (`rgba(251, 191, 36, 0.6)`). This is the skin of a fighter who has found perfect stillness in the eye of the storm.
+
+## 2026-04-09 — Lore/Story Expansion
+- **The Echo of the Dragon's Breath**
+- Legend says that once every century, the winds in Silent Valley carry the faint roar of the ancient Azure Dragon. Those who hear it gain a temporary boost to their inner focus.

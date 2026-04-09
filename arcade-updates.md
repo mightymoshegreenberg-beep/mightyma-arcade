@@ -70,3 +70,5 @@ Deep in the neon-lit basement of the MightyMA tower, they say the original arcad
 ## 2026-04-09 — Lore/Story Expansion
 - **The Echo of the Dragon's Breath**
 - Legend says that once every century, the winds in Silent Valley carry the faint roar of the ancient Azure Dragon. Those who hear it gain a temporary boost to their inner focus.
+
+### 2026-04-10: Goten's Destruction Mode (Hakai) - Skin Update. Unleash the purple aura of the Gods of Destruction with this new high-energy skin.

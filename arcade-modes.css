@@ -538,3 +538,82 @@ body.goten-gold-mode::after {
     animation: aura-pulse 5s ease-in-out infinite;
     filter: blur(40px);
 }
+
+/* ============================================================
+   HAKAI GOTEN MODE — 2026-04-10 Daily Arcade Drop
+   Purple / magenta destruction aura of the Gods of Destruction
+   ============================================================ */
+body.goten-hakai-mode {
+  --bg:       #120018;
+  --surface:  #1c0826;
+  --card:     #2a0f3a;
+  --accent1:  #a855f7;
+  --accent2:  #ec4899;
+  --accent3:  #f5d0fe;
+  --accent4:  #f472b6;
+  --text:     #fff1fb;
+  --muted:    #d946ef;
+  --glow:     0 0 32px rgba(168,85,247,.85);
+}
+
+body.goten-hakai-mode header {
+  background: linear-gradient(135deg, #120018, #2a0f3a) !important;
+  border-bottom-color: #a855f7 !important;
+}
+
+body.goten-hakai-mode header::before {
+  background: radial-gradient(ellipse at 50% 0%, rgba(168,85,247,.42), transparent 70%) !important;
+}
+
+body.goten-hakai-mode .logo {
+  background: linear-gradient(90deg, #a855f7, #ec4899, #f5d0fe) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+body.goten-hakai-mode::after {
+  content: '' !important;
+  position: fixed !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  z-index: 9997 !important;
+  background: radial-gradient(ellipse at 50% 110%, rgba(168,85,247,.20), rgba(236,72,153,.10), transparent 62%) !important;
+  animation: aura-pulse 2.2s ease-in-out infinite alternate !important;
+}
+
+body.goten-hakai-mode .btn-p,
+body.goten-hakai-mode .hof-submit-btn,
+body.goten-hakai-mode .badge-fire {
+  background: linear-gradient(90deg, #a855f7, #ec4899) !important;
+  color: #fff !important;
+}
+
+body.goten-hakai-mode .form-input:focus,
+body.goten-hakai-mode .form-select:focus,
+body.goten-hakai-mode .form-textarea:focus {
+  border-color: #a855f7;
+  box-shadow: 0 0 0 3px rgba(168,85,247,.22);
+}
+
+body.goten-hakai-mode .ach-card.ach-unlocked {
+  border-color: rgba(168,85,247,.55) !important;
+  box-shadow: 0 0 16px rgba(168,85,247,.28);
+}
+
+body.goten-hakai-mode #skinHakai {
+  border-color: rgba(168,85,247,.4) !important;
+  color: #d8b4fe !important;
+}
+
+body.goten-hakai-mode #skinHakai.active,
+body.goten-hakai-mode #skinHakai:hover {
+  background: linear-gradient(90deg, #a855f7, #ec4899) !important;
+  color: #fff !important;
+  border-color: #a855f7 !important;
+}
+
+body.goten-hakai-mode footer,
+body.goten-hakai-mode nav {
+  background: var(--surface);
+}

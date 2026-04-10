@@ -15,7 +15,7 @@ Deep in the neon-lit basement of the MightyMA tower, they say the original arcad
 
 ## 2026-03-27 — Daily Arcade Drop
 **Type:** Skins/Graphics
-**Update:** Ultra Instinct Goten Skin (`goten-ui-mode`) — A new CSS skin variant for Goten's Last Stand evoking Goten's imagined Ultra Instinct state. The palette abandons all color and goes pure silver and white: `--accent1: #e2e8f0` (silver), `--accent2: #f8fafc` (near-white), `--accent3: #94a3b8` (slate grey), aura glow shifts to `rgba(226,232,240,.80)`. The aura pulse animation is slowed to 4s for a serene, effortless feel — Ultra Instinct doesn't strain, it flows. Logo gradient: silver → white → slate. Header background: deep cool charcoal `#08090c` to `#10121a`. The ki aura rises from below as a silver radial cloud, evoking the iconic silver transformation shimmer. When this mode is active, Goten isn't fighting — he's transcending.
+**Update:** Ultra Instinct Goten Skin (`goten-ui-mode`) — A new CSS skin variant for Goten's Last Stand evoking Goten's imagined Ultra Instinct state. The palette abandons all color and goes pure silver and white: `--accent1: #e2e8f0` (silver), `--accent2: #f8fafc` (near-white), `--accent3: #94a3b8` (slate grey), aura glow shifts to `rgba(226,232,240,.80)`. The aura pulse is slowed to 4s for a serene, effortless feel — Ultra Instinct doesn't strain, it flows. Logo gradient: silver → white → slate. Header background: deep cool charcoal `#08090c` to `#10121a`. The ki aura rises from below as a silver radial cloud, evoking the iconic silver transformation shimmer. When this mode is active, Goten isn't fighting — he's transcending.
 
 ## 2026-03-28 — Daily Arcade Drop
 **Type:** Lore/Story
@@ -72,3 +72,9 @@ Deep in the neon-lit basement of the MightyMA tower, they say the original arcad
 - Legend says that once every century, the winds in Silent Valley carry the faint roar of the ancient Azure Dragon. Those who hear it gain a temporary boost to their inner focus.
 
 ### 2026-04-10: Goten's Destruction Mode (Hakai) - Skin Update. Unleash the purple aura of the Gods of Destruction with this new high-energy skin.
+
+---
+
+## 2026-04-11 — Daily Arcade Drop
+**Type:** Lore/Story
+**Update:** After the Hakai aura settled across the cabinets, the arcade lights didn't dim — they bowed. Every monitor in the back row reflected the same violet shimmer, and for one impossible second the high-score board showed a name no one had entered: *THE ONE WHO LEAVES NOTHING BEHIND*. Moshe says the machine wasn't haunted; it was waiting for whoever could walk through destruction without flinching.

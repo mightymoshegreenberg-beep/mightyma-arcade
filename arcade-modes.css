@@ -617,3 +617,23 @@ body.goten-hakai-mode footer,
 body.goten-hakai-mode nav {
   background: var(--surface);
 }
+
+/* Safe visual polish for the Golden Gi selector button */
+body.goten-gold-mode #skinGold {
+  border: 2px solid rgba(251, 191, 36, 0.4) !important;
+  border-radius: 999px !important;
+  padding: .35rem .85rem !important;
+  background: linear-gradient(90deg, rgba(251, 191, 36, 0.15), rgba(254, 243, 199, 0.15)) !important;
+  color: #fef3c7 !important;
+  font: inherit !important;
+  cursor: pointer !important;
+  transition: all .2s !important;
+  box-shadow: 0 0 14px rgba(251, 191, 36, 0.2) !important;
+}
+body.goten-gold-mode #skinGold:hover,
+body.goten-gold-mode #skinGold.active {
+  background: linear-gradient(90deg, #fbbf24, #d97706) !important;
+  color: #0c0a09 !important;
+  border-color: #fbbf24 !important;
+  box-shadow: 0 0 16px rgba(251, 191, 36, 0.35) !important;
+}

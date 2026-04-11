@@ -78,3 +78,7 @@ Deep in the neon-lit basement of the MightyMA tower, they say the original arcad
 ## 2026-04-11 — Daily Arcade Drop
 **Type:** Lore/Story
 **Update:** After the Hakai aura settled across the cabinets, the arcade lights didn't dim — they bowed. Every monitor in the back row reflected the same violet shimmer, and for one impossible second the high-score board showed a name no one had entered: *THE ONE WHO LEAVES NOTHING BEHIND*. Moshe says the machine wasn't haunted; it was waiting for whoever could walk through destruction without flinching.
+
+## 2026-04-12 — Daily Arcade Drop
+**Type:** Skins/Graphics
+**Update:** Super Saiyan 4 Goten Skin (`goten-ssj4-mode`) — A new CSS skin variant for Goten's Last Stand evoking the primal, untamed power of Super Saiyan 4. This skin moves away from God Ki and returns to the roots of the Saiyan bloodline with a crimson and obsidian palette. `--accent1: #dc2626` (crimson red), `--accent2: #f59e0b` (amber gold), `--accent3: #450a0a` (deep maroon), `--accent4: #fef2f2` (soft red). Background: deep primal red-black `#080000`. The aura pulse is set to a heavy, resonant 2.0s. Logo gradient: crimson → amber → gold. The ki aura rises as a thick, fiery red-gold radial bloom from below. When this mode is active, the arcade feels heavy with ancient, untethered power.

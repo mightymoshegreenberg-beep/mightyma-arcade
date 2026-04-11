@@ -637,3 +637,70 @@ body.goten-gold-mode #skinGold.active {
   border-color: #fbbf24 !important;
   box-shadow: 0 0 16px rgba(251, 191, 36, 0.35) !important;
 }
+
+/* ============================================================
+   SUPER SAIYAN 4 GOTEN MODE — 2026-04-12 Daily Arcade Drop
+   Crimson / black / gold primal transformation
+   ============================================================ */
+body.goten-ssj4-mode {
+  --bg:       #080000;
+  --surface:  #150505;
+  --card:     #250808;
+  --accent1:  #dc2626;
+  --accent2:  #f59e0b;
+  --accent3:  #450a0a;
+  --accent4:  #fef2f2;
+  --text:     #fff7ed;
+  --muted:    #fb7185;
+  --glow:     0 0 32px rgba(220,38,38,.85);
+}
+
+body.goten-ssj4-mode header {
+  background: linear-gradient(135deg, #080000, #2b0505) !important;
+  border-bottom-color: #dc2626 !important;
+}
+
+body.goten-ssj4-mode header::before {
+  background: radial-gradient(ellipse at 50% 0%, rgba(220,38,38,.4), transparent 70%) !important;
+}
+
+body.goten-ssj4-mode .logo {
+  background: linear-gradient(90deg, #dc2626, #f59e0b, #fbbf24) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+body.goten-ssj4-mode::after {
+  content: '' !important;
+  position: fixed !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  z-index: 9997 !important;
+  background: radial-gradient(ellipse at 50% 110%, rgba(220,38,38,.18), rgba(245,158,11,.08), transparent 60%) !important;
+  animation: aura-pulse 2.0s ease-in-out infinite alternate !important;
+}
+
+body.goten-ssj4-mode .btn-p,
+body.goten-ssj4-mode .hof-submit-btn,
+body.goten-ssj4-mode .badge-fire {
+  background: linear-gradient(90deg, #dc2626, #f59e0b) !important;
+  color: #fff !important;
+}
+
+body.goten-ssj4-mode .form-input:focus,
+body.goten-ssj4-mode .form-select:focus,
+body.goten-ssj4-mode .form-textarea:focus {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 3px rgba(220,38,38,.22);
+}
+
+body.goten-ssj4-mode .ach-card.ach-unlocked {
+  border-color: rgba(220,38,38,.55) !important;
+  box-shadow: 0 0 16px rgba(220,38,38,.28);
+}
+
+body.goten-ssj4-mode footer,
+body.goten-ssj4-mode nav {
+  background: var(--surface);
+}

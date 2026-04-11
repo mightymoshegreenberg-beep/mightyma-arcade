@@ -16,11 +16,11 @@ function toggleCompact(){applyCompact(!document.body.classList.contains('compact
 
 // ── Among Us Mode ──────────────────────────────────────────────────
 function applyAmongUs(on){
-  if(on){document.body.classList.add('among-us-mode');document.body.classList.remove('goten-mode','goten-ssb-mode','goten-rose-mode','goten-gold-mode','goten-hakai-mode');var gt=document.getElementById('gotenToggle');if(gt)gt.checked=false;var gb=document.getElementById('gotenModeBtn');if(gb)gb.classList.remove('active');var sb=document.getElementById('ssbModeBtn');if(sb)sb.classList.remove('active');var rb=document.getElementById('roseModeBtn');if(rb)rb.classList.remove('active');}
+  if(on){document.body.classList.add('among-us-mode');document.body.classList.remove('goten-mode','goten-ssb-mode','goten-rose-mode','goten-gold-mode','goten-hakai-mode','goten-ssj4-mode');var gt=document.getElementById('gotenToggle');if(gt)gt.checked=false;var gb=document.getElementById('gotenModeBtn');if(gb)gb.classList.remove('active');var sb=document.getElementById('ssbModeBtn');if(sb)sb.classList.remove('active');var rb=document.getElementById('roseModeBtn');if(rb)rb.classList.remove('active');var s4=document.getElementById('ssj4ModeBtn');if(s4)s4.classList.remove('active');}
   else{document.body.classList.remove('among-us-mode');}
   var at=document.getElementById('amongUsToggle');if(at)at.checked=on;
   var ab=document.getElementById('amongUsModeBtn');if(ab)ab.classList.toggle('active',on);
-  var s=getSettings();s.amongUsMode=on;if(on){s.gotenMode=false;s.ssbMode=false;s.roseMode=false;s.goldMode=false;s.hakaiMode=false;}saveSettings(s);
+  var s=getSettings();s.amongUsMode=on;if(on){s.gotenMode=false;s.ssbMode=false;s.roseMode=false;s.goldMode=false;s.hakaiMode=false;s.ssj4Mode=false;}saveSettings(s);
   buildSpaceBg(on);
   if(on)unlockAchievement('ach-among-us');
   initGotenSkin();
@@ -29,11 +29,11 @@ function toggleAmongUs(){applyAmongUs(!document.body.classList.contains('among-u
 
 // ── Goten Mode ──────────────────────────────────────────────────────
 function applyGoten(on){
-  if(on){document.body.classList.add('goten-mode');document.body.classList.remove('among-us-mode','goten-ssb-mode','goten-rose-mode','goten-gold-mode','goten-hakai-mode');var at=document.getElementById('amongUsToggle');if(at)at.checked=false;var ab=document.getElementById('amongUsModeBtn');if(ab)ab.classList.remove('active');var sb=document.getElementById('ssbModeBtn');if(sb)sb.classList.remove('active');var rb=document.getElementById('roseModeBtn');if(rb)rb.classList.remove('active');}
+  if(on){document.body.classList.add('goten-mode');document.body.classList.remove('among-us-mode','goten-ssb-mode','goten-rose-mode','goten-gold-mode','goten-hakai-mode','goten-ssj4-mode');var at=document.getElementById('amongUsToggle');if(at)at.checked=false;var ab=document.getElementById('amongUsModeBtn');if(ab)ab.classList.remove('active');var sb=document.getElementById('ssbModeBtn');if(sb)sb.classList.remove('active');var rb=document.getElementById('roseModeBtn');if(rb)rb.classList.remove('active');var s4=document.getElementById('ssj4ModeBtn');if(s4)s4.classList.remove('active');}
   else{document.body.classList.remove('goten-mode');}
   var gt=document.getElementById('gotenToggle');if(gt)gt.checked=on;
   var gb=document.getElementById('gotenModeBtn');if(gb)gb.classList.toggle('active',on);
-  var s=getSettings();s.gotenMode=on;if(on){s.amongUsMode=false;s.ssbMode=false;s.roseMode=false;s.goldMode=false;s.hakaiMode=false;}saveSettings(s);
+  var s=getSettings();s.gotenMode=on;if(on){s.amongUsMode=false;s.ssbMode=false;s.roseMode=false;s.goldMode=false;s.hakaiMode=false;s.ssj4Mode=false;}saveSettings(s);
   if(!on)buildSpaceBg(false);
   if(on)unlockAchievement('ach-goten');
   initGotenSkin();
@@ -44,16 +44,17 @@ function toggleGoten(){applyGoten(!document.body.classList.contains('goten-mode'
 function applySSB(on){
   if(on){
     document.body.classList.add('goten-ssb-mode');
-    document.body.classList.remove('goten-mode','among-us-mode','goten-rose-mode','goten-gold-mode','goten-hakai-mode');
+    document.body.classList.remove('goten-mode','among-us-mode','goten-rose-mode','goten-gold-mode','goten-hakai-mode','goten-ssj4-mode');
     var gt=document.getElementById('gotenToggle');if(gt)gt.checked=false;
     var at=document.getElementById('amongUsToggle');if(at)at.checked=false;
     var gb=document.getElementById('gotenModeBtn');if(gb)gb.classList.remove('active');
     var ab=document.getElementById('amongUsModeBtn');if(ab)ab.classList.remove('active');
     var rb=document.getElementById('roseModeBtn');if(rb)rb.classList.remove('active');
+    var s4=document.getElementById('ssj4ModeBtn');if(s4)s4.classList.remove('active');
   } else {
     document.body.classList.remove('goten-ssb-mode');
   }
-  var s=getSettings();s.ssbMode=on;if(on){s.gotenMode=false;s.amongUsMode=false;s.roseMode=false;s.goldMode=false;s.hakaiMode=false;s.gotenSkin='ssb';localStorage.setItem('mma_goten_skin','ssb');}saveSettings(s);
+  var s=getSettings();s.ssbMode=on;if(on){s.gotenMode=false;s.amongUsMode=false;s.roseMode=false;s.goldMode=false;s.hakaiMode=false;s.ssj4Mode=false;s.gotenSkin='ssb';localStorage.setItem('mma_goten_skin','ssb');}saveSettings(s);
   var sb=document.getElementById('ssbModeBtn');if(sb)sb.classList.toggle('active',on);
   if(on)unlockAchievement('ach-goten-ssb');
   initGotenSkin();
@@ -63,16 +64,17 @@ function applySSB(on){
 function applyRose(on){
   if(on){
     document.body.classList.add('goten-rose-mode');
-    document.body.classList.remove('goten-mode','among-us-mode','goten-ssb-mode','goten-gold-mode','goten-hakai-mode');
+    document.body.classList.remove('goten-mode','among-us-mode','goten-ssb-mode','goten-gold-mode','goten-hakai-mode','goten-ssj4-mode');
     var gt=document.getElementById('gotenToggle');if(gt)gt.checked=false;
     var at=document.getElementById('amongUsToggle');if(at)at.checked=false;
     var gb=document.getElementById('gotenModeBtn');if(gb)gb.classList.remove('active');
     var ab=document.getElementById('amongUsModeBtn');if(ab)ab.classList.remove('active');
     var sb=document.getElementById('ssbModeBtn');if(sb)sb.classList.remove('active');
+    var s4=document.getElementById('ssj4ModeBtn');if(s4)s4.classList.remove('active');
   } else {
     document.body.classList.remove('goten-rose-mode');
   }
-  var s=getSettings();s.roseMode=on;if(on){s.gotenMode=false;s.amongUsMode=false;s.ssbMode=false;s.goldMode=false;s.hakaiMode=false;s.gotenSkin='rose';localStorage.setItem('mma_goten_skin','rose');}saveSettings(s);
+  var s=getSettings();s.roseMode=on;if(on){s.gotenMode=false;s.amongUsMode=false;s.ssbMode=false;s.goldMode=false;s.hakaiMode=false;s.ssj4Mode=false;s.gotenSkin='rose';localStorage.setItem('mma_goten_skin','rose');}saveSettings(s);
   var rb=document.getElementById('roseModeBtn');if(rb)rb.classList.toggle('active',on);
   initGotenSkin();
 }
@@ -81,17 +83,18 @@ function applyRose(on){
 function applyGold(on){
   if(on){
     document.body.classList.add('goten-gold-mode');
-    document.body.classList.remove('goten-mode','among-us-mode','goten-ssb-mode','goten-rose-mode','goten-hakai-mode');
+    document.body.classList.remove('goten-mode','among-us-mode','goten-ssb-mode','goten-rose-mode','goten-hakai-mode','goten-ssj4-mode');
     var gt=document.getElementById('gotenToggle');if(gt)gt.checked=false;
     var at=document.getElementById('amongUsToggle');if(at)at.checked=false;
     var gb=document.getElementById('gotenModeBtn');if(gb)gb.classList.remove('active');
     var ab=document.getElementById('amongUsModeBtn');if(ab)ab.classList.remove('active');
     var sb=document.getElementById('ssbModeBtn');if(sb)sb.classList.remove('active');
     var rb=document.getElementById('roseModeBtn');if(rb)rb.classList.remove('active');
+    var s4=document.getElementById('ssj4ModeBtn');if(s4)s4.classList.remove('active');
   } else {
     document.body.classList.remove('goten-gold-mode');
   }
-  var s=getSettings();s.goldMode=on;if(on){s.gotenMode=false;s.amongUsMode=false;s.ssbMode=false;s.roseMode=false;s.hakaiMode=false;s.gotenSkin='gold';localStorage.setItem('mma_goten_skin','gold');}saveSettings(s);
+  var s=getSettings();s.goldMode=on;if(on){s.gotenMode=false;s.amongUsMode=false;s.ssbMode=false;s.roseMode=false;s.hakaiMode=false;s.ssj4Mode=false;s.gotenSkin='gold';localStorage.setItem('mma_goten_skin','gold');}saveSettings(s);
   var gbn=document.getElementById('skinGold');if(gbn)gbn.classList.toggle('active',on);
   initGotenSkin();
 }
@@ -100,18 +103,40 @@ function applyGold(on){
 function applyHakai(on){
   if(on){
     document.body.classList.add('goten-hakai-mode');
-    document.body.classList.remove('goten-mode','among-us-mode','goten-ssb-mode','goten-rose-mode','goten-gold-mode');
+    document.body.classList.remove('goten-mode','among-us-mode','goten-ssb-mode','goten-rose-mode','goten-gold-mode','goten-ssj4-mode');
     var gt=document.getElementById('gotenToggle');if(gt)gt.checked=false;
     var at=document.getElementById('amongUsToggle');if(at)at.checked=false;
     var gb=document.getElementById('gotenModeBtn');if(gb)gb.classList.remove('active');
     var ab=document.getElementById('amongUsModeBtn');if(ab)ab.classList.remove('active');
     var sb=document.getElementById('ssbModeBtn');if(sb)sb.classList.remove('active');
     var rb=document.getElementById('roseModeBtn');if(rb)rb.classList.remove('active');
+    var s4=document.getElementById('ssj4ModeBtn');if(s4)s4.classList.remove('active');
   } else {
     document.body.classList.remove('goten-hakai-mode');
   }
-  var s=getSettings();s.hakaiMode=on;if(on){s.gotenMode=false;s.amongUsMode=false;s.ssbMode=false;s.roseMode=false;s.goldMode=false;s.gotenSkin='hakai';localStorage.setItem('mma_goten_skin','hakai');}saveSettings(s);
+  var s=getSettings();s.hakaiMode=on;if(on){s.gotenMode=false;s.amongUsMode=false;s.ssbMode=false;s.roseMode=false;s.goldMode=false;s.ssj4Mode=false;s.gotenSkin='hakai';localStorage.setItem('mma_goten_skin','hakai');}saveSettings(s);
   var hb=document.getElementById('skinHakai');if(hb)hb.classList.toggle('active',on);
+  initGotenSkin();
+}
+
+// ── SSJ4 Mode ────────────────────────────────────────────────────────
+function applySSJ4(on){
+  if(on){
+    document.body.classList.add('goten-ssj4-mode');
+    document.body.classList.remove('goten-mode','among-us-mode','goten-ssb-mode','goten-rose-mode','goten-gold-mode','goten-hakai-mode');
+    var gt=document.getElementById('gotenToggle');if(gt)gt.checked=false;
+    var at=document.getElementById('amongUsToggle');if(at)at.checked=false;
+    var gb=document.getElementById('gotenModeBtn');if(gb)gb.classList.remove('active');
+    var ab=document.getElementById('amongUsModeBtn');if(ab)ab.classList.remove('active');
+    var sb=document.getElementById('ssbModeBtn');if(sb)sb.classList.remove('active');
+    var rb=document.getElementById('roseModeBtn');if(rb)rb.classList.remove('active');
+    var gbn=document.getElementById('goldModeBtn');if(gbn)gbn.classList.remove('active');
+  } else {
+    document.body.classList.remove('goten-ssj4-mode');
+  }
+  var s=getSettings();s.ssj4Mode=on;if(on){s.gotenMode=false;s.amongUsMode=false;s.ssbMode=false;s.roseMode=false;s.goldMode=false;s.hakaiMode=false;s.gotenSkin='ssj4';localStorage.setItem('mma_goten_skin','ssj4');}saveSettings(s);
+  var s4=document.getElementById('ssj4ModeBtn');if(s4)s4.classList.toggle('active',on);
+  var sk=document.getElementById('skinSsj4');if(sk)sk.classList.toggle('active',on);
   initGotenSkin();
 }
 
@@ -121,7 +146,7 @@ function applyGotenSkin(skin){
   s.gotenSkin=skin;
   saveSettings(s);
   localStorage.setItem('mma_goten_skin',skin);
-  ['base','ssj','ssb','rose','gold','hakai'].forEach(function(k){
+  ['base','ssj','ssb','rose','gold','hakai','ssj4'].forEach(function(k){
     var btn=document.getElementById('skin'+k.charAt(0).toUpperCase()+k.slice(1));
     if(btn)btn.classList.toggle('active',k===skin);
   });
@@ -129,33 +154,45 @@ function applyGotenSkin(skin){
     applyRose(false);
     applyGold(false);
     applyHakai(false);
+    applySSJ4(false);
     applySSB(true);
   } else if(skin==='rose'){
     applySSB(false);
     applyGold(false);
     applyHakai(false);
+    applySSJ4(false);
     applyRose(true);
   } else if(skin==='gold'){
     applyRose(false);
     applySSB(false);
     applyHakai(false);
+    applySSJ4(false);
     applyGold(true);
   } else if(skin==='hakai'){
     applyRose(false);
     applySSB(false);
     applyGold(false);
+    applySSJ4(false);
     applyHakai(true);
+  } else if(skin==='ssj4'){
+    applyRose(false);
+    applySSB(false);
+    applyGold(false);
+    applyHakai(false);
+    applySSJ4(true);
   } else if(skin==='ssj'){
     applyRose(false);
     applySSB(false);
     applyGold(false);
     applyHakai(false);
+    applySSJ4(false);
     applyGoten(true);
   } else {
     applyRose(false);
     applySSB(false);
     applyGold(false);
     applyHakai(false);
+    applySSJ4(false);
   }
   initGotenSkin();
 }
@@ -163,16 +200,20 @@ function applyGotenSkin(skin){
 function initGotenSkin(){
   var settings=getSettings();
   var skin=localStorage.getItem('mma_goten_skin')||settings.gotenSkin||'base';
-  if((settings.goldMode||skin==='gold')&&!document.body.classList.contains('among-us-mode')&&!document.body.classList.contains('goten-mode')&&!document.body.classList.contains('goten-ssb-mode')&&!document.body.classList.contains('goten-rose-mode')&&!document.body.classList.contains('goten-hakai-mode')){
+  if((settings.ssj4Mode||skin==='ssj4')&&!document.body.classList.contains('among-us-mode')&&!document.body.classList.contains('goten-mode')&&!document.body.classList.contains('goten-ssb-mode')&&!document.body.classList.contains('goten-rose-mode')&&!document.body.classList.contains('goten-gold-mode')&&!document.body.classList.contains('goten-hakai-mode')){
+    document.body.classList.add('goten-ssj4-mode');
+  }
+  if((settings.goldMode||skin==='gold')&&!document.body.classList.contains('among-us-mode')&&!document.body.classList.contains('goten-mode')&&!document.body.classList.contains('goten-ssb-mode')&&!document.body.classList.contains('goten-rose-mode')&&!document.body.classList.contains('goten-hakai-mode')&&!document.body.classList.contains('goten-ssj4-mode')){
     document.body.classList.add('goten-gold-mode');
   }
-  if((settings.roseMode||skin==='rose')&&!document.body.classList.contains('among-us-mode')&&!document.body.classList.contains('goten-mode')&&!document.body.classList.contains('goten-ssb-mode')&&!document.body.classList.contains('goten-gold-mode')&&!document.body.classList.contains('goten-hakai-mode')){
+  if((settings.roseMode||skin==='rose')&&!document.body.classList.contains('among-us-mode')&&!document.body.classList.contains('goten-mode')&&!document.body.classList.contains('goten-ssb-mode')&&!document.body.classList.contains('goten-gold-mode')&&!document.body.classList.contains('goten-hakai-mode')&&!document.body.classList.contains('goten-ssj4-mode')){
     document.body.classList.add('goten-rose-mode');
   }
-  if((settings.hakaiMode||skin==='hakai')&&!document.body.classList.contains('among-us-mode')&&!document.body.classList.contains('goten-mode')&&!document.body.classList.contains('goten-ssb-mode')&&!document.body.classList.contains('goten-rose-mode')&&!document.body.classList.contains('goten-gold-mode')){
+  if((settings.hakaiMode||skin==='hakai')&&!document.body.classList.contains('among-us-mode')&&!document.body.classList.contains('goten-mode')&&!document.body.classList.contains('goten-ssb-mode')&&!document.body.classList.contains('goten-rose-mode')&&!document.body.classList.contains('goten-gold-mode')&&!document.body.classList.contains('goten-ssj4-mode')){
     document.body.classList.add('goten-hakai-mode');
   }
-  if(settings.goldMode||skin==='gold')skin='gold';
+  if(settings.ssj4Mode||skin==='ssj4')skin='ssj4';
+  else if(settings.goldMode||skin==='gold')skin='gold';
   else if(settings.roseMode||skin==='rose')skin='rose';
   else if(settings.hakaiMode||skin==='hakai')skin='hakai';
   var showSection=document.body.classList.contains('goten-mode')||
@@ -180,13 +221,15 @@ function initGotenSkin(){
     document.body.classList.contains('goten-rose-mode')||
     document.body.classList.contains('goten-gold-mode')||
     document.body.classList.contains('goten-hakai-mode')||
+    document.body.classList.contains('goten-ssj4-mode')||
     skin!=='base';
   var sec=document.getElementById('gotenSkinSection');
   if(sec)sec.style.display=showSection?'':'none';
-  ['base','ssj','ssb','rose','gold','hakai'].forEach(function(k){
+  ['base','ssj','ssb','rose','gold','hakai','ssj4'].forEach(function(k){
     var btn=document.getElementById('skin'+k.charAt(0).toUpperCase()+k.slice(1));
     if(btn)btn.classList.toggle('active',k===skin);
   });
+  var s4=document.getElementById('ssj4ModeBtn');if(s4)s4.classList.toggle('active',skin==='ssj4'||document.body.classList.contains('goten-ssj4-mode'));
 }
 
 // ── Activity Ticker ──────────────────────────────────────────────────

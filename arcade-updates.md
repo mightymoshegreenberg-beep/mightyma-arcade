@@ -1,5 +1,9 @@
 # MightyMA Arcade — Update Log
 
+## 2026-04-13 — Daily Arcade Drop
+**Type:** Lore/Story Expansion
+**Details:** The discovery of the 'Glitch King' in the Mystery Mode. Legends say he was the original architect of the Training Dojo, now trapped between code and reality. His presence adds a faint, shifting purple static to the arcade's core.
+
 ## 2026-03-24 — Daily Arcade Drop
 **Type:** Lore Entry
 

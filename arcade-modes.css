@@ -704,3 +704,15 @@ body.goten-ssj4-mode footer,
 body.goten-ssj4-mode nav {
   background: var(--surface);
 }
+
+/* Neon-Static Glitch King Effect */
+.neon-static-glow {
+    box-shadow: 0 0 10px rgba(138, 43, 226, 0.6), inset 0 0 5px rgba(138, 43, 226, 0.4);
+    border: 1px solid rgba(138, 43, 226, 0.8);
+    animation: static-flicker 2s infinite alternate;
+}
+
+@keyframes static-flicker {
+    0% { opacity: 0.8; }
+    100% { opacity: 1; }
+}

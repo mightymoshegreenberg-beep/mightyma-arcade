@@ -86,3 +86,7 @@ Deep in the neon-lit basement of the MightyMA tower, they say the original arcad
 ## 2026-04-12 — Daily Arcade Drop
 **Type:** Skins/Graphics
 **Update:** Super Saiyan 4 Goten Skin (`goten-ssj4-mode`) — A new CSS skin variant for Goten's Last Stand evoking the primal, untamed power of Super Saiyan 4. This skin moves away from God Ki and returns to the roots of the Saiyan bloodline with a crimson and obsidian palette. `--accent1: #dc2626` (crimson red), `--accent2: #f59e0b` (amber gold), `--accent3: #450a0a` (deep maroon), `--accent4: #fef2f2` (soft red). Background: deep primal red-black `#080000`. The aura pulse is set to a heavy, resonant 2.0s. Logo gradient: crimson → amber → gold. The ki aura rises as a thick, fiery red-gold radial bloom from below. When this mode is active, the arcade feels heavy with ancient, untethered power.
+
+## 2026-04-14 — Daily Arcade Drop
+**Type:** Skins/Graphics Improvement
+**Summary:** Introduced the **Neon-Static Skin** elements. Added a new `neon-static-glow` utility class to the CSS to support shifting purple static visual effects for Glitch King related elements.

@@ -98,3 +98,11 @@ Deep in the neon-lit basement of the MightyMA tower, they say the original arcad
 ## 2026-04-15 — Daily Arcade Drop
 **Type:** Lore/Story Expansion
 **Update:** The Legend of the Infinite Arcade — Deep within the source code of *MightyMA Arcade*, past the hidden training levels and the glitch-filled basement, lies a coordinate labeled *Level Infinity*. Legend says this isn't a stage you play, but a memory the arcade holds of every game ever finished. Moshe discovered that if you input the code for 'Goten's Last Stand' in reverse while standing in the center of the Dojo, the neon signs begin to cycle through colors that don't exist in the standard spectrum. It is said that at Level Infinity, the player becomes part of the high-score board itself, their legend forever etched into the arcade's silicon heart.
+
+## 2026-04-16 — Daily Arcade Drop
+**Type:** Skins/Graphics Improvement
+**Summary:** Introduced the **Mighty-Aura Skin**. Applied the `.mighty-aura-glow` effect to legendary items, featuring a pulsing golden-cyan aura to represent the peak of the MightyMA power level.
+
+## 2026-04-17 — Daily Arcade Drop
+**Type:** Lore/Story Expansion
+**Update:** Lore expansion concerning **The Shadow of the Master**. A silhouette has been spotted near the Training Dojo entrance. Players report a cold chill and a flickering screen whenever the high score board is accessed.

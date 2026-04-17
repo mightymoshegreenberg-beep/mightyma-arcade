@@ -716,3 +716,17 @@ body.goten-ssj4-mode nav {
     0% { opacity: 0.8; }
     100% { opacity: 1; }
 }
+
+/* 2026-04-18 — Shadow-Master Wraith Skin */
+.wraith-smoke-trail {
+  position: absolute;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(50,50,50,0.4) 0%, rgba(0,0,0,0) 70%);
+  border-radius: 50%;
+  animation: smoke-fade 1.5s forwards ease-out;
+}
+
+@keyframes smoke-fade {
+  0% { transform: scale(0.5); opacity: 0.6; filter: blur(2px); }
+  100% { transform: scale(2); opacity: 0; filter: blur(10px); }
+}

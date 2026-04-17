@@ -1,5 +1,11 @@
 # MightyMA Arcade — Update Log
 
+## 2026-04-18 — Daily Arcade Drop
+**Type:** Skins/Graphics Improvement
+- *Shadow-Master Wraith Skin*: A new legendary skin featuring a semi-transparent dark-smoke silhouette effect.
+- *Visual Effect*: Added `.wraith-smoke-trail` CSS class for a lingering grey particulate trail when moving.
+- *Aura*: Subtle flicker matching the high-score board's cold chill.
+
 ## 2026-04-16 — Daily Arcade Drop
 **Type:** Skins/Graphics Improvement
 **Description:** Introduced the **Mighty-Aura Skin**. Applied the `.mighty-aura-glow` effect to legendary items, featuring a pulsing golden-cyan aura to represent the peak of the MightyMA power level.

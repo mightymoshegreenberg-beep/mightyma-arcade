@@ -1,5 +1,10 @@
 # MightyMA Arcade — Update Log
 
+### 2026-04-19 — Daily Arcade Drop
+- **Type**: Lore/Story Expansion
+- **Update**: Late last night, a scoreboard nobody could find in the floor plan flickered on by itself. The name at the top was **VX-13**, and the score kept rising even after the arcade was empty. Some say it isn’t a player at all — just a hidden level still waiting for someone brave enough to press **Start**.
+- **Effect Added**: .vx-13-glitch effect for phantom scores.
+
 ## 2026-04-18 — Daily Arcade Drop
 **Type:** Skins/Graphics Improvement
 - *Shadow-Master Wraith Skin*: A new legendary skin featuring a semi-transparent dark-smoke silhouette effect.

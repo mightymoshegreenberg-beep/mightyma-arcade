@@ -1,5 +1,5 @@
 {
-  "last_check": "2026-04-18T22:00:00Z",
+  "last_check": "2026-04-18T23:30:00Z",
   "inventory": [
     {
       "product": "Iron Age Pull Up Bar for Doorway",
@@ -8,7 +8,7 @@
     },
     {
       "product": "AmazeFan Pull Up Bar Doorway",
-      "status": "in_stock",
+      "status": "out_of_stock",
       "url": "https://www.amazon.com/AmazeFan-Pull-Doorway-Ergonomic-Grip/dp/B0D8RDML79"
     }
   ]

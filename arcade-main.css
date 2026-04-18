@@ -13,3 +13,7 @@
     50% { box-shadow: 0 0 20px #00f2ff, 0 0 40px #ffd700; }
     100% { box-shadow: 0 0 10px #00f2ff, 0 0 20px #ffd700; }
 }
+
+.vx-13-glitch {
+    text-shadow: 2px 2px #ff00ff, -2px -2px #00ffff;
+}

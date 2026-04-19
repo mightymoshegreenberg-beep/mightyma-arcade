@@ -730,3 +730,22 @@ body.goten-ssj4-mode nav {
   0% { transform: scale(0.5); opacity: 0.6; filter: blur(2px); }
   100% { transform: scale(2); opacity: 0; filter: blur(10px); }
 }
+
+/* 2026-04-20 — Daily Arcade Drop: Ghostly Echo Skin */
+.ghostly-echo-mode {
+    --accent1: #f8fafc;
+    --accent2: #cbd5e1;
+    --accent3: #94a3b8;
+    background-color: #020617;
+    opacity: 0.9;
+}
+
+.ghostly-echo-glow {
+    animation: ghostly-pulse 4s ease-in-out infinite;
+    box-shadow: 0 0 15px rgba(248, 250, 252, 0.5);
+}
+
+@keyframes ghostly-pulse {
+    0%, 100% { box-shadow: 0 0 10px rgba(248, 250, 252, 0.3); }
+    50% { box-shadow: 0 0 25px rgba(203, 213, 225, 0.7); }
+}

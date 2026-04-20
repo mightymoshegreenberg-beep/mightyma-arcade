@@ -1,5 +1,10 @@
 # MightyMA Arcade — Update Log
 
+### 2026-04-21 — Daily Arcade Drop
+- **Type**: Lore/Story Expansion
+- **Update**: **The Silver Silhouette**. Following the activation of the Ghostly Echo, players have reported a flickering silver silhouette in the reflection of the cabinet glass. It doesn't mirror the player; it mirrors a version of the arcade from forty years ago. When the silver glow reaches its peak, a single token is deposited into the 'Goten's Last Stand' machine by unseen hands.
+- **Effect Added**: `.silver-reflection` glitch effect for background elements.
+
 ### 2026-04-20 — Daily Arcade Drop
 - **Type**: Skins/Graphics Improvement
 - **Update**: **Ghostly Echo Skin** (`.ghostly-echo-mode`) — Inspired by the mysterious VX-13 high score. This skin turns the interface into a semi-transparent, shimmering silver-grey.

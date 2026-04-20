@@ -749,3 +749,29 @@ body.goten-ssj4-mode nav {
     0%, 100% { box-shadow: 0 0 10px rgba(248, 250, 252, 0.3); }
     50% { box-shadow: 0 0 25px rgba(203, 213, 225, 0.7); }
 }
+
+/* 2026-04-21 — Daily Arcade Drop: Lore - The Silver Silhouette */
+@keyframes silver-glitch {
+  0%, 100% { opacity: 0.1; transform: skewX(0deg); }
+  20% { opacity: 0.3; transform: skewX(2deg); }
+  40% { opacity: 0.05; transform: skewX(-1deg); }
+  60% { opacity: 0.4; transform: skewX(5deg); }
+  80% { opacity: 0.15; transform: skewX(-3deg); }
+}
+
+.silver-reflection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(148, 163, 184, 0.05), rgba(248, 250, 252, 0.1));
+  pointer-events: none;
+  z-index: 9998;
+  animation: silver-glitch 0.2s infinite;
+  display: none;
+}
+
+body.ghostly-echo-mode .silver-reflection {
+  display: block;
+}

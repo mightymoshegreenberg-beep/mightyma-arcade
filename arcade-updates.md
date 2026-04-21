@@ -127,3 +127,8 @@ Deep in the neon-lit basement of the MightyMA tower, they say the original arcad
 ## 2026-04-17 — Daily Arcade Drop
 **Type:** Lore/Story Expansion
 **Update:** Lore expansion concerning **The Shadow of the Master**. A silhouette has been spotted near the Training Dojo entrance. Players report a cold chill and a flickering screen whenever the high score board is accessed.
+
+## 2026-04-22 — Daily Arcade Drop
+- **Type:** Skins/Graphics Improvement
+- **Description:** Added a neon glow effect to the "Neon Knight" skin and optimized pixel-art rendering for smoother sprite transitions.
+- **Visuals:** Updated the sprite sheet with enhanced shading and glow mapping.

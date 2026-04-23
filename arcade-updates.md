@@ -1,5 +1,14 @@
 # MightyMA Arcade — Update Log
 
+### 2026-04-24
+**Update Type:** Skins/Graphics Improvement
+**Summary:** Cyber-Samurai: Ronin of the Grid Skin
+**Details:** 
+- New `.cyber-ronin-mode` added to the skin rotation.
+- Introduced a deep crimson and electric turquoise color palette (`--accent1: #ff003c; --accent2: #00f3ff;`).
+- Added `.ronin-blade-glow` CSS utility for sharpened UI edges and neon trailing effects.
+- Lore: "The Grid has produced a new protector. The Cyber-Ronin emerges from the neon mist to reclaim the high scores."
+
 ## 2026-04-23 — Daily Arcade Drop
 - **Type:** Lore/Story Expansion
 - **Update:** **The Legend of the Neon Nomad**
@@ -7,17 +16,17 @@ Whispers have begun to circulate among the cabinet halls about the "Neon Nomad."
 
 ### 2026-04-21 — Daily Arcade Drop
 - **Type**: Lore/Story Expansion
-- **Update**: **The Silver Silhouette**. Following the activation of the Ghostly Echo, players have reported a flickering silver silhouette in the reflection of the cabinet glass. It doesn't mirror the player; it mirrors a version of the arcade from forty years ago. When the silver glow reaches its peak, a single token is deposited into the 'Goten's Last Stand' machine by unseen hands.
+- **Update:** **The Silver Silhouette**. Following the activation of the Ghostly Echo, players have reported a flickering silver silhouette in the reflection of the cabinet glass. It doesn't mirror the player; it mirrors a version of the arcade from forty years ago. When the silver glow reaches its peak, a single token is deposited into the 'Goten's Last Stand' machine by unseen hands.
 - **Effect Added**: `.silver-reflection` glitch effect for background elements.
 
 ### 2026-04-20 — Daily Arcade Drop
 - **Type**: Skins/Graphics Improvement
-- **Update**: **Ghostly Echo Skin** (`.ghostly-echo-mode`) — Inspired by the mysterious VX-13 high score. This skin turns the interface into a semi-transparent, shimmering silver-grey.
-- **Visual Effect**: Added `.ghostly-echo-glow` CSS class, which applies a slow, spectral pulse animation in `#f8fafc` and `#cbd5e1`.
+- **Update:** **Ghostly Echo Skin** (`.ghostly-echo-mode`) — Inspired by the mysterious VX-13 high score. This skin turns the interface into a semi-transparent, shimmering silver-grey.
+- **Visual Effect:** Added `.ghostly-echo-glow` CSS class, which applies a slow, spectral pulse animation in `#f8fafc` and `#cbd5e1`.
 
 ### 2026-04-19 — Daily Arcade Drop
-- **Type**: Lore/Story Expansion
-- **Update**: Late last night, a scoreboard nobody could find in the floor plan flickered on by itself. The name at the top was **VX-13**, and the score kept rising even after the arcade was empty. Some say it isn’t a player at all — just a hidden level still waiting for someone brave enough to press **Start**.
+- **Type:** Lore/Story Expansion
+- **Update:** Late last night, a scoreboard nobody could find in the floor plan flickered on by itself. The name at the top was **VX-13**, and the score kept rising even after the arcade was empty. Some say it isn’t a player at all — just a hidden level still waiting for someone brave enough to press **Start**.
 - **Effect Added**: .vx-13-glitch effect for phantom scores.
 
 ## 2026-04-18 — Daily Arcade Drop

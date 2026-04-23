@@ -17,3 +17,37 @@
 .vx-13-glitch {
     text-shadow: 2px 2px #ff00ff, -2px -2px #00ffff;
 }
+
+/* Cyber-Samurai: Ronin of the Grid Update - 2026-04-24 */
+body.cyber-ronin-mode {
+    --bg: #0d0208;
+    --surface: #1a050d;
+    --card: #2d0a15;
+    --accent1: #ff003c; /* Crimson Blade */
+    --accent2: #00f3ff; /* Electric Grid */
+    --accent3: #7000ff; /* Void Smoke */
+    --text: #ffffff;
+    --muted: #ff003c80;
+    --glow: 0 0 15px #ff003c;
+}
+
+.ronin-blade-glow {
+    box-shadow: -2px -2px 10px var(--accent2), 2px 2px 15px var(--accent1);
+    border: 1px solid var(--accent1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.ronin-blade-glow:hover {
+    box-shadow: -4px -4px 20px var(--accent2), 4px 4px 30px var(--accent1);
+}
+
+@keyframes ronin-flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+.cyber-ronin-mode .logo {
+    animation: ronin-flicker 2s infinite;
+    color: var(--accent1);
+    text-shadow: 0 0 10px var(--accent1), 0 0 20px var(--accent2);
+}

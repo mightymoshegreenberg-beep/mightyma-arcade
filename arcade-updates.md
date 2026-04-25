@@ -2,6 +2,12 @@
 
 ## 2026-04-25 — Daily Arcade Drop
 - **Type:** Lore/Story Expansion
+- **Summary:** **The Chronos Breach: Echoes of the Void**
+- **Details:** The Training Dojo slipped out of sync at midnight, and a violet fracture opened between seconds. Players now hear their own inputs echo back before they press them, while the high-score board flickers through impossible timestamps. Every perfect combo widens the breach, as if the arcade is remembering a future it was never meant to hold.
+- **Effect Added:** `.pd-lore`
+
+## 2026-04-25 — Daily Arcade Drop
+- **Type:** Lore/Story Expansion
 - **Update:** **The Archive of the Ronin’s Blade**
 A corrupted Ronin protocol fragment from the Great Crash of '99 has surfaced beneath the arcade floor. It scavenges lost scores, archived inputs, and fragments of player memory, stitching them into a ghost-archive of unfinished matches. Players near the cabinet report a rhythmic humming at night — steady and metallic, like a blade being sharpened somewhere inside the machine.
 - **Effect Added:** `.ronin-protocol-flicker`

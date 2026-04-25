@@ -36,7 +36,7 @@ Whispers have begun to circulate among the cabinet halls about the "Neon Nomad."
 - **Update:** **Ghostly Echo Skin** (`.ghostly-echo-mode`) — Inspired by the mysterious VX-13 high score. This skin turns the interface into a semi-transparent, shimmering silver-grey.
 - **Visual Effect:** Added `.ghostly-echo-glow` CSS class, which applies a slow, spectral pulse animation in `#f8fafc` and `#cbd5e1`.
 
-### 2026-04-19
+## 2026-04-19
 - **Type:** Lore/Story Expansion
 - **Update:** Late last night, a scoreboard nobody could find in the floor plan flickered on by itself. The name at the top was **VX-13**, and the score kept rising even after the arcade was empty. Some say it isn’t a player at all — just a hidden level still waiting for someone brave enough to press **Start**.
 - **Effect Added:** .vx-13-glitch effect for phantom scores.
@@ -73,7 +73,7 @@ Deep in the neon-lit basement of the MightyMA tower, they say the original arcad
 **Update:** Ultra Instinct Goten Skin (`goten-ui-mode`) — A new CSS skin variant for Goten's Last Stand evoking Goten's imagined Ultra Instinct state. The palette abandons all color and goes pure silver and white: `--accent1: #e2e8f0` (silver), `--accent2: #f8fafc` (near-white), `--accent3: #94a3b8` (slate grey), aura glow shifts to `rgba(226,232,240,.80)`. The aura pulse is slowed to 4s for a serene, effortless feel — Ultra Instinct doesn't strain, it flows. Logo gradient: silver → white → slate. Header background: deep cool charcoal `#08090c` to `#10121a`. The ki aura rises from below as a silver radial cloud, evoking the iconic silver transformation shimmer. When this mode is active, Goten isn't fighting — he's transcending.
 
 ## 2026-03-28 — Daily Arcade Drop
-**Type:** Lore/Story
+## Lore/Story
 **Update:** They called her The Watcher — a girl who came in every Friday night, pumped a single token into Goten's Last Stand, and left after exactly one life. No one ever saw her play past the first stage, yet her initials — E.G.T. — sat permanent at the top of the leaderboard. The night the cabinet finally flickered off for maintenance, the initials were gone. The slot where they'd been read simply: STILL HERE.
 
 ## 2026-03-29 — Daily Arcade Drop
@@ -140,7 +140,7 @@ Deep in the neon-lit basement of the MightyMA tower, they say the original arcad
 
 ## 2026-04-14 — Daily Arcade Drop
 **Type:** Skins/Graphics Improvement
-**Summary:** Introduced the **Neon-Static Skin** elements. Added a new `neon-static-glow` utility class to the CSS to support shifting purple static visual effects for Glitch King related elements.
+**Update:** Introduced the **Neon-Static Skin** elements. Added a new `neon-static-glow` utility class to the CSS to support shifting purple static visual effects for Glitch King related elements.
 
 ## 2026-04-15 — Daily Arcade Drop
 **Type:** Lore/Story Expansion
@@ -158,3 +158,9 @@ Deep in the neon-lit basement of the MightyMA tower, they say the original arcad
 - **Type:** Skins/Graphics Improvement
 - **Description:** Added a neon glow effect to the "Neon Knight" skin and optimized pixel-art rendering for smoother sprite transitions.
 - **Visuals:** Updated the sprite sheet with enhanced shading and glow mapping.
+
+## 2026-04-26 — Daily Arcade Drop
+- **Type:** Skins/Graphics Improvement
+- **Update:** **Chrono Prism Skin** (`.chrono-prism-mode`) — The arcade's fractured timelines finally found their reflection. This new skin wraps the interface in shifting prismatic chrome, with violet-to-cyan highlights that ripple like glass under laser light. Each HUD element now pulses with a layered chroma shimmer, and the high-score board gains a subtle time-warp aura as if every number is trying to arrive a second early.
+- **Visual Effect:** Added `.chrono-prism-glow`, a refractive neon bloom that trails motion with split-second afterimages and gives the whole arcade a polished, dimensional arcade-cabinet sheen.
+- **Lore Tag:** The Chronos Breach no longer feels broken — it feels upgraded.

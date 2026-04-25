@@ -1,4 +1,4 @@
-    /* === AMONG US BACKGROUND LAYER === */
+/* === AMONG US BACKGROUND LAYER === */
     @keyframes twinkle{0%,100%{opacity:.25}50%{opacity:.9}}
     @keyframes float-crewmate{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-20px) rotate(6deg)}}
     @keyframes aura-pulse{from{opacity:.4}to{opacity:1}}
@@ -774,4 +774,15 @@ body.goten-ssj4-mode nav {
 
 body.ghostly-echo-mode .silver-reflection {
   display: block;
+}
+
+/* Ronin Protocol Flicker Effect */
+.ronin-protocol-flicker { animation: ronin-flicker 0.2s infinite alternate; text-shadow: 1px 0 #ff003c, -1px 0 #00f3ff; opacity: 0.9; }
+
+@keyframes ronin-flicker {
+  0% { transform: skewX(0deg); opacity: 0.9; }
+  25% { transform: skewX(1deg); opacity: 0.72; }
+  50% { transform: skewX(-1.5deg); opacity: 1; }
+  75% { transform: skewX(2deg); opacity: 0.76; }
+  100% { transform: skewX(0deg); opacity: 0.92; }
 }

@@ -8,7 +8,7 @@
 
 ## 2026-04-25 — Daily Arcade Drop
 - **Type:** Lore/Story Expansion
-- **Update:** **The Archive of the Ronin’s Blade**
+- **Update:** **The Chronos Breach: Echoes of the Void**
 A corrupted Ronin protocol fragment from the Great Crash of '99 has surfaced beneath the arcade floor. It scavenges lost scores, archived inputs, and fragments of player memory, stitching them into a ghost-archive of unfinished matches. Players near the cabinet report a rhythmic humming at night — steady and metallic, like a blade being sharpened somewhere inside the machine.
 - **Effect Added:** `.ronin-protocol-flicker`
 

@@ -786,3 +786,14 @@ body.ghostly-echo-mode .silver-reflection {
   75% { transform: skewX(2deg); opacity: 0.76; }
   100% { transform: skewX(0deg); opacity: 0.92; }
 }
+
+/* 2026-04-27 — Daily Arcade Drop: Lore - The Baseline Paradox */
+.baseline-paradox-pulse {
+  animation: paradox-thrum 6s ease-in-out infinite;
+  text-shadow: 0 0 8px rgba(124, 58, 237, 0.4);
+}
+
+@keyframes paradox-thrum {
+  0%, 100% { filter: brightness(1); transform: scale(1); }
+  50% { filter: brightness(1.15); transform: scale(1.002); }
+}

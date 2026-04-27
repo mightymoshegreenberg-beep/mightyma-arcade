@@ -1,5 +1,11 @@
 # MightyMA Arcade — Update Log
 
+## 2026-04-28 — Daily Arcade Drop
+- **Type:** Skins/Graphics Improvement
+- **Update:** **Obsidian Matrix Skin** (`.obsidian-matrix`)
+- **Details:** Re-coded the visual layer to simulate a deep obsidian texture with reactive green binary data streams. Perfect for late-night arcade sessions.
+- **Visual effect:** Added `.obsidian-matrix-glimmer`, a high-contrast emerald glow that follows movement.
+
 ## 2026-04-27 — Daily Arcade Drop
 - **Type:** Lore/Story Expansion
 - **Update:** **The Baseline Paradox — Architect’s Log 001**

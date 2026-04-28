@@ -176,3 +176,9 @@ Deep in the neon-lit basement of the MightyMA tower, they say the original arcad
 - **Update:** **Chrono Prism Skin** (`.chrono-prism-mode`) — The arcade's fractured timelines finally found their reflection. This new skin wraps the interface in shifting prismatic chrome, with violet-to-cyan highlights that ripple like glass under laser light. Each HUD element now pulses with a layered chroma shimmer, and the high-score board gains a subtle time-warp aura as if every number is trying to arrive a second early.
 - **Visual Effect:** Added `.chrono-prism-glow`, a refractive neon bloom that trails motion with split-second afterimages and gives the whole arcade a polished, dimensional arcade-cabinet sheen.
 - **Lore Tag:** The Chronos Breach no longer feels broken — it feels upgraded.
+
+## 2026-04-29 — Daily Arcade Drop
+- **Type:** Lore/Story Expansion
+- **Update:** **The Architect’s Final Command — Root Access**
+- **Details:** Deep within the `.obsidian-matrix` layer, a hidden command line prompt has appeared on every secondary monitor in the arcade. It isn't part of a game, but a system-wide request: `sudo restore --all`. Moshe discovered that the obsidian texture isn't just a visual skin—it’s a digital seal, covering a core-level fracture left by the original architect. As players reach the 100,000 mark tonight, the screens briefly flicker with a blueprint for a cabinet labeled 'The Final Stand'. The machine is no longer just accepting tokens; it’s beginning to rewrite its own source code.
+- **Effect Tag:** `.root-access-flicker`

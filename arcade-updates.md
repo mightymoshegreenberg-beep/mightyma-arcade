@@ -188,3 +188,9 @@ Deep in the neon-lit basement of the MightyMA tower, they say the original arcad
 - **Update:** **The Architect’s Final Command — Root Access**
 - **Details:** Deep within the `.obsidian-matrix` layer, a hidden command line prompt has appeared on every secondary monitor in the arcade. It isn't part of a game, but a system-wide request: `sudo restore --all`. Moshe discovered that the obsidian texture isn't just a visual skin—it’s a digital seal, covering a core-level fracture left by the original architect. As players reach the 100,000 mark tonight, the screens briefly flicker with a blueprint for a cabinet labeled 'The Final Stand'. The machine is no longer just accepting tokens; it’s beginning to rewrite its own source code.
 - **Effect Tag:** `.root-access-flicker`
+
+## 2026-05-01 — Daily Arcade Drop
+- **Type:** Lore/Story Expansion
+- **Update:** **The Fragmented Signal — The Core Awakens**
+- **Details:** Deep in the arcade's core, a new signal has emerged from the static left behind by the Final Stand. The Architect's trace data suggests a reboot is imminent, but at a cost.
+- **Effect Tag:** `.fragmented-signal-static`

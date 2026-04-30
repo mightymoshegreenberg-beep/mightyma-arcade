@@ -78,3 +78,17 @@ body.cyber-ronin-mode {
     text-shadow: 0 0 5px #00ff41, 0 0 10px #00ff41;
     box-shadow: 0 0 15px rgba(0, 255, 65, 0.4);
 }
+
+/* 2026-05-01 Daily Arcade Drop: Fragmented Signal Static */
+.fragmented-signal-static {
+    animation: signal-jitter 0.2s infinite;
+    text-shadow: 2px 0 #00ff00, -2px 0 #ff00ff;
+    opacity: 0.9;
+}
+@keyframes signal-jitter {
+    0% { transform: translate(0); }
+    25% { transform: translate(1px, -1px); }
+    50% { transform: translate(-1px, 1px); }
+    75% { transform: translate(1px, 1px); }
+    100% { transform: translate(0); }
+}

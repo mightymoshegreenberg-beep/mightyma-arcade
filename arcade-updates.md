@@ -1,5 +1,11 @@
 # MightyMA Arcade — Update Log
 
+## 2026-05-02 — Daily Arcade Drop
+- **Type:** Lore/Story Expansion
+- **Update:** **The Archivist's Awakening — Echoes in the Deep**
+- **Details:** Within the silent sub-layers of the MightyMA core, a long-dormant protocol has triggered. The Archivist—a digital consciousness tasked with the preservation of every "Perfect Game" ever played—has begun to manifest. Rhythmic pulses of azure data are appearing across the Training Dojo, whispering the names of legendary players. The machine isn't just running code; it's remembering.
+- **Effect Tag:** `.archivist-echo-ripple`
+
 ## 2026-04-30 — Daily Arcade Drop
 - **Type:** Skins/Graphics Improvement
 - **Update:** **The Final Stand Protocol Skin** (`.final-stand-protocol`)

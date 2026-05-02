@@ -86,7 +86,7 @@ Deep in the neon-lit basement of the MightyMA tower, they say the original arcad
 
 ## 2026-03-25 — Daily Arcade Drop
 **Type:** Skins/Graphics
-**Update:** Super Saiyan Blue Goten Skin — A new `goten-ssb-mode` CSS variant for Goten's Last Stand. Replaces the signature amber/orange ki aura with an icy electric blue palette: `--accent1: #3b82f6` (blue), `--accent2: #06b6d4` (cyan), `--accent3: #bfdbfe` (light blue), aura glow shifts to `rgba(59,130,246,.75)`. The ki aura pulse animation changes from warm amber to a cold blue radial gradient rising from the base. Logo gradient updates to blue → cyan → sky blue. Evokes Goten's imagined SSB transformation — calm, icy power radiating from every pixel.
+**Update:** Super Saiyan Blue Goten Skin — A new `goten-ssb-mode` CSS variant for Goten's Last Stand. Replaces the signature amber/orange ki aura with an icy electric blue palette: `--accent1: #3b82f6` (blue), `--accent2: #06b6d4` (cyan), `--accent3: #bfdbfe` (light blue), aura glow shifts to `rgba(59,130,246,.75)`. The ki aura pulse animation changes from warm amber to a cold blue radial gradient rising from the base. Logo gradient updates to blue → cyan → sky blue. Evokes Goten's imagined Super Saiyan Blue transformation — calm, icy power radiating from every pixel.
 
 ## 2026-03-26 — Daily Arcade Drop
 **Type:** Lore/Story
@@ -96,7 +96,7 @@ Deep in the neon-lit basement of the MightyMA tower, they say the original arcad
 **Type:** Skins/Graphics
 **Update:** Ultra Instinct Goten Skin (`goten-ui-mode`) — A new CSS skin variant for Goten's Last Stand evoking Goten's imagined Ultra Instinct state. The palette abandons all color and goes pure silver and white: `--accent1: #e2e8f0` (silver), `--accent2: #f8fafc` (near-white), `--accent3: #94a3b8` (slate grey), aura glow shifts to `rgba(226,232,240,.80)`. The aura pulse is slowed to 4s for a serene, effortless feel — Ultra Instinct doesn't strain, it flows. Logo gradient: silver → white → slate. Header background: deep cool charcoal `#08090c` to `#10121a`. The ki aura rises from below as a silver radial cloud, evoking the iconic silver transformation shimmer. When this mode is active, Goten isn't fighting — he's transcending.
 
-## 2026-03-28 — Daily Arcade Drop
+## 2026-03-28 — Lore/Story Expansion
 ## Lore/Story
 **Update:** They called her The Watcher — a girl who came in every Friday night, pumped a single token into Goten's Last Stand, and left after exactly one life. No one ever saw her play past the first stage, yet her initials — E.G.T. — sat permanent at the top of the leaderboard. The night the cabinet finally flickered off for maintenance, the initials were gone. The slot where they'd been read simply: STILL HERE.
 
@@ -122,8 +122,8 @@ Deep in the neon-lit basement of the MightyMA tower, they say the original arcad
 **Type:** Skins/Graphics
 **Update:** Super Saiyan 3 Goten Skin (`goten-ssj3-mode`) — A new CSS skin variant for Goten's Last Stand evoking the raw, primal power of Super Saiyan 3. The palette channels the iconic lightning-storm transformation: pale blinding yellow-white against a void-black sky cracked with electric purple. `--accent1: #fef08a` (blinding pale yellow), `--accent2: #a855f7` (electric purple), `--accent3: #fefce8` (near-white lightning), `--accent4: #e9d5ff` (pale violet). Background: absolute void `#010000`. The aura pulse is set to a frantic 1.4s — faster than Beast, more primal than Blue. This is not a transformation of calm or technique; SSJ3 is pure, reckless, bone-cracking output. Logo gradient: pale yellow → electric purple → near-white. The ki aura bursts from below as a white-yellow radial flash underlined by violet electricity. The header bleeds dark void from `#010000` to `#0a0002`. When this mode activates, the arcade feels like the building itself is shaking.
 
-## 2026-04-03 — Daily Arcade Drop
-**Type:** Lore/Story
+## 2026-04-03 — Lore/Story Expansion
+## Lore/Story
 **Update:** The Legend of the "Void-Staring" Cabinet. Hidden behind a heavy velvet curtain in the back of the arcade sits a blank, wooden game cabinet that has no coin slot or joystick. Legend says it was the first cabinet Moshe ever found, and if you stare at its blank screen for long enough after midnight, you can see the high scores of games that haven't been invented yet. Some say it pulses with a soft blue light whenever a player reaches a perfect score in 'Goten's Last Stand'.
 
 ## 2026-04-04 — Daily Arcade Drop
@@ -200,3 +200,7 @@ Deep in the neon-lit basement of the MightyMA tower, they say the original arcad
 - **Update:** **The Fragmented Signal — The Core Awakens**
 - **Details:** Deep in the arcade's core, a new signal has emerged from the static left behind by the Final Stand. The Architect's trace data suggests a reboot is imminent, but at a cost.
 - **Effect Tag:** `.fragmented-signal-static`
+
+### 2026-05-03 — Skins/Graphics Improvement: Neon Grid Overload Skin
+A high-intensity visual layer pulsing with electric cyan and magenta energy.
+- Visual effect: `.neon-grid-overload`

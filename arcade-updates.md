@@ -1,5 +1,11 @@
 # MightyMA Arcade — Update Log
 
+## 2026-05-04 — Daily Arcade Drop
+- **Type:** Lore/Story Expansion
+- **Update:** **The Glitch in the Machine**
+- **Details:** In the Training Dojo, a mysterious figure has been seen flickering between the punching bags and target lanes. The moment anyone approaches, the silhouette stutters, splits into static, and vanishes into the code—leaving only a ripple across the floor and the faint sound of a loading chime.
+- **Effect Tag:** `.glitch-in-the-machine`
+
 ## 2026-05-02 — Daily Arcade Drop
 - **Type:** Lore/Story Expansion
 - **Update:** **The Archivist's Awakening — Echoes in the Deep**

@@ -1,3 +1,7 @@
+## 2026-05-05 — Daily Arcade Drop
+**Type:** Skins/Graphics Improvement
+**Update:** "Retro Neon Overhaul" — Enhanced the sprite palettes with vibrant neon glows and added scanline filters to the arcade screen for a more authentic 80s aesthetic.
+
 # MightyMA Arcade — Update Log
 
 ## 2026-05-04 — Daily Arcade Drop
@@ -121,8 +125,8 @@ Deep in the neon-lit basement of the MightyMA tower, they say the original arcad
 **Update:** Goten Mystic / Potential Unleashed Skin (`goten-mystic-mode`) — A new CSS skin variant for Goten's Last Stand evoking a Mystic/Ultimate transformation — the concept of Goten's hidden potential finally drawn out by the Elder Kai. The palette is deep violet and warm gold: `--accent1: #7c3aed` (deep violet), `--accent2: #fde68a` (soft gold), `--accent3: #4c1d95` (dark indigo), `--accent4: #ddd6fe` (lavender mist). Background collapses to near-void purple-black `#030008`. The aura pulse is set to a measured 3.2s — not frantic, not serene, but relentless. This is not a transformation from anger or instinct. It is unlocked potential, calm and absolute. Logo gradient: violet → gold → lavender. The ki aura rises as a violet-gold radial bloom from below, like power that was always there, finally given permission.
 
 ## 2026-04-01 — Daily Arcade Drop
-**Type:** Lore/Story
-**Update:** The MightyMA Arcade has always been open on April 1st — but the staff will tell you, if you ask quietly, that something shifts after midnight on that date. The tokens stop working. The machines accept them anyway. No one has ever explained the game that appears only on April Fools' — a cabinet no one ordered, a title screen that reads *"FOOL'S GAUNTLET"* in flickering red letters. The high score at the top never changes: 999,999 — set by a player listed only as MOSHE. Regulars say if you reach level four, the cabinet whispers something. No one's made it past level three.
+- **Type:** Lore/Story
+- **Update:** The MightyMA Arcade has always been open on April 1st — but the staff will tell you, if you ask quietly, that something shifts after midnight on that date. The tokens stop working. The machines accept them anyway. No one has ever explained the game that appears only on April Fools' — a cabinet no one ordered, a title screen that reads *"FOOL'S GAUNTLET"* in flickering red letters. The high score at the top never changes: 999,999 — set by a player listed only as MOSHE. Regulars say if you reach level four, the cabinet whispers something. No one's made it past level three.
 
 ## 2026-04-02 — Daily Arcade Drop
 **Type:** Skins/Graphics

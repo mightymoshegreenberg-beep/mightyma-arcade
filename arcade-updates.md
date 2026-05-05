@@ -1,3 +1,9 @@
+## 2026-05-06 — Daily Arcade Drop
+- **Type:** Lore/Story Expansion
+- **Update:** **The Terminal’s Secret — The Cipher Unveiled**
+- **Details:** After the Retro Neon Overhaul, a low-level background process began outputting scrambled hex strings at the base of every cabinet. Local players have started mapping these sequences, which appear to describe a "Level 0" existing before the Training Dojo was compiled. One string translated simply to: *NO INPUT IS EVER LOST*. Since this discovery, a subtle rhythmic green flicker has appeared on the edges of the high-score boards.
+- **Effect Tag:** `.terminal-cipher-flicker`
+
 ## 2026-05-05 — Daily Arcade Drop
 **Type:** Skins/Graphics Improvement
 **Update:** "Retro Neon Overhaul" — Enhanced the sprite palettes with vibrant neon glows and added scanline filters to the arcade screen for a more authentic 80s aesthetic.

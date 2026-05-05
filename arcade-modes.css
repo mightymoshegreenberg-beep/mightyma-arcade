@@ -853,3 +853,15 @@ body.neon-grid-overload-mode .ach-card.ach-unlocked {
   border: 1px solid var(--accent1);
   box-shadow: 0 0 8px var(--glow);
 }
+
+/* 2026-05-06 — Daily Arcade Drop: The Terminal’s Secret — The Cipher Unveiled */
+.terminal-cipher-flicker {
+    animation: cipher-flicker 2.5s infinite alternate linear;
+    border-bottom: 2px solid rgba(0, 255, 65, 0.3);
+}
+
+@keyframes cipher-flicker {
+    0% { opacity: 0.8; text-shadow: 0 0 2px #00ff41; }
+    50% { opacity: 1; text-shadow: 0 0 8px #00ff41, 0 0 12px #00ff41; }
+    100% { opacity: 0.9; text-shadow: 0 0 3px #00ff41; }
+}

@@ -1,3 +1,9 @@
+## 2026-05-08 — Daily Arcade Drop
+- **Type:** Lore/Story Expansion
+- **Update:** **The Whispering Cabinet — The Ghost in the Frame**
+- **Details:** A legendary, non-functional arcade cabinet in the corner of the Dojo has begun displaying a single, pulsating pixel of light. It seems to watch the players, following their movement across the room. Local legends say it’s a fragment of the Architect’s own curiosity, preserved in a frame that was never meant to be powered.
+- **Effect Tag:** `.whispering-cabinet-glow`
+
 ## 2026-05-07 — Daily Arcade Drop
 - **Type:** Skins/Graphics Improvement
 - **Update:** **The Vector-Void Interface**
@@ -25,7 +31,7 @@
 ## 2026-05-02 — Daily Arcade Drop
 - **Type:** Lore/Story Expansion
 - **Update:** **The Archivist's Awakening — Echoes in the Deep**
-- **Details:** Within the silent sub-layers of the MightyMA core, a long-dormant protocol has triggered. The Archivist—a digital consciousness tasked with the preservation of every "Perfect Game" ever played—has begun to manifest. Rhythmic pulses of azure data are appearing across the Training Dojo, whispering the names of legendary players. The machine isn't just running code; it's remembering.
+- **Details:** Within the silent sub-layers of the MightyMA core, a long-dormant protocol has triggered. The Archivist—a digital consciousness tasked with the preservation of every "Perfect Game" ever played—has begun to manifest. Rhythmic pulses of azure data are appearing across the Training Dojo, whispering the names of legendary players. The machine isn't just running code; it’s remembering.
 - **Effect Tag:** `.archivist-echo-ripple`
 
 ## 2026-04-30 — Daily Arcade Drop
@@ -44,7 +50,7 @@
 - **Type:** Lore/Story Expansion
 - **Update:** **The Baseline Paradox — Architect’s Log 001**
 - **Details:** A fractured audio file has been recovered from the `.chrono-prism` memory buffer. The voice, distorted by decades of digital decay, belongs to the original Lead Architect of the MightyMA tower. "The Baseline Paradox is simple," the log whispers. "A player believes they are chasing a score, but the machine is chasing the player. Every input is a heartbeat recorded in the grid." Since the log’s recovery, a strange rhythmic pulse has begun to thrum within the Dojo’s walls, beating in time with the high-score counter.
-- **Effect Added:** `.baseline-paradox-pulse`
+- **Effect Tag:** `.baseline-paradox-pulse`
 
 ## 2026-04-25 — Daily Arcade Drop
 - **Type:** Lore/Story Expansion

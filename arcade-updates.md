@@ -1,3 +1,9 @@
+## 2026-05-09 — Daily Arcade Drop
+- **Type:** Skins/Graphics Improvement
+- **Update:** **The Phantom-Watch Interface**
+- **Details:** A spectral, translucent skin that overlays the gameplay with a "holographic" HUD. The color palette is a cold, ghostly white and flickering indigo (#f8fafc and #4338ca). HUD elements appear to drift slightly, as if projected through the air.
+- **Visual Effect:** `.phantom-watch-shimmer` — a semi-transparent, high-frequency flicker that runs through all text elements, giving them a ghostly, unstable appearance. It adds a subtle "eye" motif to the corners of the screen that follows the player's primary cursor/character.
+
 ## 2026-05-08 — Daily Arcade Drop
 - **Type:** Lore/Story Expansion
 - **Update:** **The Whispering Cabinet — The Ghost in the Frame**

@@ -924,3 +924,14 @@ body.phantom-watch-mode::after {
   75% { opacity: 0.7; transform: translate(0.5px, 0.5px); }
   100% { opacity: 1; transform: translate(0,0); }
 }
+/* Daily Arcade Drop 2026-05-10: The Echoes of the Void resonance effect */
+.echo-void-resonance {
+    animation: void-pulse 6s infinite ease-in-out;
+    box-shadow: 0 0 15px rgba(251, 191, 36, 0.4);
+    filter: contrast(1.1) brightness(1.1);
+}
+
+@keyframes void-pulse {
+    0%, 100% { opacity: 0.9; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.002); }
+}

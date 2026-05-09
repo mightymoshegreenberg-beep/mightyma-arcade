@@ -1,3 +1,9 @@
+## 2026-05-10 — Daily Arcade Drop
+- **Type:** Lore/Story Expansion
+- **Update:** **The Echoes of the Void — Part 1: The First Resonance**
+- **Details:** Following the activation of the Phantom-Watch Interface, the arcade's internal diagnostics began capturing low-frequency rhythmic oscillations from the "Level 0" memory buffer. A series of fragmented audio-visual logs, titled *Resonance 001*, have started appearing in the data streams. The footage shows a grainy, overexposed hallway that doesn't exist in the Dojo's physical map, leading toward a door marked with a glowing golden sigil. The whispers in the background suggest that the Phantom-Watch isn't just a HUD—it’s a key.
+- **Effect Tag:** `.echo-void-resonance`
+
 ## 2026-05-09 — Daily Arcade Drop
 - **Type:** Skins/Graphics Improvement
 - **Update:** **The Phantom-Watch Interface**

@@ -1,3 +1,9 @@
+# 2026-05-11 — Daily Arcade Drop
+- **Type:** Skins/Graphics Improvement
+- **Update:** **Void-Prism Overlay**
+- **Effect Tag:** `.void-prism-refraction`
+- **Details:** Implemented a high-contrast prismatic chromatic aberration effect. This overlay simulates the "First Resonance" energy bleed mentioned in yesterday's lore, adding a shifting rainbow-fringe to terminal text and interactive elements.
+
 ## 2026-05-10 — Daily Arcade Drop
 - **Type:** Lore/Story Expansion
 - **Update:** **The Echoes of the Void — Part 1: The First Resonance**

@@ -103,3 +103,14 @@ body.cyber-ronin-mode {
     0%, 100% { box-shadow: 0 0 10px rgba(0, 212, 255, 0.4); transform: scale(1); }
     50% { box-shadow: 0 0 20px rgba(0, 212, 255, 0.7), 0 0 35px rgba(0, 212, 255, 0.3); transform: scale(1.02); }
 }
+
+/* 2026-05-11 — Daily Arcade Drop: Void-Prism Overlay */
+.void-prism-refraction {
+    text-shadow: -1px 0 #ff00ff, 1px 0 #00ffff;
+    animation: void-prism-flicker 3s infinite ease-in-out;
+}
+
+@keyframes void-prism-flicker {
+    0%, 100% { text-shadow: -1px 0 #ff00ff, 1px 0 #00ffff; }
+    50% { text-shadow: -2px 0 #ff00ff, 2px 0 #00ffff; filter: hue-rotate(15deg); }
+}

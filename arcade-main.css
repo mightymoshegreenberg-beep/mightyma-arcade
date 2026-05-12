@@ -124,3 +124,24 @@ body.cyber-ronin-mode {
     0%, 100% { opacity: .92; }
     50% { opacity: 1; }
 }
+
+.spectral-synth-wave {
+  position: relative;
+  overflow: hidden;
+}
+
+.spectral-synth-wave::before {
+  content: '';
+  position: absolute;
+  top: -2px; left: -2px; right: -2px; bottom: -2px;
+  background: linear-gradient(45deg, #ff8c00, #9d00ff);
+  z-index: -1;
+  filter: blur(8px);
+  opacity: 0.6;
+  animation: spectral-pulse 4s infinite alternate;
+}
+
+@keyframes spectral-pulse {
+  from { opacity: 0.4; filter: blur(6px); }
+  to { opacity: 0.8; filter: blur(12px); }
+}

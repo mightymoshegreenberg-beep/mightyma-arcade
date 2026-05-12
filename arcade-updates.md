@@ -254,3 +254,9 @@ Deep in the neon-lit basement of the MightyMA tower, they say the original arcad
 ### 2026-05-03 — Skins/Graphics Improvement: Neon Grid Overload Skin
 A high-intensity visual layer pulsing with electric cyan and magenta energy.
 - Visual effect: `.neon-grid-overload`
+
+## 2026-05-13 — Daily Arcade Drop
+- **Type:** Skins/Graphics Improvement
+- **Update:** **Spectral Synth-Wave Skin**
+- **Details:** A shimmering, translucent overlay that shifts between retro sunset orange and vaporwave purple. It creates a dreamlike, spectral glow around game cards, inspired by the fading echoes of the Mirror Room.
+- **Effect Tag:** `.spectral-synth-wave`

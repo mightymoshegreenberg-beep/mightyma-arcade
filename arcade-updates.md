@@ -189,12 +189,12 @@ Deep in the neon-lit basement of the MightyMA tower, they say the original arcad
 **Update:** Super Saiyan Rosé Goten Skin (`goten-rose-mode`) — A new CSS skin variant for Goten's Last Stand evoking the elegant but lethal Super Saiyan Rosé transformation. The palette shifts to deep obsidian, hot pink, and midnight indigo: `--accent1: #db2777` (hot pink), `--accent2: #4c1d95` (dark violet), `--accent3: #fbcfe8` (pale pink), `--accent4: #1e1b4b` (midnight indigo). Background: deep obsidian `#020105`. The aura pulse is set to a steady, menacing 2.5s. Logo gradient: hot pink → dark violet → pale pink. The ki aura rises as a deep violet-pink radial bloom, mimicking the divine but corrupted energy of Rosé. When this mode is active, the arcade feels colder, as if the machine itself is judging your worth.
 
 ## 2026-04-07 — Daily Arcade Drop
-**Type:** Lore/Story Expansion
-**Update:** The Legend of the Golden Gi — In Silent Valley, Moshe practiced a stillness so deep the pines seemed to hold their breath with him. By sunrise, the old training robe on the stone looked less like cloth and more like a vow: a golden gi said to shine only when its wearer has learned that calm can be its own kind of power.
+- **Type:** Lore/Story Expansion
+- **Update:** The Legend of the Golden Gi — In Silent Valley, Moshe practiced a stillness so deep the pines seemed to hold their breath with him. By sunrise, the old training robe on the stone looked less like cloth and more like a vow: a golden gi said to shine only when its wearer has learned that calm can be its own kind of power.
 
 ## 2026-04-08 — Daily Arcade Drop
-**Type:** Skins/Graphics Improvement
-**Update:** Golden Gi Goten Skin (`goten-gold-mode`) — Inspired by the legend of Moshe's training in Silent Valley, this skin represents the calm power of the Golden Gi. Replaces the standard palette with a radiant amber and cream scheme: `--accent1: #fbbf24` (amber), `--accent2: #fef3c7` (warm cream), `--accent3: #d97706` (burnt orange), `--accent4: #fffbeb` (eggshell). The aura pulse is slowed to a steady 5s "breathing" rhythm. Logo gradient: gold → white → amber. The header glows with a warm, sun-drenched amber light (`rgba(251, 191, 36, 0.6)`). This is the skin of a fighter who has found perfect stillness in the eye of the storm.
+- **Type:** Skins/Graphics Improvement
+- **Update:** Golden Gi Goten Skin (`goten-gold-mode`) — Inspired by the legend of Moshe's training in Silent Valley, this skin represents the calm power of the Golden Gi. Replaces the standard palette with a radiant amber and cream scheme: `--accent1: #fbbf24` (amber), `--accent2: #fef3c7` (warm cream), `--accent3: #d97706` (burnt orange), `--accent4: #fffbeb` (eggshell). The aura pulse is slowed to a steady 5s "breathing" rhythm. Logo gradient: gold → white → amber. The header glows with a warm, sun-drenched amber light (`rgba(251, 191, 36, 0.6)`). This is the skin of a fighter who has found perfect stillness in the eye of the storm.
 
 ## 2026-04-09 — Lore/Story Expansion
 - **The Echo of the Dragon's Breath**
@@ -260,3 +260,10 @@ A high-intensity visual layer pulsing with electric cyan and magenta energy.
 - **Update:** **Spectral Synth-Wave Skin**
 - **Details:** A shimmering, translucent overlay that shifts between retro sunset orange and vaporwave purple. It creates a dreamlike, spectral glow around game cards, inspired by the fading echoes of the Mirror Room.
 - **Effect Tag:** `.spectral-synth-wave`
+
+---
+2026-05-14
+Type: Lore/Story Expansion
+Update: The Archivist's Secret Partition
+Summary: Deep within the high-score circuitry, the Archivist discovered a dormant partition. It doesn't store names or scores, but echoes of games never played—fragments of a logic that predates the Architect's first line of code.
+Effect Tag: .archivist-partition-haze

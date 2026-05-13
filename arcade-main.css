@@ -145,3 +145,15 @@ body.cyber-ronin-mode {
   from { opacity: 0.4; filter: blur(6px); }
   to { opacity: 0.8; filter: blur(12px); }
 }
+
+/* Daily Drop: 2026-05-14 - The Archivist's Secret Partition */
+.archivist-partition-haze {
+    text-shadow: 0 0 8px rgba(160, 32, 240, 0.4);
+    opacity: 0.95;
+    animation: partition-haze-pulse 4s ease-in-out infinite alternate;
+}
+
+@keyframes partition-haze-pulse {
+    from { filter: blur(0px); }
+    to { filter: blur(0.4px); opacity: 0.8; }
+}

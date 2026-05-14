@@ -1,3 +1,9 @@
+## 2026-05-15 — Daily Arcade Drop
+- **Type:** Skins/Graphics Improvement
+- **Update:** **Bio-Luminescent Core**
+- **Effect tag:** `.bio-luminescent-core`
+- **Description:** A pulse of organic teal light emanates from the center of the arcade interface, symbolizing the integration of living data into the system.
+
 ## 2026-05-12 — Daily Arcade Drop
 - **Type:** Lore/Story Expansion
 - **Update:** **The Mirror Room Beneath the Neon**

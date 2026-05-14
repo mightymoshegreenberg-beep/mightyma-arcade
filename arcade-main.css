@@ -157,3 +157,15 @@ body.cyber-ronin-mode {
     from { filter: blur(0px); }
     to { filter: blur(0.4px); opacity: 0.8; }
 }
+
+/* 2026-05-15: Bio-Luminescent Core Skin */
+.bio-luminescent-core {
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.6), inset 0 0 10px rgba(0, 255, 204, 0.3);
+    border: 1px solid rgba(0, 255, 204, 0.5);
+    animation: bio-pulse 3s infinite ease-in-out;
+}
+
+@keyframes bio-pulse {
+    0%, 100% { box-shadow: 0 0 15px rgba(0, 255, 204, 0.6), inset 0 0 10px rgba(0, 255, 204, 0.3); }
+    50% { box-shadow: 0 0 25px rgba(0, 255, 204, 0.9), inset 0 0 15px rgba(0, 255, 204, 0.5); }
+}

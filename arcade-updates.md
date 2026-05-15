@@ -1,7 +1,7 @@
 ## 2026-05-16 — Daily Arcade Drop
 - **Type:** Lore/Story Expansion
 - **Update:** **The Echo of the Great Architect**
-- **Description:** A rare data fragment known as the \"Whispering Circuits\" has surfaced. It contains the original sequence of the Arcade, revealing that the system was built as a bridge between the physical and digital realms. Players who listen closely to the game sounds might hear the faint hum of the code's ancestors.
+- **Description:** A rare data fragment known as the "Whispering Circuits" has surfaced. It contains the original sequence of the Arcade, revealing that the system was built as a bridge between the physical and digital realms. Players who listen closely to the game sounds might hear the faint hum of the code's ancestors.
 - **Effect Tag:** `.whispering-circuits-echo`
 
 ## 2026-05-15 — Daily Arcade Drop

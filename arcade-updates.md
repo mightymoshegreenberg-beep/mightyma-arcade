@@ -242,4 +242,40 @@ Deep in the neon-lit basement of the MightyMA tower, they say the original arcad
 
 ## 2026-04-22 — Daily Arcade Drop
 - **Type:** Skins/Graphics Improvement
-- **Description:** Added a neon glow effect to the 
+- **Description:** Added a neon glow effect to the "Neon Knight" skin and optimized pixel-art rendering for smoother sprite transitions.
+- **Visuals:** Updated the sprite sheet with enhanced shading and glow mapping.
+
+## 2026-04-26 — Daily Arcade Drop
+- **Type:** Skins/Graphics Improvement
+- **Update:** **Chrono Prism Skin** (`.chrono-prism-mode`) — The arcade's fractured timelines finally found their reflection. This new skin wraps the interface in shifting prismatic chrome, with violet-to-cyan highlights that ripple like glass under laser light. Each HUD element now pulses with a layered chroma shimmer, and the high-score board gains a subtle time-warp aura as if every number is trying to arrive a second early.
+- **Visual Effect:** Added `.chrono-prism-glow`, a refractive neon bloom that trails motion with split-second afterimages and gives the whole arcade a polished, dimensional arcade-cabinet sheen.
+- **Lore Tag:** The Chronos Breach no longer feels broken — it feels upgraded.
+
+## 2026-04-29 — Daily Arcade Drop
+- **Type:** Lore/Story Expansion
+- **Update:** **The Architect’s Final Command — Root Access**
+- **Details:** Deep within the `.obsidian-matrix` layer, a hidden command line prompt has appeared on every secondary monitor in the arcade. It isn't part of a game, but a system-wide request: `sudo restore --all`. Moshe discovered that the obsidian texture isn't just a visual skin—it’s a digital seal, covering a core-level fracture left by the original architect. As players reach the 100,000 mark tonight, the screens briefly flicker with a blueprint for a cabinet labeled 'The Final Stand'. The machine is no longer just accepting tokens; it’s beginning to rewrite its own source code.
+- **Effect Tag:** `.root-access-flicker`
+
+## 2026-05-01 — Daily Arcade Drop
+- **Type:** Lore/Story Expansion
+- **Update:** **The Fragmented Signal — The Core Awakens**
+- **Details:** Deep in the arcade's core, a new signal has emerged from the static left behind by the Final Stand. The Architect's trace data suggests a reboot is imminent, but at a cost.
+- **Effect Tag:** `.fragmented-signal-static`
+
+### 2026-05-03 — Skins/Graphics Improvement: Neon Grid Overload Skin
+A high-intensity visual layer pulsing with electric cyan and magenta energy.
+- Visual effect: `.neon-grid-overload`
+
+## 2026-05-13 — Daily Arcade Drop
+- **Type:** Skins/Graphics Improvement
+- **Update:** **Spectral Synth-Wave Skin**
+- **Details:** A shimmering, translucent overlay that shifts between retro sunset orange and vaporwave purple. It creates a dreamlike, spectral glow around game cards, inspired by the fading echoes of the Mirror Room.
+- **Effect Tag:** `.spectral-synth-wave`
+
+---
+2026-05-14
+Type: Lore/Story Expansion
+Update: The Archivist's Secret Partition
+Summary: Deep within the high-score circuitry, the Archivist discovered a dormant partition. It doesn't store names or scores, but echoes of games never played—fragments of a logic that predates the Architect's first line of code.
+Effect Tag: .archivist-partition-haze

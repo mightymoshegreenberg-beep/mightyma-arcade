@@ -1,4 +1,3 @@
-
 // ── localStorage keys ──
 var LS_ACCOUNT='mma_account';
 var LS_SETTINGS='mma_settings';
@@ -339,4 +338,13 @@ fetchWeather(31.896,35.011,'Modi\u2019in, Israel');
   }catch(e){
     tbody.innerHTML='<tr><td colspan="6" class="lb-loading">Could not load scores. <a href="#support" style="color:var(--accent2)">Submit yours \u2192</a></td></tr>';
   }
+})();
+
+(function(){
+  try{
+    if(document.body&&new Date().toDateString().includes("May 16 2026")){
+      document.body.classList.add('whispering-circuits-echo');
+      console.log('Daily Arcade Drop: Whispering Circuits Echo active.');
+    }
+  }catch(e){}
 })();

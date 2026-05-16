@@ -1,3 +1,9 @@
+## 2026-05-17 — Daily Arcade Drop
+- **Type:** Skins/Graphics Improvement
+- **Update:** **Cyber-Glitch Shaders**
+- **Details:** Implemented a new reactive visual layer that triggers during combo streaks. The interface fragments with high-speed chromatic aberration and "static" noise, mimicking the digital instability of the recently discovered Whispering Circuits.
+- **Effect Tag:** `.cyber-glitch-vfx`
+
 ## 2026-05-16 — Daily Arcade Drop
 - **Type:** Lore/Story Expansion
 - **Update:** **The Echo of the Great Architect**
@@ -163,8 +169,8 @@ Deep in the neon-lit basement of the MightyMA tower, they say the original arcad
 **Update:** They called her The Watcher — a girl who came in every Friday night, pumped a single token into Goten's Last Stand, and left after exactly one life. No one ever saw her play past the first stage, yet her initials — E.G.T. — sat permanent at the top of the leaderboard. The night the cabinet finally flickered off for maintenance, the initials were gone. The slot where they'd been read simply: STILL HERE.
 
 ## 2026-03-29 — Daily Arcade Drop
-**Type:** Skins/Graphics
-**Update:** Goten Beast Mode Skin (`goten-beast-mode`) — A new CSS skin variant for Goten's Last Stand inspired by the raw, uncontrolled Beast transformation. The palette goes crimson and bone-white: `--accent1: #dc2626` (blood red), `--accent2: #fafafa` (bone white), `--accent3: #991b1b` (deep crimson), `--accent4: #fca5a5` (pale rose). Background plunges to pure void black `#040000`. The aura pulse animation cranks to 1.8s — frantic, feral, barely contained. Logo gradient: crimson → white → deep red. Header bleed: dark blood-red `#0a0000` to `#1a0000`. The ki aura erupts from below as a violent red-white radial burst, evoking the moment Beast Goten stops holding back. This skin has no calm, no elegance — just raw, overwhelming power.
+- **Type:** Skins/Graphics
+- **Update:** Goten Beast Mode Skin (`goten-beast-mode`) — A new CSS skin variant for Goten's Last Stand inspired by the raw, uncontrolled Beast transformation. The palette goes crimson and bone-white: `--accent1: #dc2626` (blood red), `--accent2: #fafafa` (bone white), `--accent3: #991b1b` (deep crimson), `--accent4: #fca5a5` (pale rose). Background plunges to pure void black `#040000`. The aura pulse animation cranks to 1.8s — frantic, feral, barely contained. Logo gradient: crimson → white → deep red. Header bleed: dark blood-red `#0a0000` to `#1a0000`. The ki aura erupts from below as a violent red-white radial burst, evoking the moment Beast Goten stops holding back. This skin has no calm, no elegance — just raw, overwhelming power.
 
 ## 2026-03-30 — Daily Arcade Drop
 **Type:** Lore/Story

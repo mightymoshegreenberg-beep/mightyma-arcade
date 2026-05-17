@@ -1,3 +1,9 @@
+## 2026-05-18 — Daily Arcade Drop
+- **Type:** Lore/Story Expansion
+- **Update:** **The Echo of the Iron Forge**
+- **Details:** Deep within the core of the MightyMA Arcade lies the Iron Forge, a remnant of the first arcade machine. It is said that the forge breathes with every high score, whispering secrets of the players who came before. Legend has it that those who master the forge's rhythm can unlock the hidden 'Grandmaster's Gambit'.
+- **Effect Tag:** `.iron-forge-echo`
+
 ## 2026-05-17 — Daily Arcade Drop
 - **Type:** Skins/Graphics Improvement
 - **Update:** **Cyber-Glitch Shaders**

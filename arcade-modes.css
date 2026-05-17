@@ -935,3 +935,14 @@ body.phantom-watch-mode::after {
     0%, 100% { opacity: 0.9; transform: scale(1); }
     50% { opacity: 1; transform: scale(1.002); }
 }
+/* 2026-05-18 — The Echo of the Iron Forge */
+.iron-forge-echo {
+  color: #f97316;
+  text-shadow: 0 0 10px rgba(249, 115, 22, 0.6), 0 0 20px rgba(124, 45, 18, 0.4);
+  animation: iron-forge-beat 3s infinite ease-in-out;
+}
+
+@keyframes iron-forge-beat {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.02); filter: brightness(1.2); }
+}

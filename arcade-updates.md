@@ -1,3 +1,8 @@
+## 2026-05-20 — Daily Arcade Drop
+- **Type:** Lore/Story Expansion
+- **Update:** **The Glitch in the Circuit — Origin of the Void-Master**
+- **Details:** Deciphered the lost data logs found in Level 4. The Void-Master wasn't always a villain; he was the original lead technician who became part of the machine during the Great Surge of '99. New character dialogue unlocked in the Retro Hub.
+
 ## 2026-05-19 — Daily Arcade Drop
 - **Type:** Skins/Graphics Improvement
 - **Update:** **Neon Blaster & Cyber-Knight Polish**

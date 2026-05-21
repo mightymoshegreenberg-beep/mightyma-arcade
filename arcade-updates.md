@@ -1,3 +1,9 @@
+## 2026-05-22 — Daily Arcade Drop
+- **Type:** Lore/Story Expansion
+- **Update:** The Guardian's Protocol — Rise of the Arcade Sentinel
+- **Details:** The deep circuits of the MightyMA core have finally responded to the Void-Master's intrusion. Awakened by a flurry of corrupted high scores, the Arcade Sentinel has emerged from the legacy buffer. Clad in shifting cobalt light, the Sentinel stands as the final firewall against the Glitch. "Security is not a wall, it is a pulse," the Sentinel echoed through the neon halls.
+- **Effect Tag:** `.arcade-sentinel-glow`
+
 ## 2026-05-20 — Daily Arcade Drop
 - **Type:** Lore/Story Expansion
 - **Update:** **The Glitch in the Circuit — Origin of the Void-Master**

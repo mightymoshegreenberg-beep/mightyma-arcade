@@ -185,3 +185,22 @@ body.cyber-ronin-mode {
   pointer-events: none;
   z-index: 9999;
 }
+
+/* Neon Pulse Overdrive Skin */
+.neon-pulse-overdrive {
+    --pulse-color: #00f3ff;
+    border: 2px solid var(--pulse-color);
+    box-shadow: 0 0 10px var(--pulse-color), inset 0 0 10px var(--pulse-color);
+    animation: neon-pulse-anim 2s infinite alternate;
+}
+
+@keyframes neon-pulse-anim {
+    from {
+        box-shadow: 0 0 5px var(--pulse-color), inset 0 0 5px var(--pulse-color);
+        filter: brightness(1);
+    }
+    to {
+        box-shadow: 0 0 20px var(--pulse-color), inset 0 0 20px var(--pulse-color);
+        filter: brightness(1.3);
+    }
+}

@@ -302,3 +302,9 @@ Type: Lore/Story Expansion
 Update: The Archivist's Secret Partition
 Summary: Deep within the high-score circuitry, the Archivist discovered a dormant partition. It doesn't store names or scores, but echoes of games never played—fragments of a logic that predates the Architect's first line of code.
 Effect Tag: .archivist-partition-haze
+
+## 2026-05-21 — Daily Arcade Drop
+- **Type:** Skins/Graphics Improvement
+- **Update:** **Neon Pulse Overdrive — Chroma Skin Enhancement**
+- **Details:** Introduced the “Neon Pulse” skin set. This update adds a dynamic color-shifting and pulsating glow effect to UI elements, bringing the high-octane energy of the ’90s arcade circuit to the main dashboard.
+- **Effect Tag:** `.neon-pulse-overdrive`

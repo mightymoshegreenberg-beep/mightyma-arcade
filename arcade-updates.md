@@ -1,3 +1,9 @@
+## 2026-05-23 — Daily Arcade Drop
+- **Type:** Skins/Graphics Improvement
+- **Update:** Cobalt Sentinel Chassis
+- **Details:** To match the emergence of the Arcade Sentinel, the system has deployed a new chassis skin. This visual layer covers the interface in a deep cobalt metallic sheen with reactive cyan energy paths that pulse with every successful input.
+- **Effect Tag:** `.cobalt-sentinel-chassis`
+
 ## 2026-05-22 — Daily Arcade Drop
 - **Type:** Lore/Story Expansion
 - **Update:** The Guardian's Protocol — Rise of the Arcade Sentinel

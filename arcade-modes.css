@@ -958,3 +958,58 @@ body.phantom-watch-mode::after {
     from { opacity: 0.8; }
     to { opacity: 1; transform: scale(1.02); }
 }
+
+/* ============================================================
+   COBALT SENTINEL CHASSIS — 2026-05-23 Daily Arcade Drop
+   Deep cobalt metallic skin with reactive cyan energy conduits
+   ============================================================ */
+body.cobalt-sentinel-mode {
+  --bg:       #000814;
+  --surface:  #001d3d;
+  --card:     #003566;
+  --accent1:  #0047ab; /* Cobalt Blue */
+  --accent2:  #00bfff; /* Deep Sky Blue */
+  --accent3:  #3a86ff; /* Neon Blue */
+  --accent4:  #003566; /* Navy */
+  --text:     #e0f2fe;
+  --muted:    #0047ab;
+  --glow:     0 0 26px rgba(0, 71, 171, 0.75);
+}
+
+body.cobalt-sentinel-mode header {
+  background: linear-gradient(135deg, #000814, #001d3d) !important;
+  border-bottom-color: #0047ab !important;
+}
+
+body.cobalt-sentinel-mode header::before {
+  background: radial-gradient(ellipse at 50% 0%, rgba(0, 71, 171, 0.4), transparent 70%) !important;
+}
+
+body.cobalt-sentinel-mode .logo {
+  background: linear-gradient(90deg, #0047ab, #00bfff, #3a86ff) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+body.cobalt-sentinel-mode::after {
+  content: '' !important;
+  position: fixed !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  z-index: 9997 !important;
+  background: radial-gradient(ellipse at 50% 110%, rgba(0, 71, 171, 0.15), transparent 60%) !important;
+  animation: aura-pulse 3.5s ease-in-out infinite alternate !important;
+}
+
+.cobalt-sentinel-chassis {
+  border: 2px solid #0047ab;
+  box-shadow: 0 0 15px #0047ab, inset 0 0 10px #00bfff;
+  background: linear-gradient(135deg, #000814, #0047ab);
+  animation: sentinel-pulse-v2 4s infinite ease-in-out;
+}
+
+@keyframes sentinel-pulse-v2 {
+  0%, 100% { opacity: 0.8; box-shadow: 0 0 15px #0047ab; }
+  50% { opacity: 1; box-shadow: 0 0 25px #00bfff; }
+}

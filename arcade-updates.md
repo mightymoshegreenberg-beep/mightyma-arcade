@@ -1,3 +1,8 @@
+## 2026-05-25 — Daily Arcade Drop
+- **Type:** Skins/Graphics Improvement
+- **Update:** **Neon-Pulse Retro Skins — The 80s Revival**
+- **Description:** Added high-contrast neon-glowing skins for players and a trailing scanline effect to sprites for an authentic CRT arcade aesthetic.
+
 ## 2026-05-24 — Daily Arcade Drop
 - **Type:** Lore/Story Expansion
 - **Update:** The Void-Master's Counter-Code — The Glitch Siege
@@ -141,7 +146,7 @@
 A corrupted Ronin protocol fragment from the Great Crash of '99 has surfaced beneath the arcade floor. It scavenges lost scores, archived inputs, and fragments of player memory, stitching them into a ghost-archive of unfinished matches. Players near the cabinet report a rhythmic humming at night — steady and metallic, like a blade being sharpened somewhere inside the machine.
 - **Effect Added:** `.ronin-protocol-flicker`
 
-### 2026-04-24
+## 2026-04-24 — Daily Arcade Drop
 **Update Type:** Skins/Graphics Improvement
 **Summary:** Cyber-Samurai: Ronin of the Grid Skin
 **Details:** 
@@ -155,12 +160,12 @@ A corrupted Ronin protocol fragment from the Great Crash of '99 has surfaced ben
 - **Update:** **The Legend of the Neon Nomad**
 Whispers have begun to circulate among the cabinet halls about the "Neon Nomad." This spectral gamer is said to leave iridescent, flickering trails on the high-score boards of every machine they touch. Local legend says the Nomad isn't just a player, but a manifestation of the arcade's own evolving soul—a traveler seeking the ultimate "Perfect Game" to unlock the Gateway of the Glitch. Players have reported seeing a hooded figure in a jacket of shifting pixels at the corner of their vision, disappearing as soon as the "Game Over" screen flashes. Is the Nomad a friend or a sign of something deeper lurking within the circuitry?
 
-### 2026-04-21 — Daily Arcade Drop
+## 2026-04-21 — Daily Arcade Drop
 - **Type:** Lore/Story Expansion
 - **Update:** **The Silver Silhouette**. Following the activation of the Ghostly Echo, players have reported a flickering silver silhouette in the reflection of the cabinet glass. It doesn't mirror the player; it mirrors a version of the arcade from forty years ago. When the silver glow reaches its peak, a single token is deposited into the 'Goten's Last Stand' machine by unseen hands.
 - **Effect Added:** `.silver-reflection` glitch effect for background elements.
 
-### 2026-04-20 — Daily Arcade Drop
+## 2026-04-20 — Daily Arcade Drop
 - **Type:** Skins/Graphics Improvement
 - **Update:** **Ghostly Echo Skin** (`.ghostly-echo-mode`) — Inspired by the mysterious VX-13 high score. This skin turns the interface into a semi-transparent, shimmering silver-grey.
 - **Visual Effect:** Added `.ghostly-echo-glow` CSS class, which applies a slow, spectral pulse animation in `#f8fafc` and `#cbd5e1`.

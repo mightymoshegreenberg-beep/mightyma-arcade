@@ -331,3 +331,9 @@ Effect Tag: .archivist-partition-haze
 - **Update:** **Neon Pulse Overdrive — Chroma Skin Enhancement**
 - **Details:** Introduced the “Neon Pulse” skin set. This update adds a dynamic color-shifting and pulsating glow effect to UI elements, bringing the high-octane energy of the ’90s arcade circuit to the main dashboard.
 - **Effect Tag:** `.neon-pulse-overdrive`
+
+## 2026-05-26 — Daily Arcade Drop
+- **Type:** Lore/Story Expansion
+- **Update:** **The Emerald Echo — Fragments of the Verdant Architect**
+- **Details:** Deep inside the source code of the training dojo, developers have uncovered a repeating string of emerald light. This "Emerald Echo" is believed to be the signature of the Verdant Architect, a silent co-creator of the Arcade who encoded the foundations of organic growth into the digital stone.
+- **Effect Tag:** `.emerald-echo-static`

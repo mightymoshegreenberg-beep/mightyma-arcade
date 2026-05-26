@@ -52,7 +52,6 @@
 
 ## 2026-05-15 — Daily Arcade Drop
 - **Type:** Skins/Graphics Improvement
-- **Update:** **Bio-Luminescent Core**
 - **Effect tag:** `.bio-luminescent-core`
 - **Description:** A pulse of organic teal light emanates from the center of the arcade interface, symbolizing the integration of living data into the system.
 
@@ -337,3 +336,10 @@ Effect Tag: .archivist-partition-haze
 - **Update:** **The Emerald Echo — Fragments of the Verdant Architect**
 - **Details:** Deep inside the source code of the training dojo, developers have uncovered a repeating string of emerald light. This "Emerald Echo" is believed to be the signature of the Verdant Architect, a silent co-creator of the Arcade who encoded the foundations of organic growth into the digital stone.
 - **Effect Tag:** `.emerald-echo-static`
+
+## 2026-05-27 — Daily Arcade Drop
+- **Type:** Skins/Graphics Improvement
+- **Update:** **Obsidian Nebula — Matte-Black Chassis with Pulsing Core**
+- **Details:** A deep, matte-black skin for the primary avatar that absorbs ambient light.
+- **Details:** Integrated a new "pulsing core" animation that beats with the arcade's master clock.
+- **Effect Tag:** `.obsidian-nebula-pulse`

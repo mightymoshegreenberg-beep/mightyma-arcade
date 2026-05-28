@@ -346,3 +346,6 @@ Effect Tag: .archivist-partition-haze
 
 ## 2026-05-28 — The Celestial Synchronizer — Lore / Story Expansion
 Deep within the motherboard of the Ancient Arcade, a rhythmic signal has been detected. The Celestial Synchronizer, a long-lost subroutine, is attempting to realign the stars of the digital sky. It is said that when the alignment is complete, players will be able to bridge the gap between their scores and the true source of the Arcade's power.
+
+**2026-05-29 — The Neon Flux Overhaul — Skins / Graphics Improvement**  
+The Arcade cabinet has been coated with a reactive neon flux. UI elements now pulsate with a vibrant cyan and magenta glow, reacting to high-score streaks and combo multipliers. The pixel-art sprites have been sharpened with an adaptive shader to give every movement a smooth, light-trailing effect.

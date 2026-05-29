@@ -118,6 +118,7 @@ body.goten-ssb-mode .btn-p,
 body.goten-ssb-mode .hof-submit-btn,
 body.goten-ssb-mode .badge-fire {
   background: linear-gradient(90deg, #3b82f6, #06b6d4) !important;
+  color: #fff !important;
 }
 
 body.goten-ssb-mode .form-input:focus,
@@ -1024,4 +1025,15 @@ body.cobalt-sentinel-mode::after {
 @keyframes glitch-haze-pulse {
   0% { opacity: 0.8; transform: scale(1); }
   100% { opacity: 1; transform: scale(1.02); }
+}
+
+/* Singularity Protocol - Added 2026-05-30 */
+.singularity-protocol-pulse {
+  animation: singularity-pulse 4s ease-in-out infinite;
+  box-shadow: 0 0 15px rgba(124, 58, 237, 0.5);
+}
+
+@keyframes singularity-pulse {
+  0%, 100% { transform: scale(1); filter: hue-rotate(0deg); }
+  50% { transform: scale(1.02); filter: hue-rotate(15deg); }
 }

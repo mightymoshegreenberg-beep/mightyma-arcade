@@ -233,3 +233,15 @@ body.cyber-ronin-mode {
   from { filter: hue-rotate(0deg) brightness(1); }
   to { filter: hue-rotate(45deg) brightness(1.2); }
 }
+
+/* 2026-05-31 Arcade Drop: Neon Synth Pulse */
+@keyframes neon-synth-pulse-anim {
+    0% { box-shadow: 0 0 5px #00f2ff, 0 0 10px #00f2ff; }
+    50% { box-shadow: 0 0 20px #00f2ff, 0 0 30px #00f2ff; }
+    100% { box-shadow: 0 0 5px #00f2ff, 0 0 10px #00f2ff; }
+}
+
+.neon-synth-pulse {
+    animation: neon-synth-pulse-anim 2s infinite ease-in-out;
+    border: 1px solid #00f2ff;
+}

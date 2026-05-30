@@ -58,7 +58,7 @@
 ## 2026-05-12 — Daily Arcade Drop
 - **Type:** Lore/Story Expansion
 - **Update:** **The Mirror Room Beneath the Neon**
-- **Details:** When the Void-Prism Overlay reached full bloom, the maintenance logs caught a second rhythm in the hallway—footsteps that never quite matched the players'. The trail ends at a sealed chamber behind the leaderboard wall, where every cabinet reflects a different year of the arcade. At its center stands a black-glass terminal that only wakes when nobody is staring directly at it, whispering names of challengers who haven't arrived yet. The arcade isn't replaying its past anymore; it's rehearsing tomorrow.
+- **Details:** When the Void-Prism Overlay reached full bloom, the maintenance logs caught a second rhythm in the hallway—footsteps that never quite matched the players'. The trail ends at a sealed chamber behind the leaderboard wall, where every cabinet reflects a different year of the arcade. At its center stands a black-glass terminal that only wakes when nobody is staring directly at it, whispering names of challengers who haven't arrived yet. The arcade isn't replaying its past anymore; it’s rehearsing tomorrow.
 - **Effect Tag:** `.mirror-room-whisper`
 
 # 2026-05-11 — Daily Arcade Drop
@@ -355,3 +355,9 @@ The Arcade cabinet has been coated with a reactive neon flux. UI elements now pu
 - **Update:** **The Singularity Protocol — Folding the Grid**
 - **Details:** Following the Neon Flux Overhaul, the arcade's central processor has begun to output a non-repeating sequence of gravitational-wave data. This phenomenon, dubbed the "Singularity Protocol," suggests that the arcade is no longer just processing input—it’s folding the digital space around it. Players report that during high-intensity streaks, the background music seems to slow down while their reflexes accelerate, as if the machine is pulling them into its core. "The event horizon is just the start menu," a cryptic message displayed on a secondary terminal read.
 - **Effect Tag:** `.singularity-protocol-pulse`
+
+## 2026-05-31 — Daily Arcade Drop
+- **Type:** Skins/Graphics Improvement
+- **Update:** Neon Synth Console Set
+- **Details:** Re-calibrated the main console graphics for a 'Neon Synth' aesthetic. Added a high-frequency cyan pulse effect to primary interactive components.
+- **Visual Class:** .neon-synth-pulse

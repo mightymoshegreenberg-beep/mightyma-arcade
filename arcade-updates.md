@@ -361,3 +361,8 @@ The Arcade cabinet has been coated with a reactive neon flux. UI elements now pu
 - **Update:** Neon Synth Console Set
 - **Details:** Re-calibrated the main console graphics for a 'Neon Synth' aesthetic. Added a high-frequency cyan pulse effect to primary interactive components.
 - **Visual Class:** .neon-synth-pulse
+
+## 2026-06-01 — Lore/Story Expansion
+- **Title:** The Echo of the Mighty MA
+- **Summary:** Fragments of the ancient arcade motherboard have been found scattered across the training dojo. Legend has it that these shards pulse with the energy of Moshe’s first victory.
+- **Status:** Ancient fragments discovered.

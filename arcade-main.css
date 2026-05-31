@@ -245,3 +245,10 @@ body.cyber-ronin-mode {
     animation: neon-synth-pulse-anim 2s infinite ease-in-out;
     border: 1px solid #00f2ff;
 }
+
+/* Lore Expansion: The Echo of the Mighty MA */
+.echo-fragment-glow {
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+  border: 1px solid #00ffff;
+  transition: box-shadow 0.3s ease-in-out;
+}

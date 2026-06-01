@@ -1,3 +1,43 @@
+## 2026-06-02 — Skins/Graphics Improvement
+- **Title:** Enhanced Arcade Tactility
+- **Summary:** Implemented a subtle hover lift and reactive glow to the skin selector interface, providing more tactile feedback when navigating the arcade.
+
+## 2026-06-01 — Lore/Story Expansion
+- **Title:** The Echo of the Mighty MA
+- **Summary:** Fragments of the ancient arcade motherboard have been found scattered across the training dojo. Legend has it that these shards pulse with the energy of Moshe’s first victory.
+- **Status:** Ancient fragments discovered.
+
+## 2026-05-31 — Daily Arcade Drop
+- **Type:** Skins/Graphics Improvement
+- **Update:** Neon Synth Console Set
+- **Details:** Re-calibrated the main console graphics for a 'Neon Synth' aesthetic. Added a high-frequency cyan pulse effect to primary interactive components.
+- **Visual Class:** .neon-synth-pulse
+
+## 2026-05-30 — The Singularity Protocol — Lore / Story Expansion
+- **Type:** Lore/Story Expansion
+- **Update:** **The Singularity Protocol — Folding the Grid**
+- **Details:** Following the Neon Flux Overhaul, the arcade's central processor has begun to output a non-repeating sequence of gravitational-wave data. This phenomenon, dubbed the "Singularity Protocol," suggests that the arcade is no longer just processing input—it’s folding the digital space around it. Players report that during high-intensity streaks, the background music seems to slow down while their reflexes accelerate, as if the machine is pulling them into its core. "The event horizon is just the start menu," a cryptic message displayed on a secondary terminal read.
+- **Effect Tag:** `.singularity-protocol-pulse`
+
+## 2026-05-29 — The Neon Flux Overhaul — Skins / Graphics Improvement  
+The Arcade cabinet has been coated with a reactive neon flux. UI elements now pulsate with a vibrant cyan and magenta glow, reacting to high-score streaks and combo multipliers. The pixel-art sprites have been sharpened with an adaptive shader to give every movement a smooth, light-trailing effect.
+
+## 2026-05-28 — The Celestial Synchronizer — Lore / Story Expansion
+Deep within the motherboard of the Ancient Arcade, a rhythmic signal has been detected. The Celestial Synchronizer, a long-lost subroutine, is attempting to realign the stars of the digital sky. It is said that when the alignment is complete, players will be able to bridge the gap between their scores and the true source of the Arcade's power.
+
+## 2026-05-27 — Daily Arcade Drop
+- **Type:** Skins/Graphics Improvement
+- **Update:** **Obsidian Nebula — Matte-Black Chassis with Pulsing Core**
+- **Details:** A deep, matte-black skin for the primary avatar that absorbs ambient light.
+- **Details:** Integrated a new "pulsing core" animation that beats with the arcade's master clock.
+- **Effect Tag:** `.obsidian-nebula-pulse`
+
+## 2026-05-26 — Daily Arcade Drop
+- **Type:** Lore/Story Expansion
+- **Update:** **The Emerald Echo — Fragments of the Verdant Architect**
+- **Details:** Deep inside the source code of the training dojo, developers have uncovered a repeating string of emerald light. This "Emerald Echo" is believed to be the signature of the Verdant Architect, a silent co-creator of the Arcade who encoded the foundations of organic growth into the digital stone.
+- **Effect Tag:** `.emerald-echo-static`
+
 ## 2026-05-25 — Daily Arcade Drop
 - **Type:** Skins/Graphics Improvement
 - **Update:** **Neon-Pulse Retro Skins — The 80s Revival**
@@ -20,6 +60,12 @@
 - **Update:** The Guardian's Protocol — Rise of the Arcade Sentinel
 - **Details:** The deep circuits of the MightyMA core have finally responded to the Void-Master's intrusion. Awakened by a flurry of corrupted high scores, the Arcade Sentinel has emerged from the legacy buffer. Clad in shifting cobalt light, the Sentinel stands as the final firewall against the Glitch. "Security is not a wall, it is a pulse," the Sentinel echoed through the neon halls.
 - **Effect Tag:** `.arcade-sentinel-glow`
+
+## 2026-05-21 — Daily Arcade Drop
+- **Type:** Skins/Graphics Improvement
+- **Update:** **Neon Pulse Overdrive — Chroma Skin Enhancement**
+- **Details:** Introduced the “Neon Pulse” skin set. This update adds a dynamic color-shifting and pulsating glow effect to UI elements, bringing the high-octane energy of the ’90s arcade circuit to the main dashboard.
+- **Effect Tag:** `.neon-pulse-overdrive`
 
 ## 2026-05-20 — Daily Arcade Drop
 - **Type:** Lore/Story Expansion
@@ -73,26 +119,22 @@
 - **Details:** Following the activation of the Phantom-Watch Interface, the arcade's internal diagnostics began capturing low-frequency rhythmic oscillations from the "Level 0" memory buffer. A series of fragmented audio-visual logs, titled *Resonance 001*, have started appearing in the data streams. The footage shows a grainy, overexposed hallway that doesn't exist in the Dojo's physical map, leading toward a door marked with a glowing golden sigil. The whispers in the background suggest that the Phantom-Watch isn't just a HUD—it’s a key.
 - **Effect Tag:** `.echo-void-resonance`
 
-## 2026-05-09 — Daily Arcade Drop
-- **Type:** Skins/Graphics Improvement
+## 2026-05-09 — Skins/Graphics Improvement
 - **Update:** **The Phantom-Watch Interface**
 - **Details:** A spectral, translucent skin that overlays the gameplay with a "holographic" HUD. The color palette is a cold, ghostly white and flickering indigo (#f8fafc and #4338ca). HUD elements appear to drift slightly, as if projected through the air.
 - **Visual Effect:** `.phantom-watch-shimmer` — a semi-transparent, high-frequency flicker that runs through all text elements, giving them a ghostly, unstable appearance. It adds a subtle "eye" motif to the corners of the screen that follows the player's primary cursor/character.
 
-## 2026-05-08 — Daily Arcade Drop
-- **Type:** Lore/Story Expansion
+## 2026-05-08 — Lore/Story Expansion
 - **Update:** **The Whispering Cabinet — The Ghost in the Frame**
 - **Details:** A legendary, non-functional arcade cabinet in the corner of the Dojo has begun displaying a single, pulsating pixel of light. It seems to watch the players, following their movement across the room. Local legends say it’s a fragment of the Architect’s own curiosity, preserved in a frame that was never meant to be powered.
 - **Effect Tag:** `.whispering-cabinet-glow`
 
-## 2026-05-07 — Daily Arcade Drop
-- **Type:** Skins/Graphics Improvement
+## 2026-05-07 — Skins/Graphics Improvement
 - **Update:** **The Vector-Void Interface**
 - **Details:** A minimalist high-fidelity overhaul inspired by 70s vector graphics. This skin strips away the heavy pixel textures in favor of razor-sharp, glowing green wireframes and infinite black backgrounds.
 - **Visual Effect:** `.vector-void-outline` — a thin, high-luminescence green stroke that pulses subtly to the beat of the background track.
 
-## 2026-05-06 — Daily Arcade Drop
-- **Type:** Lore/Story Expansion
+## 2026-05-06 — Lore/Story Expansion
 - **Update:** **The Terminal’s Secret — The Cipher Unveiled**
 - **Details:** After the Retro Neon Overhaul, a low-level background process began outputting scrambled hex strings at the base of every cabinet. Local players have started mapping these sequences, which appear to describe a "Level 0" existing before the Training Dojo was compiled. One string translated simply to: *NO INPUT IS EVER LOST*. Since this discovery, a subtle rhythmic green flicker has appeared on the edges of the high-score boards.
 - **Effect Tag:** `.terminal-cipher-flicker`
@@ -193,8 +235,7 @@ Whispers have begun to circulate among the cabinet halls about the "Neon Nomad."
 
 Deep in the neon-lit basement of the MightyMA tower, they say the original arcade cabinet was never turned off — it's been running since 1987, and the AI inside has been learning ever since. Some players claim that on certain nights, the enemies start moving in patterns no developer ever programmed.
 
-## 2026-03-25 — Daily Arcade Drop
-**Type:** Skins/Graphics
+## 2026-03-25 — Skins/Graphics
 **Update:** Super Saiyan Blue Goten Skin — A new `goten-ssb-mode` CSS variant for Goten's Last Stand. Replaces the signature amber/orange ki aura with an icy electric blue palette: `--accent1: #3b82f6` (blue), `--accent2: #06b6d4` (cyan), `--accent3: #bfdbfe` (light blue), aura glow shifts to `rgba(59,130,246,.75)`. The ki aura pulse animation changes from warm amber to a cold blue radial gradient rising from the base. Logo gradient updates to blue → cyan → sky blue. Evokes Goten's imagined Super Saiyan Blue transformation — calm, icy power radiating from every pixel.
 
 ## 2026-03-26 — Lore/Story
@@ -242,15 +283,13 @@ Deep in the neon-lit basement of the MightyMA tower, they say the original arcad
 - **Update:** On the first quiet night after April 5, the cabinet behind the velvet curtain began blinking a single blue light once every minute, like a heartbeat trying to remember a name. Moshe says the machine isn't empty at all — it stores the echoes of every impossible run, every near-miss, every score the leaderboard never had room to hold. By dawn, the blank screen had changed again, this time to a message in white static: *"You didn't discover me. You kept me alive."*
 
 ## 2026-04-06 — Daily Arcade Drop
-- **Type:** Skins/Graphics
-- **Update:** Super Saiyan Rosé Goten Skin (`goten-rose-mode`) — A new CSS skin variant for Goten's Last Stand evoking the elegant but lethal Super Saiyan Rosé transformation. The palette shifts to deep obsidian, hot pink, and midnight indigo: `--accent1: #db2777` (hot pink), `--accent2: #4c1d95` (dark violet), `--accent3: #fbcfe8` (pale pink), `--accent4: #1e1b4b` (midnight indigo). Background: deep obsidian `#020105`. The aura pulse is set to a steady, menacing 2.5s. Logo gradient: hot pink → dark violet → pale pink. The ki aura rises as a deep violet-pink radial bloom, mimicking the divine but corrupted energy of Rosé. When this mode is active, the arcade feels colder, as if the machine itself is judging your worth.
+**Type:** Skins/Graphics
+**Update:** Super Saiyan Rosé Goten Skin (`goten-rose-mode`) — A new CSS skin variant for Goten's Last Stand evoking the elegant but lethal Super Saiyan Rosé transformation. The palette shifts to deep obsidian, hot pink, and midnight indigo: `--accent1: #db2777` (hot pink), `--accent2: #4c1d95` (dark violet), `--accent3: #fbcfe8` (pale pink), `--accent4: #1e1b4b` (midnight indigo). Background: deep obsidian `#020105`. The aura pulse is set to a steady, menacing 2.5s. Logo gradient: hot pink → dark violet → pale pink. The ki aura rises as a deep violet-pink radial bloom, mimicking the divine but corrupted energy of Rosé. When this mode is active, the arcade feels colder, as if the machine itself is judging your worth.
 
-## 2026-04-07 — Daily Arcade Drop
-- **Type:** Lore/Story Expansion
+## 2026-04-07 — Lore/Story Expansion
 - **Update:** The Legend of the Golden Gi — In Silent Valley, Moshe practiced a stillness so deep the pines seemed to hold their breath with him. By sunrise, the old training robe on the stone looked less like cloth and more like a vow: a golden gi said to shine only when its wearer has learned that calm can be its own kind of power.
 
-## 2026-04-08 — Daily Arcade Drop
-- **Type:** Skins/Graphics Improvement
+## 2026-04-08 — Skins/Graphics Improvement
 - **Update:** Golden Gi Goten Skin (`goten-gold-mode`) — Inspired by the legend of Moshe's training in Silent Valley, this skin represents the calm power of the Golden Gi. Replaces the standard palette with a radiant amber and cream scheme: `--accent1: #fbbf24` (amber), `--accent2: #fef3c7` (warm cream), `--accent3: #d97706` (burnt orange), `--accent4: #fffbeb` (eggshell). The aura pulse is slowed to a steady 5s "breathing" rhythm. Logo gradient: gold → white → amber. The header glows with a warm, sun-drenched amber light (`rgba(251, 191, 36, 0.6)`). This is the skin of a fighter who has found perfect stillness in the eye of the storm.
 
 ## 2026-04-09 — Lore/Story Expansion
@@ -366,3 +405,9 @@ The Arcade cabinet has been coated with a reactive neon flux. UI elements now pu
 - **Title:** The Echo of the Mighty MA
 - **Summary:** Fragments of the ancient arcade motherboard have been found scattered across the training dojo. Legend has it that these shards pulse with the energy of Moshe’s first victory.
 - **Status:** Ancient fragments discovered.
+
+## 2026-06-02 — Lore/Story Expansion
+- **Title:** The Echo of the Mighty MA
+- **Summary:** Fragments of the ancient arcade motherboard have been found scattered across the training dojo. Legend has it that these shards pulse with the energy of Moshe’s first victory.
+- **Status:** Ancient fragments discovered.
+

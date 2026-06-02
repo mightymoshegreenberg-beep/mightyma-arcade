@@ -1,3 +1,7 @@
+## 2026-06-03 — Lore/Story Expansion
+- **Title:** The Glitch Core Chronicles
+- **Summary:** Discovered deep within the cabinet’s legacy circuitry: the Glitch Core. This unstable energy source is rumored to be the true origin of the pixel-perfect precision found in the Arcade’s most elite competitors. Some say it hums a melody from a game that was never released.
+
 ## 2026-06-02 — Skins/Graphics Improvement
 - **Title:** Enhanced Arcade Tactility
 - **Summary:** Implemented a subtle hover lift and reactive glow to the skin selector interface, providing more tactile feedback when navigating the arcade.
@@ -279,8 +283,8 @@ Deep in the neon-lit basement of the MightyMA tower, they say the original arcad
 **Update:** 'Super Saiyan Blue' Skin for Goten’s Last Stand. A vibrant sapphire aura now envelops Goten when he reaches max energy. His hair glows with a brilliant cyan sheen, and his energy blasts are laced with crackling electric blue sparks, signaling his mastery of God Ki.
 
 ## 2026-04-05 — Daily Arcade Drop
-- **Type:** Lore/Story
-- **Update:** On the first quiet night after April 5, the cabinet behind the velvet curtain began blinking a single blue light once every minute, like a heartbeat trying to remember a name. Moshe says the machine isn't empty at all — it stores the echoes of every impossible run, every near-miss, every score the leaderboard never had room to hold. By dawn, the blank screen had changed again, this time to a message in white static: *"You didn't discover me. You kept me alive."*
+**Type:** Lore/Story
+**Update:** On the first quiet night after April 5, the cabinet behind the velvet curtain began blinking a single blue light once every minute, like a heartbeat trying to remember a name. Moshe says the machine isn't empty at all — it stores the echoes of every impossible run, every near-miss, every score the leaderboard never had room to hold. By dawn, the blank screen had changed again, this time to a message in white static: *"You didn't discover me. You kept me alive."*
 
 ## 2026-04-06 — Daily Arcade Drop
 **Type:** Skins/Graphics
@@ -410,4 +414,3 @@ The Arcade cabinet has been coated with a reactive neon flux. UI elements now pu
 - **Title:** The Echo of the Mighty MA
 - **Summary:** Fragments of the ancient arcade motherboard have been found scattered across the training dojo. Legend has it that these shards pulse with the energy of Moshe’s first victory.
 - **Status:** Ancient fragments discovered.
-

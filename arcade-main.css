@@ -271,3 +271,19 @@ body.cyber-ronin-mode {
   transform: translateY(-1px);
   box-shadow: 0 0 0 1px rgba(255,255,255,.08), var(--glow);
 }
+/* --- 2026-06-04 Radiant Pulse Update --- */
+.arcade-pulse {
+  animation: arcade-pulse 2.2s ease-in-out infinite;
+  box-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+}
+
+@keyframes arcade-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.9);
+  }
+}

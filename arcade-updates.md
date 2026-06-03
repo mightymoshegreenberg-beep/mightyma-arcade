@@ -1,3 +1,11 @@
+## 2026-06-04 — The Radiant Pulse Skin Pack
+**Update:** Radiant Pulse Skins & UI Polish
+**Summary:** Introducing the "Radiant Pulse" skin set, featuring high-contrast neon aesthetics and reactive UI elements.
+**Details:** The arcade's visual processor has been overhauled to support the new "Radiant Pulse" theme. These skins don't just look fast—they feel fast, with a subtle expansion/glow cycle that mimics the heartbeat of the Mighty MA motherboard.
+**Effect Tag:** Graphics Enhancement
+**Visual Effect:** Added a new `.arcade-pulse` animation to the main skin selectors and enhanced the ambient glow across the dashboard.
+**Status:** Deployed
+
 ## 2026-06-03 — Lore/Story Expansion
 - **Title:** The Glitch Core Chronicles
 - **Summary:** Discovered deep within the cabinet’s legacy circuitry: the Glitch Core. This unstable energy source is rumored to be the true origin of the pixel-perfect precision found in the Arcade’s most elite competitors. Some say it hums a melody from a game that was never released.
@@ -117,7 +125,7 @@ Deep within the motherboard of the Ancient Arcade, a rhythmic signal has been de
 - **Effect Tag:** `.void-prism-refraction`
 - **Details:** Implemented a high-contrast prismatic chromatic aberration effect. This overlay simulates the "First Resonance" energy bleed mentioned in yesterday's lore, adding a shifting rainbow-fringe to terminal text and interactive elements.
 
-## 2026-05-10 — Daily Arcade Drop
+## 2026-05-10 — Lore/Story Expansion
 - **Type:** Lore/Story Expansion
 - **Update:** **The Echoes of the Void — Part 1: The First Resonance**
 - **Details:** Following the activation of the Phantom-Watch Interface, the arcade's internal diagnostics began capturing low-frequency rhythmic oscillations from the "Level 0" memory buffer. A series of fragmented audio-visual logs, titled *Resonance 001*, have started appearing in the data streams. The footage shows a grainy, overexposed hallway that doesn't exist in the Dojo's physical map, leading toward a door marked with a glowing golden sigil. The whispers in the background suggest that the Phantom-Watch isn't just a HUD—it’s a key.
